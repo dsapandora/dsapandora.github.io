@@ -13,30 +13,20 @@
     <link href="CSS/spore-font.css" rel="stylesheet" />
     <link href="CSS/animate.css" rel="stylesheet" />
     <link href="CSS/spore-animate.css" rel="stylesheet" />
+    
 <style>
 
-/*
-Theme Name: Spore
-Author: Allie
-Author URI: http://designscrazed.org
-Version: 1.0.0
-License: GNU General Public License v2 or later
-License URI: http://www.gnu.org/licenses/gpl-2.0.html
-Tags: white, three-columns, responsive-layout, featured-images, full-width-template, blogging
-
-*/
-
-/* CONTENT BODY SETTINGS - DON'T TOUCH ! */
+/* BODY */
 
 html,body{
-	height: 100%; /** Adaptative screen **/
+	height: 100%;
     margin:0;padding:0;
 }
 
-/* HEADER / BODY */
+/*A1*/
 
 .blank{
-	position:relative; /** Div for the transition when your leave the url - fade out/in white color **/
+	position:relative;
 	width:100%;
 	height:100%;
 	z-index:50;
@@ -45,7 +35,7 @@ html,body{
 
 
 #A0{
-	background: url(IMG/gallery-in-a-page.jpg)  50% 50% no-repeat; /** Background image - change it here !**/
+	background: url(IMG/gallery-in-a-page.jpg)  50% 50% no-repeat;
 	position:absolute;
     background-size: cover;
 	-webkit-background-size:cover;
@@ -61,15 +51,15 @@ html,body{
 }
 
 #A1-main{
-	position:relative; /** Main div to adapt all the element to the body**/
+	position:relative;
 	width:100%;
-	height:100%;
+	height:200px;
 	z-index:1;
 }
 
 
 #A1{
-	position:relative; /** Sub div to adapt the background for the body**/
+	position:relative;
 	width:100%;
 	height:100%;
 	z-index:1;
@@ -77,7 +67,7 @@ html,body{
 
 
 #A0-2{
-	background-color:#101613; /** Transparent background across the background **/
+	background-color:#101613;
 	opacity:0.5;
 	position:absolute;
     width:100%;
@@ -103,46 +93,22 @@ html,body{
 	opacity:0.8;
 }
 
-#wrapper-head{
-	position:absolute; /** Main div for the title, arrow icon and button learn more **/
-	height:100%;
-	width:100%;
-	z-index:5;
-	opacity:0;
-	top:0;
-}
-
-#title{
-	position:absolute;
-	z-index:4;
-	-webkit-font-smoothing: antialiased;
-	-moz-osx-font-smoothing: grayscale;
-	text-align:center;
-	font-size:24px;
-	line-height:130%;
-	color:#FFF;
-    font-family: 'open_sansregular';
-	width:50%;
-	margin-left:25%;
-	height:100%;
-	top:50%;
-}
-
 #wrapper-logo{
 	position:absolute;
 	width:169px;
 	height:45px;
 	margin-left:-500px;
 	left:50%;
-	top:50px;
+	top:60px;
 	z-index:11;
 	overflow: hidden;
 	opacity:0;
 }
 
 #logo{
-	width:100%;
-	height:100%;
+	background-image:url(IMG/logotop.svg);
+	width:169px;
+	height:45px;
 	position:absolute;
 	left:0;
 	top:0;
@@ -159,61 +125,9 @@ html,body{
 	left:50%;
 	margin-left:450px;
 	z-index:5;
-	top:60px;
+	top:67.5px;
 	cursor:pointer;
 	opacity:0;
-}
-
-#fleche1{
-	position:absolute;
-	background-image: url(IMG/ancre.svg);
-	background-repeat:no-repeat;
-	width:40px;
-	height:40px;
-	top:90%;
-	left:50%;
-	margin-left:-20px;
-	z-index:4;
-	cursor:pointer;
-}
-
-#wrapper-learnmore{
-	position:absolute;
-	width:140px;
-	height:45px;
-	left:50%;
-	margin-left:-70px;
-	top:65%;
-	opacity:1;
-	z-index:4;
-	cursor:pointer;
-}
-
-.bouton-learnmore{
-	position:absolute;
-	width:100%;
-	height:100%;
-	left:0;
-	opacity:1;
-	top:0;
-	background-color:#transparent;
-	border:solid 2px #FFF;
-	border-radius:10px;
-}
-
-.text-learnmore{
-	position:absolute;
-	z-index:1;
-	-webkit-font-smoothing: antialiased;
-	-moz-osx-font-smoothing: grayscale;
-	text-align:center;
-	font-size:18px;
-	line-height:45px;
-	height:45px;
-	color:#FFF;
-    font-family: 'open_sanssemibold';
-	width:80%;
-	margin-left:10%;
 }
 
 /* TAB MENU / HEADER */
@@ -251,8 +165,8 @@ html,body{
 	width:70%;
 	left:50%;
 	margin-left:-35%;
-	-webkit-font-smoothing: antialiased;
-	-moz-osx-font-smoothing: grayscale;
+-moz-osx-font-smoothing: grayscale;
+-webkit-font-smoothing: antialiased;
 	text-align:center;
 	font-size:17px;
 	line-height:150%;
@@ -277,8 +191,8 @@ html,body{
 	width:70%;
 	left:50%;
 	margin-left:-35%;
-	-webkit-font-smoothing: antialiased;
-	-moz-osx-font-smoothing: grayscale;
+-moz-osx-font-smoothing: grayscale;
+-webkit-font-smoothing: antialiased;
 	text-align:center;
 	font-size:17px;
 	line-height:150%;
@@ -313,170 +227,138 @@ html,body{
 	opacity:1;
 }
 
-/* PART 2 - TITLE */
+
+/*A2*/
 
 #A2{
 	position:relative;
 	width:100%;
-	min-height:250px;
+	height:auto;
 	z-index:1;
+	opacity:0;
 }
 
 #text-2{
-	position:absolute;
+	position:relative;
 	background-color:transparent;
 	width:550px;
-	height:90px;
+	height:auto;
 	top:50%;
-	margin-top:-45px;
+	margin-top:50px;
 	left:50%;
 	margin-left:-275px;
 	z-index:3;
-	-webkit-font-smoothing: antialiased;
-	-moz-osx-font-smoothing: grayscale;
+-moz-osx-font-smoothing: grayscale;
+-webkit-font-smoothing: antialiased;
 	text-align:center;
-	font-size:23px;
+	font-size:40px;
 	line-height:150%;
 	color:#444549;
     font-family: 'open_sansregular';
 	letter-spacing:-1px;
-}
-
-/* PART 3 PORTFOLIO ARTICLES 3 GRID LEFT/RIGHT/MID */
-
-
-#wrapper-A3{
-	position:relative;
-	width:1000px;
-	z-index:1;
-	left:50%;
-	margin-left:-500px;
-	height:auto;
 	padding-top:50px;
-	overflow:hidden;
 }
 
-#A3-right,#A3-left,#A3-middle{
-   background-color:#FFF;
-    float:left;    
-	width:30%;
-	height:auto;
-	z-index:1;
-}
 
-#A3-right{margin-right:0;}
-#A3-left{padding-right:5%;}
-#A3-middle{left:35%;padding-right:5%;}
 
-.calage
-{
-    clear: both;
-    height: 50px;
-    width: 100%;
-}
-
-/* ARTICLES 1-9 EXAMPLE */
-
-#wrapper-post1,#wrapper-post4,#wrapper-post7{
+#wrapper-A2-date-1{
 	position:relative;
-	width:100%;
-	height:auto;
-
-}
-
-#wrapper-A3-left-date-1,#wrapper-A3-left-date-2,#wrapper-A3-left-date-3,#wrapper-A3-middle-date-4,#wrapper-A3-middle-date-5,#wrapper-A3-middle-date-6,#wrapper-A3-right-date-7,#wrapper-A3-right-date-8,#wrapper-A3-right-date-9{
-	position:relative;
-	width:100%;
+	width:130px;
 	height:40px;
 	z-index:1;
-	top:15px;
-	left:0;
+	left:50%;
+	margin-left:-65px;
+	padding-top:25px;
+	padding-bottom:75px;
 }
 
-#A3-left-date-1,#A3-left-date-2,#A3-left-date-3,#A3-middle-date-4,#A3-middle-date-5,#A3-middle-date-6,#A3-right-date-7,#A3-right-date-8,#A3-right-date-9{
-	position:absolute;
-	width:100%;
-	height:100%;
-	-webkit-font-smoothing: antialiased;
-	-moz-osx-font-smoothing: grayscale;
-	text-align:left;
-	font-size:15px;
-	line-height:160%;
-	color:#C6C6C6;
-    font-family: 'open_sansbold';
-	margin-left:35px;
-}
-
-#A3-left-icone-1,#A3-left-icone-2,#A3-left-icone-3,#A3-middle-icone-4,#A3-middle-icone-5,#A3-middle-icone-6,#A3-right-icone-7,#A3-right-icone-8,#A3-right-icone-9{
+#A2-icone-1{
 	position:absolute;
 	background-image: url(IMG/icone1.svg);
 	background-repeat:no-repeat;
 	width:27px;
 	height:18px;
 	left:0;
-	top:3px;
-
+	top:50%;
+	margin-top:-42px;
 }
 
-
-#A3-left-title-1,#A3-left-title-2,#A3-left-title-3,#A3-middle-title-4,#A3-middle-title-5,#A3-middle-title-6,#A3-right-title-7,#A3-right-title-8,#A3-right-title-9{
-	position:relative;
-	width:95%;
-	left:0;
-	-webkit-font-smoothing: antialiased;
-	-moz-osx-font-smoothing: grayscale;
-	text-align:left;
-	font-size:21px;
+#A2-date-1{
+	position:absolute;
+	width:100%;
+	height:100%;
+-moz-osx-font-smoothing: grayscale;
+-webkit-font-smoothing: antialiased;
+	text-align:right;
+	font-size:15px;
 	line-height:160%;
-	color:#444549;
-    font-family: 'open_sanssemibold';
-	top:15px;
-	letter-spacing:-1px;
+	color:#C6C6C6;
+    font-family: 'open_sansbold';
 }
 
-#A3-left-text-1,#A3-left-text-2,#A3-left-text-3,#A3-middle-text-4,#A3-middle-text-5,#A3-middle-text-6,#A3-right-text-7,#A3-right-text-8,#A3-right-text-9{
+/*A3*/
+
+
+#wrapper-A3{
 	position:relative;
-	width:95%;
-	-webkit-font-smoothing: antialiased;
-	-moz-osx-font-smoothing: grayscale;
-	text-align:left;
-	font-size:16px;
-	line-height:140%;
-	left:0;
-	color:#9C9C9C;
-    font-family: 'open_sansregular';
-	top:35px;
+	width:600px;
+	z-index:1;
+	left:50%;
+	margin-left:-300px;
+	height:auto;
+	overflow-x:hidden;
+	opacity:0;
 }
 
-#wrapper-post2,#wrapper-post3,#wrapper-post5,#wrapper-post6,#wrapper-post8,#wrapper-post9{
+#A3-top{
 	position:relative;
 	width:100%;
 	height:auto;
-	margin-top:100px;
-
-}
-
-#A3-left-image-2,#A3-left-image-3,#A3-middle-image-4,#A3-middle-image-5,#A3-middle-image-6,#A3-right-image-8,#A3-right-image-9{
-	position:relative;
-	width:100%;
 	z-index:1;
 	top:0;
 	left:0;
-	overflow:hidden;
 }
 
-#A3-left-image-2 img,#A3-left-image-3 img,#A3-middle-image-4 img,#A3-middle-image-5 img,#A3-middle-image-6 img,#A3-right-image-8 img,#A3-right-image-9 img{
+#A3-image{
+	position:relative;
+	z-index:1;
+	top:0;
+	left:0;
 	width:100%;
 }
 
-/* ARTICLES FOR THE VIDEO - EXTENDED DIV NECESSARY TO WATCH THE VIDEO*/
+#A3-image img{width:100%;}
+
+#A3-top-2{
+	position:relative;
+	width:100%;
+	height:auto;
+	z-index:1;
+	padding-top:50px;
+	left:0;
+}
+
+#A3-text-1{
+	position:relative;
+	width:95%;
+-moz-osx-font-smoothing: grayscale;
+-webkit-font-smoothing: antialiased;
+	text-align:left;
+	font-size:16px;
+	line-height:170%;
+	left:0;
+	color:#474851;
+    font-family: 'open_sanssemibold';
+}
+
+/*POST WITH VIDEO*/
 
 iframe {
     width:100%;
     height:auto;
  }
 
-.video-container-1,.video-container-6,.video-container-7 {
+.video-container-1 {
     position:relative;
     padding-bottom:56.25%;
     padding-top:30px;
@@ -486,105 +368,259 @@ iframe {
 	left:0;
  }
 
-.video-container-1 iframe,.video-container-6 iframe,.video-container-7 iframe,.video-container-1 object,.video-container-6 object,.video-container-7 object,.video-container-1 embed,.video-container-6 embed,.video-container-7 embed {
+.video-container-1 iframe,.video-container-1 object,.video-container-1 embed {
     width:100%;
     height:100%;
     position:absolute;
     top:0;
     left:0;
 }
-
-/* PART 4 - BOUTON PAGE 1-4*/
+/*A4*/
 
 
 
 #A4{
 	position:relative;
 	width:100%;
-	height:200px;
+	height:70px;
 	z-index:1;
     background-color:#FFF;
+	padding-top:50px;
+	padding-bottom:50px;
 	
 }
 
 #wrapper-A4{
 	position:absolute;
-	width:300px;
+	width:600px;
 	height:45px;
-	margin-left:-150px;
+	margin-left:-300px;
 	left:50%;
 	top:50%;
 	margin-top:-22.5px;
 }
 
-#page1{
+#line1-A4{
 	position:absolute;
-	left:15%;
-	border-radius:50%;
-	height:35px;
-	width:35px;
-	background-color:transparent;/*add a background color*/
-	border:solid 4px #444549;/*add a color border*/
-	cursor:pointer;
+    background-color:#CCC;
+	height:1px;
+	top:0;
+	width:100%;
+}
+
+#line2-A4{
+	position:absolute;
+    background-color:#CCC;
+	height:1px;
+	bottom:0;
+	width:100%;
+}
+
+#A4-nextpage-1{
+    position:absolute;
+	width:150px;
+-moz-osx-font-smoothing: grayscale;
+-webkit-font-smoothing: antialiased;
+	text-align:left;
+	font-size:16px;
+	height:70px;
+	left:0;
+	color:#474851;
+    font-family: 'open_sanssemibold';
+	top:50%;
+	margin-top:-10px;
+
+}
+
+#A4-nextpage-2{
+    position:absolute;
+	width:150px;
+-moz-osx-font-smoothing: grayscale;
+-webkit-font-smoothing: antialiased;
+	text-align:right;
+	font-size:16px;
+	height:70px;
+	top:50%;
+	right:0;
+	color:#474851;
+    font-family: 'open_sanssemibold';
+	margin-top:-10px;
+
+}
+
+/*A4a*/
+
+#A4a{
+	position:relative;
+	width:100%;
+	height:100px;
 	z-index:1;
+    background-color:#FFF;
+	padding-bottom:50px;
 	
 }
 
-#text-page1{
+#wrapper-A4a{
+	position:absolute;
+	width:600px;
+	margin-left:-300px;
+	height:100px;
+	left:50%;
+}
+
+#A4a-title-1{
     position:absolute;
+	width:100%;
+-moz-osx-font-smoothing: grayscale;
+-webkit-font-smoothing: antialiased;
+	text-align:left;
+	font-size:16px;
+	height:100px;
+	left:0;
+	color:#474851;
     font-family: 'open_sanssemibold';
-	-webkit-font-smoothing: antialiased;
-	-moz-osx-font-smoothing: grayscale;
-	font-size:15px;
-	height:35px;
-	top:0;
-	left:0;
-	line-height:35px;
-	color:#444549;
-	text-align:center;
+	top:50%;
+	margin-top:-10px;
+	line-height:30px;
+
+}
+
+
+/*A4b*/
+
+#A4b{
+	position:relative;
 	width:100%;
-	z-index:2;
+	height:620px;
+	z-index:1;
+    background-color:#FFF;
+	padding-bottom:50px;
+	
 }
 
-#text-page2,#text-page3,#text-page4{
-    position:absolute;
-    font-family: 'open_sansregular';
-	-webkit-font-smoothing: antialiased;
-	-moz-osx-font-smoothing: grayscale;
-	font-size:15px;
-	height:350px;
-	top:0;
-	left:0;
-	line-height:35px;
-	color:#FFF;
-	text-align:center;
+#wrapper-A4b{
+	position:absolute;
 	width:100%;
-	z-index:2;
+	height:100%;
 }
 
-#main-page2,#main-page3,#main-page4{
-	position:absolute;
-	width:35px;
-	height:35px;
-	top:0;
+
+/*FORM*/
+
+#conteneur {
+position:relative;
+top:0;
+width:578px; 
+left:50%;
+margin-left:-300px;
+z-index:10;
 }
 
-#main-page2{left:38.5%;margin-left:-11.7px;}
-#main-page3{right:38.5%;margin-right:-11.7px;}
-#main-page4{right:15%;}
 
-#page2,#page3,#page4{
-	position:absolute;
-	left:0;
-	border-radius:50%;
-	height:35px;
-	width:35px;
-	background-color:#9C9C9C;
-	cursor:pointer;
-	border:solid 4px #9C9C9C;
+
+input {
+/* styles de caractères */
+    font-family: 'open_sanssemibold';
+font-size: 16px; 
+color: #CCC; 
+/* marge et taille */
+width: 578px; 
+height: 40px; 
+padding: 5px 10px 0px 10px; 
+margin: 0 0 20px 0;
+/* couleur de fond */
+background:#FFF;
+/* bordures */
+border:1px solid #CCC;
+-moz-osx-font-smoothing: grayscale;
+-webkit-font-smoothing: antialiased;
+outline:none;
 }
 
-/* PART 5 - MENU WITH SHORTCUTS*/
+textarea {
+/* styles de caractères */
+font-size: 16px; 
+color: #CCC;
+    font-family: 'open_sanssemibold';
+/* marge taille et ombre portée */
+width: 578px;
+height: 120px;
+padding: 10px 10px 0px 10px;
+margin: 0 0 20px 0;
+/* couleur de fond */
+background:#FFF;
+/* bordures */
+border:1px solid #CCC;
+-moz-osx-font-smoothing: grayscale;
+-webkit-font-smoothing: antialiased;
+outline:none;
+}
+
+input[type=submit] {
+/* position taille marges */
+cursor: pointer;
+width: 200px;
+height: 40px; 
+padding: 5px 10px; 
+/* coins arrondies */
+transition: all 0.5s ease-in-out;
+-webkit-transition: all 0.5s ease-in-out; /** Chrome & Safari **/
+-moz-transition: all 0.5s ease-in-out; /** Firefox **/
+-o-transition: all 0.5s ease-in-out; /** Opera **/
+/* fond */
+background-color:#31323a;
+/* styles de texte */
+color:#FFF;
+font-weight:bold;
+font-family: 'open_sanssemibold';
+-moz-osx-font-smoothing: grayscale;
+-webkit-font-smoothing: antialiased;
+border:1px solid #CCC;
+border-radius:5px;
+
+}
+
+input:focus, textarea:focus {
+background:#FFF;
+}
+
+input[type=submit]:hover {
+background: #51CE77;
+/* styles de texte */
+color: #FFF;
+border: none;
+}
+
+input[type=submit]:active {
+background: #51CE77;
+/* styles de texte */
+color: #CCC;
+border: none;
+}
+
+fieldset {
+	border: none;
+	margin: 0;
+	padding:0;
+}
+
+textarea { 
+	resize: vertical;
+    max-height:250px; 
+    min-height:100px;
+	border:1px solid #CCC;
+}
+
+#er-message{text-align:center;font-family: 'open_sanssemibold'; color:#00c1af;font-size:16px; padding-bottom:20px;-moz-osx-font-smoothing: grayscale;
+-webkit-font-smoothing: antialiased;
+}
+
+.glowing-border {
+	border:5px solid #00c1af;
+}
+
+
+/*A5*/
 
 #A5{
 	position:relative;
@@ -642,8 +678,8 @@ iframe {
 
 #left-text-post,#mid-text-post,#right-text-post{
 	position:relative;
-	-webkit-font-smoothing: antialiased;
-	-moz-osx-font-smoothing: grayscale;
+-moz-osx-font-smoothing: grayscale;
+-webkit-font-smoothing: antialiased;
 	text-align:left;
 	font-size:17px;
 	color:#FFF;
@@ -658,8 +694,8 @@ iframe {
 
 #left-text-post-1,#mid-text-post-1,#right-text-post-1{
 	position:relative;
-	-webkit-font-smoothing: antialiased;
-	-moz-osx-font-smoothing: grayscale;
+-moz-osx-font-smoothing: grayscale;
+-webkit-font-smoothing: antialiased;
 	text-align:left;
 	font-size:16px;
 	color:#CCC;
@@ -679,8 +715,8 @@ iframe {
 
 #left-text-post-2,#left-text-post-3,#mid-text-post-2,#mid-text-post-3,#right-text-post-2,#right-text-post-3,#left-text-post-4,#mid-text-post-4,#right-text-post-4{
 	position:relative;
-	-webkit-font-smoothing: antialiased;
-	-moz-osx-font-smoothing: grayscale;
+-moz-osx-font-smoothing: grayscale;
+-webkit-font-smoothing: antialiased;
 	text-align:left;
 	font-size:16px;
 	color:#CCC;
@@ -694,7 +730,7 @@ iframe {
 	padding-top:15px;
 }
 
-/* PART 5 BIS - RELATED BLOG NUMBERS */
+/*A5b*/
 
 #A5b{
 	position:relative;
@@ -756,8 +792,8 @@ iframe {
 
 #left-A5b-text-post,#mid-A5b-text-post,#right-A5b-text-post{
 	position:relative;
-	-webkit-font-smoothing: antialiased;
-	-moz-osx-font-smoothing: grayscale;
+-moz-osx-font-smoothing: grayscale;
+-webkit-font-smoothing: antialiased;
 	text-align:center;
 	font-size:40px;
 	color:#CCC;
@@ -772,8 +808,8 @@ iframe {
 
 #left-A5b-text-post-1,#mid-A5b-text-post-1,#right-A5b-text-post-1{
 	position:relative;
-	-webkit-font-smoothing: antialiased;
-	-moz-osx-font-smoothing: grayscale;
+-moz-osx-font-smoothing: grayscale;
+-webkit-font-smoothing: antialiased;
 	text-align:center;
 	font-size:16px;
 	color:#9B9DA3;
@@ -789,7 +825,7 @@ iframe {
 }
 
 
-/* PART 6 - SOCIAL LINKS*/
+/*A6 SOCIAL LINKS*/
 
 #A6{
 	position:relative;
@@ -827,8 +863,8 @@ iframe {
 #behance,#dribbble,#facebook,#google,#linked{
     font-family: 'socialicoregular';
 	position:absolute;
-	-webkit-font-smoothing: antialiased;
-	-moz-osx-font-smoothing: grayscale;
+-moz-osx-font-smoothing: grayscale;
+-webkit-font-smoothing: antialiased;
 	text-align:left;
 	font-size:35px;
 	cursor:pointer;
@@ -855,7 +891,7 @@ iframe {
 #linked{margin-left:-10px;}
 #behance{margin-left:-15px;}
 
-/* PART 7 - FOOTER - COPYRIGHT*/
+/*A7*/
 
 #A7{
 	position:relative;
@@ -889,8 +925,8 @@ iframe {
 #copyright{
 	position:absolute;
 	width:100%;
-	-webkit-font-smoothing: antialiased;
-	-moz-osx-font-smoothing: grayscale;
+-moz-osx-font-smoothing: grayscale;
+-webkit-font-smoothing: antialiased;
 	text-align:center;
 	font-size:13px;
 	height:60px;
@@ -901,8 +937,6 @@ iframe {
 	text-transform: uppercase;
 	letter-spacing:-1px;
 }
-
-/* RESPONSIVE DESIGN ! IMPORTANT DONT TOUCH IT */
 
 /* X-LARGE */
 @media (max-width: 1500px) {
@@ -917,105 +951,105 @@ iframe {
 /* PERSONNAL RESPONSIVE DESIGN FOR COMPUTER SMALL SCREEN, MEDIA SCREEN AND IPAD HORIZONTAL*/
 @media (max-width: 1080px) {
 #wrapper-logo{margin-left:-420px;}
-#wrapper-plus,#wrapper-cross{margin-left:370px;}
-#wrapper-A5,#line-A7,#wrapper-A5b{width:900px;margin-left:-450px;}
+#wrapper-cross,#wrapper-plus{margin-left:370px;}
+#wrapper-A5,#line-A7{width:900px;margin-left:-450px;}
 }
 
 /*HYBRID*/
 @media (max-width: 1000px) {
-#wrapper-A3,#wrapper-A5,#wrapper-A5b,#line-A7{width:700px;margin-left:-350px;}
+#wrapper-A5,#wrapper-A5b,#line-A7{width:700px;margin-left:-350px;}
 #wrapper-logo{margin-left:-320px;}
-#wrapper-plus,#wrapper-cross{margin-left:270px;}
+#wrapper-cross,#wrapper-plus{margin-left:270px;}
 }
 
 /*FOR VERTICAL IPAD NATIVE 801px INCLUDING THE NEW TABLETS HYBRID*/
 @media (max-width: 801px) {
-#wrapper-A3,#wrapper-A5,#wrapper-A5b,#line-A7{width:580px;margin-left:-290px;}
-#wrapper-logo{margin-left:-260px;}
-#wrapper-plus,#wrapper-cross{margin-left:210px;}
+#wrapper-A5,#wrapper-A5b,#line-A7{width:580px;margin-left:-290px;}
+#wrapper-logo{margin-left:-300px;}
+#wrapper-cross,#wrapper-plus{margin-left:250px;}
 #A3-left,#A3-middle,#A3-right,#A5-left,#A5-middle,#A5-right,#A5b-left,#A5b-middle,#A5b-right{float:none;position:relative;width:100%;height:auto;left:0;padding-right:none;padding-top:50px;padding-bottom:50px;}
 #left-text-post,#mid-text-post,#right-text-post,#left-text-post-2,#left-text-post-3,#mid-text-post-2,#mid-text-post-3,#right-text-post-2,#right-text-post-3,#left-text-post-4,#mid-text-post-4,#right-text-post-4,#left-text-post-1,#mid-text-post-1,#right-text-post-1{text-align:center;}
 #left-text-post,#mid-text-post,#right-text-post{width:100%;}
 #left-line-post,#mid-line-post,#right-line-post{width:33%;left:50%;margin-left:-16.6%;}
 #left-line2-post,#mid-line2-post,#right-line2-post{width:33%;left:50%;margin-left:-16.6%;}
 #left-A5b-line-post,#left-A5b-line2-post,#left-A5b-text-post,#left-A5b-text-post-1,#right-A5b-line-post,#right-A5b-line2-post,#right-A5b-text-post,#right-A5b-text-post-1{margin-left:-50px;}
-#title{font-size:22px;line-height:130%;width:60%;margin-left:20%;top:40%;}
 #wrapper-menu{margin-top:-25%;}
 }
 
 /* MQUERIES FOR SMARTPHONE VERY LARGE & E-READERS */
 @media (max-width: 640px) {
-#wrapper-A3,#wrapper-A5,#wrapper-A5b,#line-A7{width:460px;margin-left:-230px;}
-#wrapper-plus,#wrapper-cross{margin-left:150px;}
+#wrapper-A4a,#wrapper-A4,#wrapper-A3,#wrapper-A5,#wrapper-A5b,#line-A7{width:460px;margin-left:-230px;}
+#wrapper-logo{margin-left:-230px;}
+#wrapper-cross,#wrapper-plus{margin-left:200px;}
+#title{top:28%;width:60%;margin-left:20%;font-size:55px;}
+#text-2{width:80%;margin-left:10%;left:0%;}
 #A5b-left,#A5b-middle,#A5-left,#A5-middle,#A3-left,#A3-middle{padding-right:0;}
-#A7{display:none;}
-#text-2{font-size:20px;width:80%;margin-left:10%;left:0%;}
-#wrapper-logo{margin-left:-195px;}
-#wrapper-menu{margin-top:-30%;}
-
+#conteneur{width:438px;margin-left:-230px;}
+input,textarea {width:438px;}
+#wrapper-menu{padding-top:30%;}
 }
 
 /* MQUERIES FOR NEW SMARTPHONE HYBRID AND SMALL TABLET BY HEIGHT */
 @media (max-height: 600px) {
-#wrapper-A3,#wrapper-A5,#wrapper-A5b,#line-A7{width:400px;margin-left:-200px;}
-#wrapper-logo{margin-left:-195px;}
-#wrapper-plus,#wrapper-cross{margin-left:145px;}
-#wrapper-menu{margin-top:-35%;}
+#wrapper-A4a,#wrapper-A4,#wrapper-A3,#wrapper-A5,#wrapper-A5b,#line-A7{width:400px;margin-left:-200px;}
+#wrapper-logo{margin-left:-170px;}
+#wrapper-home,#wrapper-cross{margin-left:120px;}
 }
 
 
 /* MQUERIES FOR SMARTPHONE LARGE & IPHONE 4 HORIZONTAL */
 @media (max-width: 480px) {
-#wrapper-A3,#wrapper-A5,#wrapper-A5b{width:400px;margin-left:-200px;}
-#wrapper-plus,#wrapper-cross{margin-left:145px;}
+#wrapper-A4a,#wrapper-A4,#wrapper-A3,#wrapper-A5,#wrapper-A5b{width:400px;margin-left:-200px;}
+#wrapper-home{margin-left:120px;}
+#wrapper-cross,#wrapper-plus{margin-left:170px;}
 #A7{display:none;}
-#text-2{font-size:20px;}
-#wrapper-logo{margin-left:-185px;}
+#wrapper-logo{margin-left:-195px;}
+#text-2{font-size:30px;}
+#conteneur{width:378px;margin-left:-200px;}
+input,textarea {width:378px;}
 #wrapper-menu{margin-top:-35%;}
 }
 
 /* MQUERIES FOR SMARTPHONE LARGE & IPHONE 4 HORIZONTAL */
 @media (max-width: 400px) {
-#wrapper-A3,#wrapper-A5,#wrapper-A5b{width:300px;margin-left:-150px;}
-#wrapper-plus,#wrapper-cross{margin-left:135px;}
+#wrapper-A4a,#wrapper-A4,#wrapper-A3,#wrapper-A5,#wrapper-A5b{width:300px;margin-left:-150px;}
+#wrapper-cross,#wrapper-plus{margin-left:140px;}
+#conteneur{width:278px;margin-left:-150px;}
+input,textarea {width:278px;}
 #wrapper-logo{margin-left:-175px;}
 #wrapper-menu{margin-top:-40%;}
+#text-2{margin-top:20px;}
+#wrapper-A2-date-1{padding-top:20px;padding-bottom:20px;width:200px;margin-left:-100px;}
 }
 
 /* MQUERIES ADDITIONAL FOR SMARTPHONE IPHONE 3 & 4 VERTICAL POSITION BY HEIGHT*/
 @media (max-width: 320px) {
-#wrapper-A3,#wrapper-A5,#wrapper-A5b{width:280px;margin-left:-140px;}
-#wrapper-plus,#wrapper-cross{margin-left:90px;}
-#wrapper-plus{top:40px;}
+#wrapper-A4a,#wrapper-A4,#wrapper-A3,#wrapper-A5,#wrapper-A5b{width:280px;margin-left:-140px;}
 #wrapper-social,#wrapper-A4{width:280px;margin-left:-140px;}
-#wrapper-logo{margin-left:-135px;top:30px;}
+#conteneur{width:258px;margin-left:-140px;}
+input,textarea {width:258px;}
+#wrapper-logo{margin-left:-135px;}
+#wrapper-cross,#wrapper-plus{margin-left:90px;}
 #wrapper-menu{margin-top:-45%;}
-#recent-post-title,#recent-post-1,#recent-post-2,#recent-post-3,#recent-post-4{line-height:115%;}
-#category-post-title,#category-post-1,#category-post-2,#category-post-3{line-height:115%;}
 }
 
 /* MEDIA QUERIES FOR HYBRID MOBILE*/
 @media (max-height: 650px) {
-#title{font-size:19px;line-height:130%;width:60%;margin-left:20%;top:34%;}
-#wrapper-learnmore{top:74%;}
-#fleche1{display:none;}
 #wrapper-menu{margin-top:-47.5%;}
-
 }
 
-/* MEDIA QUERIES FOR IPHONE 5 VERTICAL AND OLD VERSION*/
-@media (max-height: 568px) {
-#title{font-size:17px;line-height:130%;width:60%;margin-left:20%;top:37%;}
+/* MQUERIES ADDITIONAL FOR SMARTPHONE IPHONE 3 & 4 VERTICAL POSITION BY HEIGHT*/
+@media (max-height: 480px) {
 }
 
 /* MQUERIES ADDITIONAL FOR SMARTPHONE IPHONE 3 & 4 HORIZONTAL POSITIONBY HEIGHT*/
 @media (max-height: 330px) {
-#wrapper-logo{top:30px;margin-left:-84.5px;}
-#wrapper-plus,#wrapper-cross{display:none;}
+#wrapper-logo{top:65px;margin-left:-84.5px;}
+#wrapper-plus,#wrapper-cross{top:30px;display:none;}
 #main-wrapper-menu{display:none;}
+#text-2{margin-top:20px;}
+#wrapper-A2-date-1{padding-top:20px;padding-bottom:20px;width:200px;margin-left:-100px;}
 }
-
-
 
 </style>
 
@@ -1057,218 +1091,91 @@ iframe {
 <!-- HEADER -->
 
 <div id="A1-main">
-	    
-    <div id="wrapper-logo" class="object">
-	<a href="#"><div id="logo" class="shadow object" ><img src="IMG/logotop.svg" width="169" height="45"/></div></a>
+
+    <div id="wrapper-logo">
+	<a href="index.html"><div id="logo" class="shadow object"></div></a>
 	</div>
     
     <div id="A1">
     
-    	<div class="blank"></div>
-    
+        <div class="blank"></div>
     	<div id="A0"></div>
     	<div id="A0-2"></div>
     	<div id="trame"></div>
-        
-		
-    	<div id="wrapper-head">
-   			<div id="title" class="object">Spore is a creative onepage wordpress theme for web developers who change the world.</div>
-            <div id="wrapper-learnmore">
-            	<div class="bouton-learnmore object">
-        			<div class="text-learnmore object">Learn more</div>
-    			</div>
-            </div>
-           <a href="#ancre"><div id="fleche1"></div></a>
-   	    </div>
-
-
-		<div id="wrapper-plus" class="object"></div>
-        
+ 
 	</div>
         
 </div>
 
-<a name="ancre"></a>
-
-<!-- PART 2 - TITLE -->
-
 <div id="A2">
+        
+        <div id="text-2">Another post</div>
     
-    <div id="text-2" class="wow fadeIn" data-wow-offset="10">Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore<span style="color:#999;"> magna aliquam.</span></div>
-    
+        <div id="wrapper-A2-date-1">
+            		
+                <div id="A2-date-1">15 nov, 2014</div>
+                <div id="A2-icone-1"></div>  
+                <div id="A2-icone-eye-1"></div>
+        </div> 
 </div>
     
-<!-- PART 3 - PORTFOLIO ARTICLES 3 GRID -->
 
 <div id="wrapper-A3" class="object">
     
-    	<div id="A3-left">
-        
-        	<div id="wrapper-post1" class="text-part-A5">
-            	<div class="video-container-1">
-					<iframe width="560" height="315" src="//www.youtube.com/embed/aN-zEzr4Zwc" frameborder="0" allowfullscreen></iframe>
-                </div>
-            
-            	<div id="wrapper-A3-left-date-1">
-            		<div id="A3-left-date-1">22 nov, 2014</div>
-                	<div id="A3-left-icone-1"></div>
-            	</div> 
-            	<ul>
-            		<li><div id="A3-left-title-1"><a href="spore-post1.html">Post a Youtube video</a></div></li>
-            	</ul>
-                <div id="A3-left-text-1">Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam.Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</div>  
-            </div>
-            
-            <div id="wrapper-post2" class="text-part-A5">
-            	<a href="spore-post2.html"><div id="A3-left-image-2"><img src="IMG/image1-01.jpg"  alt="post an image with animation" title="post an image with animation" class="grow"/></div></a>
-            
-            	<div id="wrapper-A3-left-date-2">
-            		<div id="A3-left-date-2">21 nov, 2014</div>
-                	<div id="A3-left-icone-2"></div>
-            	</div> 
-           		<ul>
-            		<li><div id="A3-left-title-2"><a href="spore-post2.html">Post an image with animation</a></div></li> 
-            	</ul>
-            	<div id="A3-left-text-2">Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam.</div>  
-            </div>
-            
-             <div id="wrapper-post3" class="text-part-A5">
-            	<a href="spore-post3.html"><div id="A3-left-image-3"><img src="IMG/image6-01.jpg"  alt="Auto-resized image" title="Auto-resized image" class="grow"/></div></a>
-            
-            	<div id="wrapper-A3-left-date-3">
-            		<div id="A3-left-date-3">20 nov, 2014</div>
-                	<div id="A3-left-icone-3"></div>
-            	</div> 
-            	<ul>
-            		<li><div id="A3-left-title-3"><a href="spore-post3.html">Auto-resized image</a></div></li>
-                </ul>  
-            	<div id="A3-left-text-3">Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam.</div>  
-            </div>
-            
-        </div>
-  
-    	<div id="A3-middle">
-        	
-            <div id="wrapper-post4" class="text-part-A5">
-            	<a href="spore-post4.html"><div id="A3-middle-image-4"><img src="IMG/image3-01.jpg"  alt="Another post" title="Another post" class="grow"/></div></a>
-            
-            	<div id="wrapper-A3-middle-date-4">
-            		<div id="A3-middle-date-4">19 nov, 2014</div>
-                	<div id="A3-middle-icone-4"></div>
-            	</div> 
-            	<ul>
-            		<li><div id="A3-middle-title-4"><a href="spore-post4.html">Another post</a></div></li>
-                </ul>  
-            	<div id="A3-middle-text-4">Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam.</div>  
-            </div>
-            
-            <div id="wrapper-post5" class="text-part-A5">
-            	<a href="spore-post5.html"><div id="A3-middle-image-5"><img src="IMG/image4-01.jpg"  alt="Another post" title="Another post" class="grayscale" /></div></a>
-            
-            	<div id="wrapper-A3-middle-date-5">
-            		<div id="A3-middle-date-5">18 nov, 2014</div>
-                	<div id="A3-middle-icone-5"></div>
-            	</div> 
-            	<ul>
-            		<li><div id="A3-middle-title-5"><a href="spore-post5.html">Post transition image</a></div></li>
-                </ul> 
-            	<div id="A3-middle-text-5">Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam.</div>  
-            </div>
-            
-            <div id="wrapper-post6" class="text-part-A5">
-            
-           		<div class="video-container-6">
-            		<iframe src="//player.vimeo.com/video/108753054?portrait=0&amp;color=ffffff" width="500" height="281" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
-            	</div>
-                
-            	<div id="wrapper-A3-middle-date-6">
-            		<div id="A3-middle-date-6">17 nov, 2014</div>
-                	<div id="A3-middle-icone-6"></div>
-            	</div> 
-            	<ul>
-            		<li><div id="A3-middle-title-6"><a href="spore-post6.html">Post a Vimeo video</a></div></li>
-                </ul> 
-            	<div id="A3-middle-text-6">Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam.</div>  
-            </div>
-        
-        
+    	<div id="A3-top">
+			<div id="A3-image"><img src="IMG/image5-01.jpg"  alt="Post with transition image" title="Post with transition image" class="grow" /></div>	
         </div>
         
-        <div id="A3-right">
-        
-        	    <div id="wrapper-post7" class="text-part-A5">
-            	<div class="video-container-1">
-					<iframe width="560" height="315" src="//www.youtube.com/embed/CLHUpONf3yI" frameborder="0" allowfullscreen></iframe>
-                </div>
-            
-            	<div id="wrapper-A3-right-date-7">
-            		<div id="A3-right-date-7">16 nov, 2014</div>
-                	<div id="A3-right-icone-7"></div>
-            	</div> 
-            	<ul>
-            		<li><div id="A3-right-title-7"><a href="spore-post7.html">Another video post</a></div></li>
-                </ul>
-            	<div id="A3-right-text-7">Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam.Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam</div>  
-            </div>
-            
-            <div id="wrapper-post8" class="text-part-A5">
-            	<a href="spore-post8.html"><div id="A3-right-image-8"><img src="IMG/image5-01.jpg"  alt="Post with transition image" title="Post with transition image" class="grow" /></div></a>
-            
-            	<div id="wrapper-A3-right-date-8">
-            		<div id="A3-right-date-8">15 nov, 2014</div>
-                	<div id="A3-right-icone-8"></div>
-            	</div> 
-            	<ul>
-            		<li><div id="A3-right-title-8"><a href="spore-post8.html">Another post</a></div></li>
-                </ul>  
-            	<div id="A3-right-text-8">Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam.</div>  
-            </div>
-            
-            <div id="wrapper-post9" class="text-part-A5">
-            	<a href="spore-post9.html"><div id="A3-right-image-9"><img src="IMG/image2-01.jpg"  alt="Another post" title="Another post" class="grow"/></div></a>
-            
-            	<div id="wrapper-A3-right-date-9">
-            		<div id="A3-right-date-9">14 nov, 2014</div>
-                	<div id="A3-right-icone-9"></div>
-            	</div> 
-            	<ul>
-            		<li><div id="A3-right-title-9"><a href="spore-post9.html">Another post</a></div></li>
-                </ul>
-            	<div id="A3-right-text-9">Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam.</div>  
-            </div>
-        
+        <div id="A3-top-2">
+			<div id="A3-text-1">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</div>	
         </div>
-	<div class="calage"></div>     
 </div>
-
-<!-- PART 4 - BOUTON PAGE 1-4 -->
 
 <div id="A4" class="object">
 
-	<div id="wrapper-A4" class="wow bounceInRight" data-wow-offset="10">
+	<div id="wrapper-A4" class="text-part-A5">
     	
+    <div id="line1-A4"></div>
+    <div id="line2-A4"></div>
+    
+    <ul>  
+    <li><div id="A4-nextpage-1"><a href="index.html">&#171;&nbsp;&nbsp;Previous page</a></div></li>  
+    <li><div id="A4-nextpage-2"><a href="spore-post2.html">Next page&nbsp;&nbsp;&#187;</a></div></li>  
+    </ul>   
+     
+    </div>
+
+</div>
+
+<div id="A4a" class="object">
+
+	<div id="wrapper-A4a" class="wow bounceInRight" data-wow-offset="10">
+    	
+    <div id="A4a-title-1">Leave us a Comment<br><span style="color:#CCC;">Your email address will not be published. Required fields are marked with *</span></div>  
         
-        <div id="page1" class="object">
-        	<div id="text-page1"><strong>1</strong></div>
-        </div>
-        
-        <div id="main-page2">
-        	<div id="page2" class="object">
-          		<div id="text-page2" class="object"><strong>2</strong></div>
-        	</div>
-        </div>
-        
-        <div id="main-page3">
-        	<div id="page3" class="object">
-            	<div id="text-page3" class="object"><strong>3</strong></div>
-        	</div>
-        </div>
-        
-		<div id="main-page4">
-        	<div id="page4" class="object">
-            	<div id="text-page4" class="object"><strong>4</strong></div>
-        	</div>
-		</div>
+    </div>
+
+</div>
+
+
+<div id="A4b" class="object">
+
+	<div id="wrapper-A4b">
+    
+    	<div id = "conteneur">
+	
+ 			<form id="contact" method="post" action="#">
+	 				<div id="er-message"></div>
+    			<fieldset>
+					<p><input type="text" id="nom" name="nom" tabindex="1" placeholder="Name*"/></p>
+					<p><input type="text" id="email" name="email" tabindex="2" placeholder="Email*"/></p>
+					<p><input type="text" id="objet" name="objet" tabindex="3" placeholder="Website"/></p>
+					<p><textarea id="message" name="message" maxlength="500" placeholder="Comment" tabindex="4" cols="30" rows="8"></textarea></p>
+				</fieldset>
+ 
+				<div style="text-align:center;"><input type="submit" name="envoi" value="Send" /></div>
+  			</form>
+    	</div>
         
     </div>
 
@@ -1327,7 +1234,6 @@ iframe {
 </div>
 
 
-<!-- PART 5 BIS - SUB MENU AND RELATED NUMBERS -->
 
 <div id="A5b"> 
  
@@ -1365,7 +1271,6 @@ iframe {
     
 </div>
 
-<!-- PART 6 - SOCIAL PART -->
 
 <div id="A6">
 
@@ -1404,8 +1309,6 @@ iframe {
     </div>
 </div>
 
-<!-- PART 7 - COPYRIGHT -->
-
 <div id="A7">
 
 	<div id="wrapper-A7">
@@ -1415,8 +1318,7 @@ iframe {
     
 </div>
 
-<!-- SCRIPT -->
-
+<!--SCRIPT-->
 	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
     <script type="text/javascript" src="JS/jquery.scrollTo.min.js"></script>
     <script type="text/javascript" src="JS/jquery.localScroll.min.js"></script>
@@ -1434,7 +1336,7 @@ window.addEventListener('load', function() {
 	
 	$(window).on('beforeunload', function(){
 		$(".blank").fadeIn(300);
-		$("#main-wrapper-menu,#A1-main,#A2,#A3,#A4,#A5,#A6,#A7").animate({'opacity':'0'},300);
+		$("#main-wrapper-menu,#A1-main,#A1,#A2,#wrapper-A3,#A3,#A4,#A4a,#A4b,#A5,#A6,#A7").animate({'opacity':'0'},300);
   		$(window).delay(1000).scrollTop(0);
 	});
 	
@@ -1443,29 +1345,9 @@ window.addEventListener('load', function() {
 	$.localScroll();
 	
 	$(".blank").delay(1000).fadeOut(300);
-	$("#wrapper-head").delay(2000).animate({'opacity':'1'},500);
-	$("#wrapper-logo").delay(3200).animate({'opacity':'1'},300);
-	$("#wrapper-plus").delay(3200).animate({'opacity':'1'},300);
-});
-
-$(function() {
-	var bar = $('#wrapper-head');
-	var opacity = bar.css('opacity');
-	var top = bar.css('top');
-	
-	$(window).scroll(function() {
-		if($(this).scrollTop() > 100) {
-			bar.stop().animate({ opacity :'0', top :'-10%'},250);
-		} 
+	$("#wrapper-logo,#wrapper-plus").delay(2000).animate({'opacity':'1'},300);
+	$("#wrapper-A3,#A2").delay(2000).animate({'opacity':'1'},300);
 	});
-		
-	$(window).scroll(function() {
-		if($(this).scrollTop() < 100) {
-			bar.stop().animate({ opacity :'1', top :'0'},250);
-		}	
-	});
-});
-
 
 /*CLICK PLUS AND CROSS MENU*/
 
@@ -1486,35 +1368,6 @@ WC.addEventListener('click', function() {
 		     $(".category-post").fadeOut(250);
 			 $("#wrapper-plus").delay(1000).fadeIn(250);			 
 }); 
-
-/*BUTTON ARROW*/
-
-$(document).on('touchstart mouseover', '#fleche1', function(event){
-        event.stopPropagation();
-        event.preventDefault();
-        if(event.handled !== true) {
-			 
-			 $("#fleche1").stop().animate({'top':'92.5%'},200);
-
-            event.handled = true;
-        } else {
-            return false;
-        }
-});
-
-$(document).on('touchend mouseout', '#fleche1', function(event){
-        event.stopPropagation();
-        event.preventDefault();
-        if(event.handled !== true) {
-			 
-			 $("#fleche1").stop().animate({'top':'90%'},200);
-			 
-            event.handled = true;
-        } else {
-            return false;
-        }
-});
-
 
 /*BUTTON LOGO*/
 
@@ -1599,6 +1452,35 @@ $(document).on('touchend mouseout', '#wrapper-cross', function(event){
             return false;
         }
 });
+
+/*BUTTON HOME*/
+
+$(document).on('touchstart mouseover', '#wrapper-home', function(event){
+        event.stopPropagation();
+        event.preventDefault();
+        if(event.handled !== true) {
+			 
+			 $("#wrapper-home").stop().animate({'opacity':'0.75','scale':'1.1'},150);
+
+            event.handled = true;
+        } else {
+            return false;
+        }
+});
+
+$(document).on('touchend mouseout', '#wrapper-home', function(event){
+        event.stopPropagation();
+        event.preventDefault();
+        if(event.handled !== true) {
+			 
+			 $("#wrapper-home").stop().animate({'opacity':'1','scale':'1'},150);
+			 
+            event.handled = true;
+        } else {
+            return false;
+        }
+});
+
 
 
 /*BUTTON FACEBOOK*/
@@ -1761,8 +1643,8 @@ $(document).on('touchstart mouseover', '#main-page2', function(event){
         event.preventDefault();
         if(event.handled !== true) {
 			 
-			 $("#page2").stop().css({'background-color':'transparent','border-color':'#444549'});
-			 $("#text-page2").stop().css({'color':'#444549'},250);
+			 $("#page2").stop().css({'background-color':'transparent','border-color':'#51CE77'});
+			 $("#text-page2").stop().css({'color':'#51CE77'},250);
 			 $("#main-page2").stop().animate({'scale':'1.1'},250);
 
             event.handled = true;
@@ -1776,7 +1658,7 @@ $(document).on('touchend mouseout', '#main-page2', function(event){
         event.preventDefault();
         if(event.handled !== true) {
 			 
-			 $("#page2").stop().css({'background-color':'#9C9C9C','border-color':'#9C9C9C'});
+			 $("#page2").stop().css({'background-color':'#51CE77','border-color':'#51CE77'});
 		     $("#text-page2").stop().css({'color':'#FFF'},250);
 	         $("#main-page2").stop().animate({'scale':'1'},250);
 			 
@@ -1793,8 +1675,8 @@ $(document).on('touchstart mouseover', '#main-page3', function(event){
         event.preventDefault();
         if(event.handled !== true) {
 			 
-			 $("#page3").stop().css({'background-color':'transparent','border-color':'#444549'});
-			 $("#text-page3").stop().css({'color':'#444549'},250);
+			 $("#page3").stop().css({'background-color':'transparent','border-color':'#51CE77'});
+			 $("#text-page3").stop().css({'color':'#51CE77'},250);
 			 $("#main-page3").stop().animate({'scale':'1.1'},250);
 
             event.handled = true;
@@ -1808,7 +1690,7 @@ $(document).on('touchend mouseout', '#main-page3', function(event){
         event.preventDefault();
         if(event.handled !== true) {
 			 
-			 $("#page3").stop().css({'background-color':'#9C9C9C','border-color':'#9C9C9C'});
+			 $("#page3").stop().css({'background-color':'#51CE77','border-color':'#51CE77'});
 		     $("#text-page3").stop().css({'color':'#FFF'},250);
 	         $("#main-page3").stop().animate({'scale':'1'},250);
 			 
@@ -1825,8 +1707,8 @@ $(document).on('touchstart mouseover', '#main-page4', function(event){
         event.preventDefault();
         if(event.handled !== true) {
 			 
-			 $("#page4").stop().css({'background-color':'transparent','border-color':'#444549'});
-			 $("#text-page4").stop().css({'color':'#444549'},250);
+			 $("#page4").stop().css({'background-color':'transparent','border-color':'#51CE77'});
+			 $("#text-page4").stop().css({'color':'#81E2A1'},250);
 			 $("#main-page4").stop().animate({'scale':'1.1'},250);
 
             event.handled = true;
@@ -1840,39 +1722,9 @@ $(document).on('touchend mouseout', '#main-page4', function(event){
         event.preventDefault();
         if(event.handled !== true) {
 			 
-			 $("#page4").stop().css({'background-color':'#9C9C9C','border-color':'#9C9C9C'});
+			 $("#page4").stop().css({'background-color':'#51CE77','border-color':'#51CE77'});
 		     $("#text-page4").stop().css({'color':'#FFF'},250);
 	         $("#main-page4").stop().animate({'scale':'1'},250);
-			 
-            event.handled = true;
-        } else {
-            return false;
-        }
-});
-
-/*BUTTON HEADER LEARN MORE*/
-
-$(document).on('touchstart mouseover', '#wrapper-learnmore', function(event){
-        event.stopPropagation();
-        event.preventDefault();
-        if(event.handled !== true) {
-			 
-			 $(".bouton-learnmore").stop().css({'background-color':'#FFF'});
-			 $(".text-learnmore").stop().css({'color':'#333'},250);
-
-            event.handled = true;
-        } else {
-            return false;
-        }
-});
-
-$(document).on('touchend mouseout', '#wrapper-learnmore', function(event){
-        event.stopPropagation();
-        event.preventDefault();
-        if(event.handled !== true) {
-			 
-			 $(".bouton-learnmore").stop().css({'background-color':'transparent'});
-		     $(".text-learnmore").stop().css({'color':'#FFF'},250);
 			 
             event.handled = true;
         } else {
