@@ -27,6 +27,9 @@ $(function() {
             }
             $.ajax({
                 url: "https://api.sendgrid.com/api/mail.send.json",
+                headers: {
+                  "Access-Control-Allow-Origin":"*"
+                }
                 type: "POST",
                 data: {
                     api_user: "dsapandora",
