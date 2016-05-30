@@ -96,7 +96,7 @@
 
                     <h2 class="section-heading">Why do we care about linear algebra?</h2>
 
-                    <p>Linear algebra is the study of vectors. If your game involves the position of an on-screen button, the direction of a camera, or the velocity of a race car, you will have to use vectors. The better you understand linear algebra, the more control you will have over the behavior of these vectors.</p>
+                    <p>Linear algebra is the study of vectors. If your virtual world involves the position of an on-screen button, the direction of a camera, or the velocity of a race car, you will have to use vectors. The better you understand linear algebra, the more control you will have over the behavior of these vectors.</p>
 
                     <h2 class="section-heading">What is a vector?</h2>
 
@@ -110,7 +110,25 @@
                     <a href="#">
                         <img class="img-responsive" src="/img/3D.jpg" alt="">
                     </a>
-                    <p>Now that we've gone over the basics of vectors, we need to know how to use them.</p>
+                    <span class="caption text-muted">Now that we've gone over the basics of vectors, we need to know how to use them.</span>
+                    <h2 class="section-heading">Vector addition</h2>
+                    <p>To add vectors together, you just add each component together separately. For example:</p>
+                    <div align="center">(0,1,4) + (3,-2,5) = (0+3, 1-2, 4+5) = (3,-1,9)</div>
+                    <p>Why do we want to add vectors together? One of the most common applications in virtual worlds for vector addition is physics integration. Any physically-based object will likely have vectors for position, velocity, and acceleration. For every frame (usually 1/60th of a second), we have to integrate these vectors -- that is, add the velocity to the position, and the acceleration to the velocity.</p>
+                    <p>Let's consider the example of Mario jumping. He starts at position (0,0). As he starts the jump, his velocity is (1,3) -- he is moving upwards quickly, but also to the right. His acceleration throughout is (0,-1), because gravity is pulling him downwards. Here is what his jump looks like over the course of seven more frames. The black text specifies his velocity for each frame.</p>
+                    <a href="#">
+                        <img class="img-responsive" src="/img/parabola.jpg" alt="">
+                    </a>
+                    <span class="caption text-muted">We can walk through the first couple frames by hand to see how this works.</span>
+                    <p>For the first frame, we add his velocity (1,3) to his position (0,0) to get his new position (1,3). Then, we add his acceleration (0,-1) to his velocity (1,3) to get his new velocity (1,2).</p>
+                    <p>We do it again for the second frame. We add his velocity (1,2) to his position (1,3) to get (2,5). Then, we add his acceleration (0,-1) to his velocity (1,2) to get (1,1).</p>
+                    <p>Usually in virtual worlds the player controls a character's acceleration with the keyboard or gamepad, and the virtual world calculates the new velocity and position using physics integration (via vector addition). Fun fact: this is the same kind of integration problem that you solve using <a href="http://en.wikipedia.org/wiki/Integral_calculus">integral calculus</a> - we are just using an approximate brute-force approach. I found it much easier to pay attention to calculus classes by thinking about physical applications like this.</p>
+                    <h2 class="section-heading">Vector subtraction</h2>
+                    <p>Subtraction works in the same way as addition -- subtracting one component at a time. Vector subtraction is useful for getting a vector that points from one position to another. For example, let's say the player is standing at (1,2) with a laser rifle, and an enemy robot is at (4,3). To get the vector that the laser must travel to hit the robot, you can subtract the player's position from the robot's position. This gives us:</p>
+                    <div align="center"> (4,3)-(1,2) = (4-1, 3-2) = (3,1).</div>
+                    <a href="#">
+                        <img class="img-responsive" src="/img/laser.jpg" alt="">
+                    </a>
                 </div>
             </div>
         </div>
