@@ -116,8 +116,8 @@
                 <ul class="pager">
                     <li class="next">
                         <a href="#">Older Posts &rarr;</a>
-                    </li>-->
-                </ul>
+                    </li>
+                </ul>-->
             </div>
         </div>
   <script type="text/javascript">
@@ -135,12 +135,12 @@
         html_build_string += "<div class='col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1'>";
         html_build_string += "<div class='post-preview'>";
         html_build_string += "<h2 class='post-title'>"+obj.snippet.title+"</h2>";
-        html_build_string += obj.player.embedHtml
+        html_build_string += "<center>"+obj.player.embedHtml+"</center>";
         html_build_string += "<h3 class='post-subtitle'>"+obj.snippet.description+"</h3>";
-        html_build_string += "<p class='post-meta'>Posted by <a href='/about.html'>dsapandora</a>"+obj.snippet.publishedAt+"</p>";
+        html_build_string += "<p class='post-meta'>Posted by <a href='/about.html'>dsapandora</a> on "+obj.snippet.publishedAt+"</p>";
         html_build_string += "</div>";
         html_build_string += "</div>";
-        html_build_string += "</div>";
+        html_build_string += "</div> <hr>";
         document.getElementById('container').innerHTML += html_build_string;
       });
     });
