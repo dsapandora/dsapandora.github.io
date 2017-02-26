@@ -125,12 +125,12 @@
    $.when(
      $.getJSON(ids_url)
    ).done( function(response) {
-     ids = response.responseJSON.items.map(function(obj) { return obj.id.videoId;});
+     ids = response.items.map(function(obj) { return obj.id.videoId;});
      get_videos_url = "https://www.googleapis.com/youtube/v3/videos?part=player,snippet&id="+ids.toString()+"&key=AIzaSyBS_eMvWMsR09hkS0ZS3JqGO7-AviCBUj0";
      $.when(
        $.getJSON(get_videos_url)
     ).done(function(list_of_videos_content) {
-      list_of_videos_content.responseJSON.items.map(function(obj) {
+      list_of_videos_content.items.map(function(obj) {
         html_build_string = "<div class='row'>";
         html_build_string += "<div class='col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1'>";
         html_build_string += "<div class='post-preview'>";
