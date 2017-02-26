@@ -122,21 +122,27 @@
         </div>
   <script type="text/javascript">
    ids_url = "https://www.googleapis.com/youtube/v3/search?part=id&maxResults=50&type=video&channelId=UCJ9WnQVCng-Nb_4oqrB0pGw&key=AIzaSyBS_eMvWMsR09hkS0ZS3JqGO7-AviCBUj0";
-   response = $.getJSON(ids_url);
-    ids = response.responseJSON.items.map(function(obj) { return obj.id.videoId;});
-   get_videos_url = "https://www.googleapis.com/youtube/v3/videos?part=player,snippet&id="+ids.toString()+"&key=AIzaSyBS_eMvWMsR09hkS0ZS3JqGO7-AviCBUj0";
-   list_of_videos_content = $.getJSON(get_videos_url);
-   list_of_videos_content.responseJSON.items.map(function(obj) {
-     html_build_string = "<div class='row'>";
-     html_build_string += "<div class='col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1'>";
-     html_build_string += "<div class='post-preview'>";
-     html_build_string += "<h2 class='post-title'>"+obj.snippet.title+"</h2>";
-     html_build_string += obj.player.embedHtml
-     html_build_string += "<h3 class='post-subtitle'>"+obj.snippet.description+"</h3>";
-     html_build_string += "<p class='post-meta'>Posted by <a href='/about.html'>dsapandora</a>"+obj.snippet.publishedAt+"</p>";
-     html_build_string += "</div>";
-     html_build_string += "</div>";
-     html_build_string += "</div>";
+   $.when(
+     $.getJSON(get_videos_url)
+   ).done( function(response) {
+     ids = response.responseJSON.items.map(function(obj) { return obj.id.videoId;});
+     get_videos_url = "https://www.googleapis.com/youtube/v3/videos?part=player,snippet&id="+ids.toString()+"&key=AIzaSyBS_eMvWMsR09hkS0ZS3JqGO7-AviCBUj0";
+     $.when(
+       $.getJSON(get_videos_url)
+    ).done(function(list_of_videos_content) {
+      list_of_videos_content.responseJSON.items.map(function(obj) {
+        html_build_string = "<div class='row'>";
+        html_build_string += "<div class='col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1'>";
+        html_build_string += "<div class='post-preview'>";
+        html_build_string += "<h2 class='post-title'>"+obj.snippet.title+"</h2>";
+        html_build_string += obj.player.embedHtml
+        html_build_string += "<h3 class='post-subtitle'>"+obj.snippet.description+"</h3>";
+        html_build_string += "<p class='post-meta'>Posted by <a href='/about.html'>dsapandora</a>"+obj.snippet.publishedAt+"</p>";
+        html_build_string += "</div>";
+        html_build_string += "</div>";
+        html_build_string += "</div>";
+      });
+    });
    });
   </script>
   <div class="row">
