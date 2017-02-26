@@ -120,7 +120,7 @@
                 </ul>
             </div>
         </div>
-  <script>
+  <script type="text/javascript">
    ids_url = "https://www.googleapis.com/youtube/v3/search?part=id&maxResults=50&type=video&channelId=UCJ9WnQVCng-Nb_4oqrB0pGw&key=AIzaSyBS_eMvWMsR09hkS0ZS3JqGO7-AviCBUj0";
    response = $.getJSON(ids_url);
     ids = response.responseJSON.items.map(function(obj) { return obj.id.videoId;});
