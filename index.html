@@ -154,6 +154,16 @@
        html_build_string += "<div class='col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1'>";
        html_build_string += "<div class='post-preview'>";
        html_build_string += "<a href='"+obj.url+"'> <h2 class='post-title'>"+obj.description+"</h2></a>";
+       readme_url = "http://api.github.com/repos/dsapandora/"+obj.name+"/readme/"
+       $.ajax({
+         url: readme_url
+         type: "GET",
+         beforeSend: function(xhr){xhr.setRequestHeader('Accept', 'application/vnd.github.v3.raw+json');},
+         success: function(result) {
+          description = result.split(" ", 50);
+          html_build_string += "<p>"+description.join(" ")+". <a href='#'> Read More..</a></p>";
+       }
+      });
        html_build_string += "<p class='post-meta'>Posted by <a href='/about.html'>dsapandora</a> on "+obj.created_at+"</p>";
        html_build_string += "</div>";
        html_build_string += "</div>";
