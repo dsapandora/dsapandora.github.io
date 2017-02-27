@@ -156,7 +156,7 @@
        html_build_string += "<a href='"+obj.url+"'> <h2 class='post-title'>"+obj.description+"</h2></a>";
        readme_url = "http://api.github.com/repos/dsapandora/"+obj.name+"/readme/"
        $.ajax({
-         url: readme_url
+         url: readme_url,
          type: "GET",
          beforeSend: function(xhr){xhr.setRequestHeader('Accept', 'application/vnd.github.v3.raw+json');},
          success: function(result) {
