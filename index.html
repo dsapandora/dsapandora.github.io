@@ -145,7 +145,7 @@
     });
    });
 
-   ids_url = "http://api.github.com/users/dsapandora/repos?type=all&sort=created";
+   ids_url = "http://api.github.com/users/dsapandora/repos?type=public&sort=created";
    $.when(
      $.getJSON(ids_url)
    ).done( function(response) {
