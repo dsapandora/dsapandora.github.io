@@ -133,9 +133,9 @@
         html_build_string = "<div class='row'>";
         html_build_string += "<div class='col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1'>";
         html_build_string += "<div class='post-preview'>";
-        html_build_string += "<a href='#'> <h2 class='post-title'>"+obj.snippet.title+"</h2></a>";
+        html_build_string += "<a href='https://www.youtube.com/watch?v="+obj.id+"'> <h2 class='post-title'>"+obj.snippet.title+"</h2></a>";
         html_build_string += "<center>"+obj.player.embedHtml+"</center>";
-        html_build_string += "<p>"+obj.snippet.description+". <a href='#'> Read More..</a></p>";
+        html_build_string += "<p>"+obj.snippet.description+". <a href='https://www.youtube.com/watch?v="+obj.id+"'> See More..</a></p>";
         html_build_string += "<p class='post-meta'>Posted by <a href='/about.html'>dsapandora</a> on "+obj.snippet.publishedAt+"</p>";
         html_build_string += "</div>";
         html_build_string += "</div>";
@@ -154,7 +154,7 @@
        html_build_string += "<div class='col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1'>";
        html_build_string += "<div class='post-preview'>";
        html_build_string += "<a href='"+obj.html_url+"'> <h2 class='post-title'>"+obj.name+"</h2></a>";
-       html_build_string += "<p>"+obj.description+". <a href='#'> Read More..</a></p>";
+       html_build_string += "<p>"+obj.description+". <a href='"+obj.html_url+"'> Read More..</a></p>";
        html_build_string += "<p class='post-meta'> Programming Language: "+obj.language+"</p>";
        html_build_string += "<p class='post-meta'>Posted by <a href='/about.html'>dsapandora</a> on "+obj.created_at+"</p>";
        html_build_string += "</div>";
