@@ -120,12 +120,12 @@
             </div>
         </div>
   <script type="text/javascript">
-   ids_url = "https://www.googleapis.com/youtube/v3/search?part=id&maxResults=50&order=date&type=video&channelId=UCJ9WnQVCng-Nb_4oqrB0pGw&key=AIzaSyBS_eMvWMsR09hkS0ZS3JqGO7-AviCBUj0";
+   ids_url = "https://www.googleapis.com/youtube/v3/search?part=id&maxResults=50&order=date&type=video&channelId=UCJ9WnQVCng-Nb_4oqrB0pGw&key=AIzaSyAirY3GCS5FrEput8MPDeo-vZPcsJ6qB_s";
    $.when(
      $.getJSON(ids_url)
    ).done( function(response) {
      ids = response.items.map(function(obj) { return obj.id.videoId;});
-     get_videos_url = "https://www.googleapis.com/youtube/v3/videos?part=player,snippet&id="+ids.toString()+"&key=AIzaSyBS_eMvWMsR09hkS0ZS3JqGO7-AviCBUj0";
+     get_videos_url = "https://www.googleapis.com/youtube/v3/videos?part=player,snippet&id="+ids.toString()+"&key=AIzaSyAirY3GCS5FrEput8MPDeo-vZPcsJ6qB_s";
      $.when(
        $.getJSON(get_videos_url)
     ).done(function(list_of_videos_content) {
