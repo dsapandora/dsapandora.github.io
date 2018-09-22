@@ -1,0 +1,238 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><!-- InstanceBegin template="/Templates/plantilla.dwt" codeOutsideHTMLIsLocked="false" -->
+<head>
+<!-- InstanceBeginEditable name="doctitle" -->
+<title>Algoritmos y Programación - Capítulo VI - Variables tipo LISTA en Python</title>
+<!-- InstanceEndEditable --> 
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<link rel="stylesheet" type="text/css" href="../estilos/estilos.css" />
+<meta name="description" content="Curso Algoritmos y Programación. Proyecto Open Course Ware de la Universidad de Antioquia" />
+<!-- InstanceBeginEditable name="head" --><!-- InstanceEndEditable -->
+</head>
+
+<body>
+<div class="cabezote_contenido">
+	<strong>Algoritmos y Programación</strong> - Facultad de Ingeniería - Universidad de Antioquia 
+</div>
+<div class="marco_general">
+  <div class="pit_body"> <!-- InstanceBeginEditable name="content_body" -->
+<h1>Variables tipo LISTA en Python </h1>
+<div class="pit_bloque_autores">
+<ul>
+<li>Jaime A. Valencia V.</li>
+<li>Facultad de Ingeniería</li>
+<li>Universidad de Antioquia</li>
+</ul>
+</div>
+<p>(<a class="pit_enlace" href="../presentacion/referencias_bibliograficas.html#Docs Python, 2011a" target="_blank">Docs Python, 2011a</a>)</p>
+<p>En Python las listas son uno de los tipos de básicos de variables u objetos.  Para generar una lista basta hacer una asignación a un nombre de variable con los elementos dentro de corchetes cuadrados <strong>[ ]</strong>. Veamos un ejemplo en el intérprete de Python (Python shell) :</p>
+<div class="pit_codigo_anexo"><pre><code>
+&gt;&gt;&gt; L1 = [1, 2, 3, 4]
+&gt;&gt;&gt; type(L1)
+&lt;type 'list'>
+&gt;&gt;&gt; print L1
+[1, 2, 3, 4]
+&gt;&gt;&gt;
+</code></pre></div>
+<p>Se asigna al nombre L1 una lista con los datos 1, 2, 3, y 4. En Python este tipo de variable se denomina <strong>list</strong> y se puede llamar como una variable simplemente.</p>
+<p>Para acceder a cualquiera de los datos de la lista se usa un índice de números enteros después del nombre de la variable y entre corchetes cuadrados:</p>
+<div class="pit_codigo_anexo"><pre><code>
+&gt;&gt;&gt; L1[0]
+1
+&gt;&gt;&gt; L1[1]
+2
+&gt;&gt;&gt; L1[2]
+3
+&gt;&gt;&gt; L1[3]
+4
+&gt; L1[4]
+
+Traceback (most recent call last):
+  File "&lt;pyshell#7>", line 1
+	L1[4]
+IndexError: list index out of range
+</code></pre></div>
+<p>Observe que el 1 quedó guardado en el índice 0 de la variable L1, mientras que el 4 en el índice 3 de la variable L1. Si llamamos una posición con un índice sin valores, Python retorna un mensaje de error informando que se ha salido del rango del índice (<strong>list index out of range</strong>).</p>
+<p>Otra forma de denominar los índices en Python es usando valores negativos como se muestra a continuación:</p>
+<div class="pit_codigo_anexo"><pre><code>
+&gt;&gt;&gt; L1[-1]
+4
+&gt;&gt;&gt; L1[-2]
+3
+&gt;&gt;&gt; L1[-3]
+2
+&gt;&gt;&gt; L1[-4]
+1
+&gt;&gt;&gt;
+</code></pre></div>
+<p>Aquí se asigna al último dato de la lista el índice -1 y al primer dato el índice -4. Es posible usar cualquiera de las dos formas de índice, el lenguaje tiene la capacidad de usarlos indiscriminadamente, pero se debe tener especial atención en no confundirlos.</p>
+<p>Las listas en Python pueden contener cualquier tipo de datos y no necesariamente tienen que ser del mismo tipo, por ejemplo:</p>
+<div class="pit_codigo_anexo"><pre><code>
+&gt;&gt;&gt; L2 = [5, 1.2, True, 'caja']
+&gt;&gt;&gt; type(L2[0])
+&lt;type 'int'&gt;
+&gt;&gt;&gt; type(L2[1])
+&lt;type 'float'&gt;
+&gt;&gt;&gt; type(L2[2])
+&lt;type 'bool'&gt;
+&gt;&gt;&gt; type(L2[3])
+&lt;type 'str'&gt;
+&gt;&gt;&gt;
+</code></pre></div>
+<p>La lista L2 contiene en el índice 0 un dato tipo entero, en el índice 1 un dato tipo real, en el índice 2 un dato tipo lógico y en el índice 3 un dato tipo alfabético. Los cuatro elementos que contiene la lista son de diferente tipo, no existe ningún tipo de restricción en cuanto a la homogeneidad de los elementos.</p>
+<p>Las listas pueden contener como elementos otras listas, generando así de manera natural listas multidimensionales, ya que los datos pueden ser llamados con índices de más dimensión. Veamos el siguiente ejemplo:</p>
+<div class="pit_codigo_anexo"><pre><code>
+&gt;&gt;&gt;L3 = [L1, L2]
+&gt;&gt;&gt; print L3
+[[1, 2, 3, 4], [5, 1.2, True, 'caja']]
+&gt;&gt;&gt; L3[0]
+[1, 2, 3, 4]
+&gt;&gt;&gt; L3[0][3]
+4
+&gt;&gt;&gt; L3[1]
+[5, 1.2, True, 'caja']
+&gt;&gt;&gt; L3[1][1]
+1.2
+&gt;&gt;&gt;
+</code></pre></div>
+<p>La variable L3 contiene dos listas y podemos acceder a cualquiera de los elementos usando dos índices como al escribir L3[0][3], el programa interpreta como un llamado a la lista L3 su posición 0 y dentro de este elemento su posición 3, respondiendo con el valor 4 que estaba guardado. Esta propiedad no tiene límite y se pueden apilar así listas dentro de listas creando arreglos multidimensionales.</p>
+<p>Las listas como objetos que son en Python, disponen de sus métodos propios que se muestran en la siguiente imagen <strong>Métodos de listas</strong>:</p>
+<div class="pit_anexo_interno pit_bloque_imagen"><img class="pit_imagen" src="imagenes/6_metodos_de_listas.png" title="Métodos de listas"></div>
+<br class="pit_romper"/>
+<p>Para listar estos métodos en el interface de Python, se escribe el nombre de la variable seguida de un punto “.” y aparece un menú de los métodos.</p>
+<p>Para usar estos métodos se escribe la variable seguida de un punto y el nombre del método con los argumentos necesarios. Veamos los siguientes ejemplos con algunos de los métodos:</p>
+<div class="pit_codigo_anexo"><pre><code>
+&gt;&gt;&gt; L1.append(-2)
+&gt;&gt;&gt; print L1
+[1, 2, 3, 4, -2]
+&gt;&gt;&gt; L1.append(3)
+&gt;&gt;&gt; print L1
+[1, 2, 3, 4, -2, 3]
+&gt;&gt;&gt;
+</code></pre></div>
+<p>El método <strong>append</strong> adiciona un elemento a la lista colocándolo en la posición superior del índice. Aquí primero se adicionó -2 y luego 3.</p>
+<div class="pit_codigo_anexo"><pre><code>
+&gt;&gt;&gt; L1.count(3)
+2
+&gt;&gt;&gt;
+</code></pre></div>
+<p>El método <strong>count</strong> cuenta cuantos elementos de la variable L1 son iguales al argumento. En este caso encuentra que dos elementos de L1 son iguales a 3.</p>
+<div class="pit_codigo_anexo"><pre><code>
+&gt;&gt;&gt; L1.extend(L1)
+&gt;&gt;&gt; print L1
+[1, 2, 3, 4, -2, 3, 1, 2, 3, 4, -2, 3]
+&gt;&gt;&gt;
+</code></pre></div>
+<p>El método <strong>extend</strong> amplía la lista L1 con otra lista, adicionando directamente los elementos.</p>
+<div class="pit_codigo_anexo"><pre><code>
+&gt;&gt;&gt; L1.index(3)
+2
+&gt;&gt;&gt; L1.index(3,3)
+5
+&gt;&gt;&gt; L1.index(3,6)
+8
+&gt;&gt;&gt; L1.index(3,9)
+11
+&gt;&gt;&gt; L1.index(3,12)
+
+Traceback (most recent call last):
+  File "&lt;pyshell#18&gt;", line 1, in 
+	L1.index(3,12)
+ValueError: 3 is not in list
+&gt;&gt;&gt;
+</code></pre></div>
+<p>El método <strong>index</strong> encuentra el primer índice cuyo valor es igual al primer argumento e iniciando la búsqueda en el índice señalado por el segundo argumento. Aquí encuentra que en el índice 2 de la variable L1 está el valor 3, luego se encuentra que 3 está también en los índices 5, 8 y 11. Para encontrar estos índices se indicó un segundo argumento definiendo a partir de cuál índice se inicia la búsqueda.</p>
+<div class="pit_codigo_anexo"><pre><code>
+&gt;&gt;&gt;L1.insert(0,111)
+&gt;&gt;&gt; L1
+[111, 1, 2, 3, 4, -2, -2, 1, 2, 3, 4, -2, -2]
+&gt;&gt;&gt; L1.insert(4,3333)
+&gt;&gt;&gt; L1
+[111, 1, 2, 3, 3333, 4, -2, -2, 1, 2, 3, 4, -2, -2]
+&gt;&gt;&gt;
+</code></pre></div>
+<p>El método <strong>insert</strong> permite insertar en la posición definida por el primer argumento, un elemento cualquiera en la lista, definido por el segundo argumento. Aquí se inserta el elemento 111 en la posición del índice 0 y luego el elemento 3333 en la posición del índice 4.</p>
+<div class="pit_codigo_anexo"><pre><code>
+&gt;&gt;&gt;L1.sort()
+&gt;&gt;&gt; L1
+[-2, -2, -2, -2, 1, 1, 2, 2, 3, 3, 4, 4, 111, 3333]
+&gt;&gt;&gt; 
+</code></pre></div>
+<p>El método <strong>sort</strong> ordena los elementos de la lista según un criterio, en este ejemplo, el ordenamiento es de forma ascendente colocando en el primer índice el elemento menor y en el último índice el elemento mayor.</p>
+<p>Adicional a los métodos de los objetos tipo lista, existen también funciones del Python que se pueden aplicar a estas listas, como por ejemplo:</p>
+<div class="pit_codigo_anexo"><pre><code>
+&gt;&gt;&gt; len(L1)
+14
+&gt;&gt;&gt; 
+</code></pre></div>
+<p>Esta función <strong>len()</strong> responde con el número de elementos que tiene la lista que se define en el argumento, en este caso, tenemos que L1 tiene 14 elementos.</p>
+<p>Las listas también permiten hacer llamado a parte de sus elementos con solo definir parte de sus índices como se muestra en este ejemplo:</p>
+<div class="pit_codigo_anexo"><pre><code>
+&gt;&gt;&gt; L1
+[-2, -2, -2, -2, 1, 1, 2, 2, 3, 3, 4, 4, 111, 3333]
+&gt;&gt;&gt; L1[0:4]
+[-2, -2, -2, -2]
+&gt;&gt;&gt; L1[4:6]
+[1, 1]
+&gt;&gt;&gt; L1[4:7]
+[1, 1, 2]
+&gt;&gt;&gt;L1[4:]
+[1, 1, 2, 2, 3, 3, 4, 4, 111, 3333]
+&gt;&gt;&gt; L1[:-1]
+[-2, -2, -2, -2, 1, 1, 2, 2, 3, 3, 4, 4, 111]
+&gt;&gt;&gt;
+</code></pre></div>
+<p>Aquí se muestra cómo llamar sólo parte de los elementos definiendo el índice inicial y final entre los dos puntos <strong>:</strong>. Si no definimos un valor después de los dos puntos, se asume el último índice (caso L1[4:]), y si no se define el valor antes de los dos puntos, se asume el primer índice (caso  L1[:-1]).</p>
+<p>Por último, es importante anotar que las listas son la base para la programación del ciclo <strong>for</strong> como por ejemplo este ciclo para sumar los valores de esta lista:</p>
+<div class="pit_codigo_anexo"><pre><code>
+&gt;&gt;&gt; L1 = [-2, -2, -2, -2, 1, 1, 2, 2, 3, 3, 4, 4, 111, 3333]
+&gt;&gt;&gt; Suma = 0
+&gt;&gt;&gt; for q in L1:
+	Suma = Suma + q
+
+&gt;&gt;&gt; print Suma
+3456
+&gt;&gt;&gt; sum(L1)
+3456
+&gt;&gt;&gt; 
+</code></pre></div>
+<p>Aquí primero usamos L1 como el iterador principal del ciclo “for” para sumar todos sus elementos en la variable Suma, luego usamos una función propia de Python, <strong>sum()</strong> que realiza internamente la suma de los elementos de la lista.</p>
+<p>Un último aspecto que debemos tener en cuenta con las listas es que podemos reemplazar cualquiera de sus elementos con solo reasignar en la posición de índice que deseemos, como en el ejemplo siguiente:</p>
+<div class="pit_codigo_anexo"><pre><code>
+&gt;&gt;&gt; L1
+[-2, -2, -2, -2, 1, 1, 2, 2, 3, 3, 4, 4, 111, 3333]
+&gt;&gt;&gt; L1[0]=888
+&gt;&gt;&gt; L1
+[888, -2, -2, -2, 1, 1, 2, 2, 3, 3, 4, 4, 111, 3333]
+&gt;&gt;&gt; L1[-1]= 0
+&gt;&gt;&gt; L1
+[888, -2, -2, -2, 1, 1, 2, 2, 3, 3, 4, 4, 111, 0]
+&gt;&gt;&gt;
+</code></pre></div>
+<p>Se reemplaza el primero y último dato de la lista L1 por los valores 888 y 0 respectivamente.</p>
+<p>Otras funciones del Python generan listas para ciertas aplicaciones, como por ejemplo:</p>
+<div class="pit_codigo_anexo"><pre><code>
+&gt;&gt;&gt; L4 = range(0, 8, 2)
+&gt;&gt;&gt; L4
+[0, 2, 4, 6]
+&gt;&gt;&gt; L4 = range(0, 9, 2)
+&gt;&gt;&gt; L4
+[0, 2, 4, 6, 8]
+&gt;&gt;&gt;
+</code></pre></div>
+<p>Esta función <strong>range()</strong> propia del Python genera listas de números enteros donde los argumentos son el valor inicial, el valor final y cada cuanto el incremento para generar un numero, respectivamente. En el ejemplo primero se genera la lista L4 con números empezando en 0  y terminando en 8, con incrementos de 2. El ejemplo siguiente cambia sólo el argumento de número final para aclarar que en la iteración se realiza hasta un valor menor que el argumento dado.</p>
+<p>Existen aún muchas más funciones propias de Python que se pueden aplicar a las listas o se pueden programar. Más adelante iremos discutiéndolas según se requiera.</p>
+
+
+<!-- InstanceEndEditable --></div>
+</div>
+<div id="footer">
+	<img src="../estilos/imgs/Creative_commons.png" width="88" height="31" alt="Licencia">
+	<p>	Esta obra esta protegida bajo una licencia de <a href="../presentacion/licencia.html" target="licencia" onclick="window.open(this.href,this.target,'resizable=1,scrollbars=1,directories=,location=,menubar=,toolbar=,status=1,width=620,height=450');" title="Licencia">creative commons</a><br>
+      Universidad de Antioquia
+          <br>
+          2010
+    </p>
+</div>
+</body>
+<!-- InstanceEnd -->

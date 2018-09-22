@@ -1,0 +1,151 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><!-- InstanceBegin template="/Templates/plantilla.dwt" codeOutsideHTMLIsLocked="false" -->
+<head>
+<!-- InstanceBeginEditable name="doctitle" -->
+<title>Algoritmos y Programación - Capítulo VII - Comandos de salida de información</title>
+<!-- InstanceEndEditable --> 
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<link rel="stylesheet" type="text/css" href="../estilos/estilos.css" />
+<meta name="description" content="Curso Algoritmos y Programación. Proyecto Open Course Ware de la Universidad de Antioquia" />
+<!-- InstanceBeginEditable name="head" --><!-- InstanceEndEditable -->
+</head>
+
+<body>
+<div class="cabezote_contenido">
+	<strong>Algoritmos y Programación</strong> - Facultad de Ingeniería - Universidad de Antioquia 
+</div>
+<div class="marco_general">
+  <div class="pit_body"> <!-- InstanceBeginEditable name="content_body" -->
+    <h1>Comandos de salida de información</h1>
+<div class="pit_bloque_autores">
+<ul>
+<li>Jaime A. Valencia V.</li>
+<li>Facultad de Ingeniería</li>
+<li>Universidad de Antioquia</li>
+</ul>
+</div>
+<p>(<a class="pit_enlace" href="../presentacion/referencias_bibliograficas.html#Wikibooks, 2011" target="_blank">Wikibooks, 2011</a>; <a class="pit_enlace" href="../presentacion/referencias_bibliograficas.html#Docs Python, 2011b" target="_blank">Docs Python, 2011b</a>; <a class="pit_enlace" href="../presentacion/referencias_bibliograficas.html#Docs Python, 2011c" target="_blank">Docs Python, 2011c</a>)</p>
+<p>La pantalla del ordenador es el primer elemento de salida visual, y los lenguajes de programación disponen de funciones o comando para facilitar la salida de información a través de este elemento o interface de usuario. Podemos también hablar de salidas sonoras o puertos de comunicación, pero en esta sección no se presentará cómo se programa para utilizar esos otros elementos de salida de información.</p>
+<p>En la versión Python 2.7 se dispone tanto del comando como de la función interna “print()”, el cual presenta en pantalla la información que se requiere, pero tiene una gran cantidad de variantes posibles para flexibilizar su aplicación según los requerimientos del programador. Si se usa “print” como comando, se escribe después de esta palabra clave lo que se desee presentar en pantalla con el formato adecuado. Si se usa “print()” como función interna, se escribe dentro del paréntesis lo que se desea presentar en pantalla, pero dispone de argumentos adicionales para definir el elemento de salida deseado. La  función interna no está normalmente disponible, pero se puede habilitar usando  la línea “from __future__ import print_function” al inicio del programa o en el interface Python (Python shell).</p>
+<p>Su forma general como función es:</p>
+<div class="pit_codigo_anexo"><pre><code>print([object, ...][, sep=' '][, end='\n'][, file=sys.stdout])</code></pre></div>
+<p>Su forma general como comando es:</p>
+<div class="pit_codigo_anexo"><pre><code>
+print_stmt ::= "print" ([expression ("," expression)* [","]]
+	| ">>" expression [("," expression)+ [","]])
+</code></pre></div>    
+<p>Todos los objetos o variables son convertidos a cadena de caracteres para ser luego presentados en pantalla con el formato predefinido.</p>             
+<p>Veamos algunos ejemplos con diferentes formatos del uso de este comando:</p>
+<div class="pit_codigo_anexo"><pre><code>
+&gt;&gt;&gt;h = 'Hola sr. \n'
+&gt;&gt;&gt;print h
+Hola sr. 
+
+&gt;&gt;&gt;print str( h )
+Hola sr. 
+
+&gt;&gt;&gt;print repr( h )
+'Hola sr. \n'
+&gt;&gt;&gt;</code></pre></div>
+<p>Aquí la variable h es de tipo carácter y  tiene al final un carácter especial que es \n, esto significa que pase al renglón siguiente y es interpretado como una instrucción de presentación de información. Luego se utiliza con el comando “print” dos funciones propias de Python str() y repr().  La función str() transforma su argumento en cadena de caracteres sin tener en cuenta las instrucciones de impresión, por eso su respuesta es simplemente “Hola sr.”. De otro lado, la función repr() muestra toda la cadena de caracteres incluyendo la instrucción de escritura \n. </p>
+<p>Este ejemplo ilustra el reemplazo de una variable tipo carácter:</p>
+<div class="pit_codigo_anexo"><pre><code>
+&gt;&gt;&gt;nombre = 'Catherin Ibarguen'
+&gt;&gt;&gt;print 'Hola, %s.' %nombre
+Hola, Catherin Ibarguen.
+&gt;&gt;&gt;fecha = 'octubre 2011'
+&gt;&gt;&gt;print 'Hola %s \n Campeona Panamericana en %s' %(nombre,fecha)
+Hola Catherin Ibarguen 
+Campeona Panamericana en  octubre 2011
+&gt;&gt;&gt;</code></pre></div>
+<p>Después del comando “print”  aparece la secuencia de caracteres que se imprimirá, 'Hola, %s', lo cual se interpreta %s como el espacio de una variable tipo carácter que será reemplazada y esa variable es la nombrada al final %nombre. Pueden reemplazarse más variable, pero deben ir como una tupla en el orden de impresión.</p>
+<p>Los siguientes ejemplos ilustran la presentación de variables de tipo numérico, reales o de punto flotante y entero.</p>
+<div class="pit_codigo_anexo"><pre><code>
+&gt;&gt;&gt;from math import pi
+&gt;&gt;&gt;print 'En numero pi es %.2f' % pi
+En numero pi es 3.14
+&gt;&gt;&gt;print 'En numero pi es %.4f' % pi
+En numero pi es 3.1416
+&gt;&gt;&gt;print 'En numero pi es %.6f' % pi
+En numero pi es 3.141593
+&gt;&gt;&gt;</code></pre></div>
+<p>Observe que el valor real de la constante pi se presenta con 2 decimales (%.2f), o con 4 decimales (%.4f) o con 6 decimales (%.6f). Su forma general es con cualquier número n de decimales (%.nf).</p>
+<div class="pit_codigo_anexo"><pre><code>
+&gt;&gt;&gt;lista = ['usa', 'jamaica', 'Brazil']
+&gt;&gt;&gt;for i, pais in enumerate(lista):
+	print "Posicion %i es %s" % (i+1, pais)
+
+Posicion 1 es usa
+Posicion 2 es jamaica
+Posicion 3 es Brazil
+&gt;&gt;&gt;</code></pre></div>
+<p>Aquí el número entero de la posición se coloca en el espacio designado %i. Se utiliza una función interna denominada enumerate() que entrega el índice y el dato de una lista.</p>
+<div class="pit_codigo_anexo"><pre><code>
+&gt;&gt;&gt;texto1 = '''
+El autor es %s ,
+quien trabajo con otros %d  escritores,
+en el año  %i
+
+durante %.1f horas
+'''
+&gt;&gt;&gt;print texto1 %('Raul E ', 5, 2010, 67.34)
+
+El autor es Raul E  ,
+quien trabajo con otros 5  escritores,
+en el año  2010
+
+durante 67.3 horas
+
+&gt;&gt;&gt;</code></pre></div>
+<p>Observe que la variable texto1 es tipo carácter con la particularidad de escribir su contenido en triple camilla ( puede ser simple ' o doble “), lo cual permite conservar la estructura de renglones directamente sin incluir los caracteres especiales y adicionalmente permite dejar espacios para reemplazar datos de variables.</p>
+<div class="pit_codigo_anexo"><pre><code>
+&gt;&gt;&gt;print('aqui es un renglo \n este es el segundo renglon \n  \t este tercer renglon
+tiene un tabulador \n regreso  sin tabulador')
+aqui es un renglo 
+  este es el segundo renglon
+	este tercer renglon tiene un tabulador 
+  regreso  sin tabulador
+&gt;&gt;&gt;</code></pre></div>
+<p>Aquí se incluyen los caracteres especiales \n para generar un nuevo renglón y \t para realizar una tabulación.</p>
+<div class="pit_codigo_anexo"><pre><code>
+&gt;&gt;&gt;for i in 'aqui va':
+	print i,
+
+a q u i   v a
+&gt;&gt;&gt;for i in 'aqui va':
+	print i
+
+a
+q
+u
+i
+
+v
+a
+&gt;&gt;&gt;</code></pre></div>
+<p>En este ejemplo se muestra el efecto de la coma al final del comando “print”. Si se coloca la coma no se generan nuevos renglones, mientras que sin la coma se genera automáticamente un nuevo renglón al final de la escritura.</p>
+<div class="pit_codigo_anexo"><pre><code>
+&gt;&gt;&gt;p1 = 'manzana'
+&gt;&gt;&gt;p2 = 'pera'
+&gt;&gt;&gt;p3 = 'naranja'
+&gt;&gt;&gt;print 'tenemos {}, {} y {}'.format(p1,p2,p3)
+tenemos manzana, pera y naranja
+&gt;&gt;&gt;print 'tenemos {1}, {2} y {0}'.format(p1,p2,p3)
+tenemos pera, naranja y manzana
+&gt;&gt;&gt;</code></pre></div>
+<p>En esta opción se utiliza el método .format() de la variable tipo carácter que permite incluir en los espacios { } con las variables de los argumentos y en el orden seleccionado. Si no se asigna número de orden o índice, se hace de manera consecutiva.</p>
+<p>Se presentaron algunas variantes de las opciones de impresión, pero realmente se permite imprimir cualquier forma que soportan las variables de tipo carácter. Esto permite todo tipo de combinaciones que se podrán discutir y trabajar en capítulos posteriores.</p> 
+
+
+<!-- InstanceEndEditable --></div>
+</div>
+<div id="footer">
+	<img src="../estilos/imgs/Creative_commons.png" width="88" height="31" alt="Licencia">
+	<p>	Esta obra esta protegida bajo una licencia de <a href="../presentacion/licencia.html" target="licencia" onclick="window.open(this.href,this.target,'resizable=1,scrollbars=1,directories=,location=,menubar=,toolbar=,status=1,width=620,height=450');" title="Licencia">creative commons</a><br>
+      Universidad de Antioquia
+          <br>
+          2010
+    </p>
+</div>
+</body>
+<!-- InstanceEnd -->

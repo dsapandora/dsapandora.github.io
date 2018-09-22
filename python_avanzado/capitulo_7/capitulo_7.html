@@ -1,0 +1,168 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><!-- InstanceBegin template="/Templates/plantilla.dwt" codeOutsideHTMLIsLocked="false" -->
+<head>
+<!-- InstanceBeginEditable name="doctitle" -->
+<title>Algoritmos y Programación - Capítulo VII - Archivos y comandos de entrada y salida</title>
+<!-- InstanceEndEditable --> 
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<link rel="stylesheet" type="text/css" href="../estilos/estilos.css" />
+<meta name="description" content="Curso Algoritmos y Programación. Proyecto Open Course Ware de la Universidad de Antioquia" />
+<!-- InstanceBeginEditable name="head" --><!-- InstanceEndEditable -->
+</head>
+
+<body>
+<div class="cabezote_contenido">
+	<strong>Algoritmos y Programación</strong> - Facultad de Ingeniería - Universidad de Antioquia 
+</div>
+<div class="marco_general">
+  <div class="pit_body"> <!-- InstanceBeginEditable name="content_body" --> 
+    <h1>Capítulo VII - Archivos y comandos de entrada y salida</h1>
+    <div class="div_intro"> 
+      <div class="pit_anexo_interno pit_bloque_imagen"><img class="pit_imagen" src="imagenes/7_elementos_de_entrada_y_salida.png" title="Elementos de entrada y salida"> 
+        <div class="pit_bloque_piedeimagen"><span class="pit_etiqueta"><a class="pit_enlace" href="../presentacion/glosario.html#(GALEANO, 2011ab)" target="_blank">(GALEANO, 
+          2011ab)</a>.</span> Elementos de entrada y salida</div>
+      </div>
+      <br class="pit_romper">
+      <p>En el ambiente del programa se puede procesar todo tipo de información 
+        digital, pero primero se requiere digitalizar la información y definir 
+        los elementos con los cuales se ingresará información o se exteriorizara 
+        los resultados de un proceso desarrollado por el ordenador. </p>
+      <p>Estos elementos se conocen como elementos de entrada y salida de información 
+        y son de muy diversa naturaleza según sea la aplicación. Los teclados 
+        y las pantallas son posiblemente los primeros elementos de entrada y salida 
+        de información que se nos vienen a la cabeza. El disco duro, las cámaras, 
+        los micrófonos, las memorias USB o los comandos de video juegos son otros 
+        posibles elementos de entrada de información. Los parlantes, los puertos 
+        de comunicación o las memorias USB son otros posibles elementos de salida 
+        de información. </p>
+      <p>En este capítulo se presentarán los primeros elementos para el manejo 
+        de la entrada y salida de información al ambiente del programa. Los elementos 
+        primarios de lectura de información serán el teclado y los archivos, mientras 
+        que los elementos primarios de salida de información serán la pantalla 
+        y los archivos de textos.</p>
+      <h3>Objetivos de aprendizaje</h3>
+      <ul>
+        <li>Aprender comando de entrada de datos. </li>
+        <li>Usar comandos de presentación de datos.</li>
+        <li>Aplicar y usar la interacción del programa con archivos.</li>
+        <li>Usar funciones y comandos de Python para entrada y salida de datos.</li>
+      </ul>
+      <h3><a name="Contenido_Indice"></a>Subtemas del capítulo</h3>
+      <ul>
+        <li><a class="pit_enlace" href="#Archivos_comandos_entrada_salida">Archivos 
+          y comandos de entrada y salida.</a></li>
+        <li><a class="pit_enlace" href="#Comandos_entrada_datos">Comandos de entrada 
+          de datos.</a></li>
+        <li><a class="pit_enlace" href="#Comandos_salida_informacion">Comandos 
+          de salida de información. </a></li>
+        <li><a class="pit_enlace" href="#Manejo_archivos">Manejo de archivos.</a></li>
+      </ul>
+    </div>
+    <hr/>
+    <h2><a name="Archivos_comandos_entrada_salida"></a>Archivos y comandos de entrada y salida</h2>
+    <p>Al desarrollar una aplicación de computador se genera un ambiente de la 
+      máquina con una información y un procedimiento que se aplica a los datos. 
+      Los datos se designan usando diferentes tipos de variables u objetos, tales 
+      como los arreglos que se presentaron en el capítulo VI. Con los datos ya 
+      nombrados dentro del ambiente del programa, se pueden realizar o programar 
+      funciones, métodos o ciclos para obtener un objetivo predefinido por el 
+      problema planteado inicialmente. </p>
+    <p>Quedan entonces pendientes dos aspectos fundamentales: el primero es la 
+      forma en que podemos ingresar información al ambiente del programa, que 
+      pueden ser datos propios y no deben ser modificados o datos que ingresará 
+      un usuario cualquiera del programa. Un segundo aspecto está relacionado 
+      con la forma que la información procesada será presentada fuera del ambiente 
+      del programa para ser procesada o leída por otra aplicación cualquiera, 
+      o para ser visualizada directamente por el usuario. </p>
+    <p>En la actualidad se puede pensar en muchas posibilidades de elementos de 
+      entrada y salida de información, y los lenguajes de programación disponen 
+      de herramientas específicas según las necesidades, pero como en un primer 
+      paso veremos la forma de ingresar información a través del teclado o leyendo 
+      de un archivo y la salida de información a través de la pantalla o escribiendo 
+      en un archivo de texto.</p>
+    <div class="pit_anexo_interno pit_bloque_imagen"><img class="pit_imagen" src="imagenes/7_esquema_de_entrada_y_salida.png" title="Esquema de entradas y salidas">
+      <div class="pit_bloque_piedeimagen"><span class="pit_etiqueta"><a class="pit_enlace" href="../presentacion/glosario.html#(GALEANO, 2011ac)" target="_blank">(GALEANO, 2011ac)</a>.</span> Esquema de entradas y salidas</div>
+    </div>
+    <br class="pit_romper">
+    <p>En la Imagen (GALEANO, 2011ac) se muestra un esquema de los elementos de 
+      entrada y salida de información al ambiente de programación que trabajaremos 
+      en este capítulo.</p>
+	  <p style="text-align: right;"><a class="pit_enlace" href="#Contenido_Indice">(subir <img alt="Subir" src="../estilos/imgs/subir.png" title="Subir" />)</a></p>
+    <hr/>
+    <h2><a name="Comandos_entrada_datos"></a>Comandos de entrada de datos </h2>
+	<p>(<a class="pit_enlace" href="../presentacion/referencias_bibliograficas.html#Wikibooks, 2011" target="_blank">Wikibooks, 2011</a>; <a class="pit_enlace" href="../presentacion/referencias_bibliograficas.html#Docs Python, 2011b" target="_blank">Docs Python, 2011b</a>; <a class="pit_enlace" href="../presentacion/referencias_bibliograficas.html#Penzilla, 2011" target="_blank">Penzilla, 2011</a>)</p>
+    <p>El teclado en el ordenador es el primer elemento disponible para entrada de información y  los lenguajes de programación disponen de comando para esperar que el usuario ingrese algún dato antes de continuar el proceso.</p>
+<p>En Python se dispone de dos funciones para la entrada de información desde el teclado: los comandos raw_input() e input(). El comando raw_input() recibe la información siempre como una cadena de caracteres directamente desde el teclado y hace la pausa en el programa hasta cuando se ingresa totalmente la información terminada por la tecla de entrar ( 'enter').  El argumento de entrada en la función es un comentario que aparecerá en la pantalla antes del espacio de ingreso de datos. Veamos un ejemplo de su aplicación en el interface de Python (Python shell):</p>
+<div class="pit_codigo_anexo"><pre><code>
+&gt;&gt;&gt;dato1 = raw_input('Escriba un dato aqui: ')
+Escriba un dato aquí: TECLADO
+&gt;&gt;&gt;dato1
+'TECLADO'
+&gt;&gt;&gt;type(dato1)
+&lt;type 'str'&gt;
+&gt;&gt;&gt;</code></pre></div>
+<p>La primera línea define que se asignará en la variable dato1 lo que se escriba desde el teclado y aparecerá primero un mensaje diciendo <span class="pit_enfasis">Escriba un datos aquí: </span> para esperar la entrada del dato. Al escribir la palabra TECLADO, ésta se guardará en la variable tipo alfanumérica ( 'str' ) denominada dato1 como se muestra al usar la función <span class="pit_enfasis">type()</span>.</p>
+	 <p><a class="pit_enlace" href="cap7_2.html" class="pit_enlace" name="ver_mas_2" target="_blank">Ver mas...</a></p>
+	<p style="text-align: right;"><a class="pit_enlace" href="#Contenido_Indice">(subir <img alt="Subir" src="../estilos/imgs/subir.png" title="Subir" />)</a></p>
+    <hr/>
+    <h2><a name="Comandos_salida_informacion"></a>Comandos de salida de información </h2>
+<p>(<a class="pit_enlace" href="../presentacion/referencias_bibliograficas.html#Wikibooks, 2011" target="_blank">Wikibooks, 2011</a>; 
+      <a class="pit_enlace" href="../presentacion/referencias_bibliograficas.html#Docs Python, 2011b" target="_blank">Docs Python, 2011b</a>; <a class="pit_enlace" href="../presentacion/referencias_bibliograficas.html#Docs Python, 2011c" target="_blank">Docs Python, 2011c</a>)</p>
+<p>La pantalla del ordenador es el primer elemento de salida visual, y los lenguajes de programación disponen de funciones o comando para facilitar la salida de información a través de este elemento o interface de usuario. Podemos también hablar de salidas sonoras o puertos de comunicación, pero en esta sección no se presentará cómo se programa para utilizar esos otros elementos de salida de información.</p>
+<p>En la versión Python 2.7 se dispone tanto del comando como de la función interna <span class="pit_enfasis">print()</span>, el cual presenta en pantalla la información que se requiere, pero tiene una gran cantidad de variantes posibles para flexibilizar su aplicación según los requerimientos del programador. Si se usa <span class="pit_enfasis">print</span> como comando, se escribe después de esta palabra clave lo que se desee presentar en pantalla con el formato adecuado. Si se usa <span class="pit_enfasis"></span> como función interna, se escribe dentro del paréntesis lo que se desea presentar en pantalla, pero dispone de argumentos adicionales para definir el elemento de salida deseado. La  función interna no está normalmente disponible, pero se puede habilitar usando  la línea <span class="pit_enfasis">from __future__ import print_function</span> al inicio del programa o en el interface Python (Python shell).</p>
+<p>Su forma general como función es:</p>
+<div class="pit_codigo_anexo"><pre><code>print([object, ...][, sep=' '][, end='\n'][, file=sys.stdout])</code></pre></div>
+<p>Su forma general como comando es:</p>
+<div class="pit_codigo_anexo"><pre><code>
+print_stmt ::= "print" ([expression ("," expression)* [","]]
+	| ">>" expression [("," expression)+ [","]])
+</code></pre></div>    
+<p>Todos los objetos o variables son convertidos a cadena de caracteres para ser luego presentados en pantalla con el formato predefinido.</p>
+	 <p><a href="cap7_3.html" class="pit_enlace" name="ver_mas_3" target="_blank">Ver mas...</a></p>
+    <p style="text-align: right;"><a class="pit_enlace" href="#Contenido_Indice">(subir 
+      <img alt="Subir" src="../estilos/imgs/subir.png" title="Subir" />)</a></p>
+    <hr/>
+    <h2><a name="Manejo_archivos"></a>Manejo de Archivos </h2>
+<p>(<a class="pit_enlace" href="../presentacion/referencias_bibliograficas.html#Wikibooks, 2011" target="_blank">Wikibooks, 2011</a>; <a class="pit_enlace" href="../presentacion/referencias_bibliograficas.html#Docs Python, 2011b" target="_blank">Docs Python, 2011b</a>; <a class="pit_enlace" href="../presentacion/referencias_bibliograficas.html#Dev Shed Tutorials, 2011" target="_blank">Dev Shed Tutorials, 2011</a>)</p>
+    <p>Cuando se desarrollan aplicaciones de computador se requiere en muchos casos escribir o leer información que está o se requiere almacenar  en alguna otra parte, por ejemplo, en el mismo disco duro, en una memoria USB o en algún sitio de Internet. </p>
+<p>Los lenguajes de programación disponen de comandos pare realizar la conexión entre el ambiente del programa y unidades de almacenamiento de información apoyándose en el sistema operativo que se trabaja. Python dispone para esta acción de interactuar con archivos de datos la clase <span class="pit_enfasis">file</span>, la cual es convocada para generar objetos de intercambio de información mediante la función “open()”.</p>
+<p>La función “open()” requiere como mínimo de un argumento, el nombre del archivo y un segundo argumento que define el modo de uso del archivo con uno de los siguientes caracteres: </p>
+<div class="pit_codigo_anexo"><pre><code>
+'r' modo solo de lectura (de la palabra en ingles 'read')
+'w' modo solo de escritura (de la palabra en ingles 'write')
+'a' modo de adición de datos (de la palabra en ingles 'append')</code></pre></div>
+<p>El modo <strong>r</strong> permite la opción del carácter '+' para acciones simultáneas de lectura y escritura, y el carácter 'b' para intercambiar información en modo binario. Al omitir este argumento se asume que el archivo está en modo de lectura. El modo binario de intercambio de información no lo discutiremos en esta sección, sólo usaremos el modo de información formateado que podremos leer directamente desde un editor de texto cualquiera.</p>
+<p>Veamos un ejemplo para crear un archivo y escribir en él una información:</p>
+<div class="pit_codigo_anexo"><pre><code>
+&gt;&gt;&gt;myf1 = open('archivo1.txt','w')
+&gt;&gt;&gt;myf1.write('Este es el primer renglo \n y el segundo.')
+&gt;&gt;&gt;myf1.close()
+</code></pre></div>
+	 <p><a href="cap7_4.html" class="pit_enlace" name="ver_mas_4" target="_blank">Ver mas...</a></p>
+	 <p style="text-align: right;"><a class="pit_enlace" href="#Contenido_Indice">(subir 
+      <img alt="Subir" src="../estilos/imgs/subir.png" title="Subir" />)</a></p>
+    <hr/>
+<p class="pit_nota"><span class="pit_etiqueta">Nota:</span> A continuación se encuentran las referencias bibliográficas utilizadas para la construcción de los contenidos de este capítulo:
+<ul>
+      <li>(<a class="pit_enlace" href="../presentacion/referencias_bibliograficas.html#About, 2011" target="_blank">About, 2011</a>)</li>
+      <li>(<a class="pit_enlace" href="../presentacion/referencias_bibliograficas.html#Ibiblio, 2011" target="_blank">Ibiblio, 2011</a>)</li>
+      <li>(<a class="pit_enlace" href="../presentacion/referencias_bibliograficas.html#IBM, 2011" target="_blank">IBM, 2011</a>)</li>
+      <li>(<a class="pit_enlace" href="../presentacion/referencias_bibliograficas.html#Python Course, 2011" target="_blank">Python Course, 2011</a>)</li>
+</ul>
+</p>
+    
+    <div style="text-align:center; "> <a class="pit_enlace" href="../capitulo_6/capitulo_6.html">Anterior<img alt="Anterior" src="../estilos/imgs/anterior.png"></a> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      <a class="pit_enlace" href="../index.html">Inicio<img alt="Inicio" src="../estilos/imgs/home.png" title="Inicio" /></a> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      <a class="pit_enlace" href="../capitulo_8/capitulo_8.html">Siguiente<img alt="Siguiente" src="../estilos/imgs/siguiente.png"></a></div>
+    <!-- InstanceEndEditable --></div>
+</div>
+<div id="footer">
+	<img src="../estilos/imgs/Creative_commons.png" width="88" height="31" alt="Licencia">
+	<p>	Esta obra esta protegida bajo una licencia de <a href="../presentacion/licencia.html" target="licencia" onclick="window.open(this.href,this.target,'resizable=1,scrollbars=1,directories=,location=,menubar=,toolbar=,status=1,width=620,height=450');" title="Licencia">creative commons</a><br>
+      Universidad de Antioquia
+          <br>
+          2010
+    </p>
+</div>
+</body>
+<!-- InstanceEnd -->

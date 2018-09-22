@@ -1,0 +1,59 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><!-- InstanceBegin template="/Templates/plantilla.dwt" codeOutsideHTMLIsLocked="false" -->
+<head>
+<!-- InstanceBeginEditable name="doctitle" -->
+<title>Algoritmos y Programación - Caítulo VIII . Edición, estructura y ejecución de programas en Python</title>
+<!-- InstanceEndEditable --> 
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<link rel="stylesheet" type="text/css" href="../estilos/estilos.css" />
+<meta name="description" content="Curso Algoritmos y Programación. Proyecto Open Course Ware de la Universidad de Antioquia" />
+<!-- InstanceBeginEditable name="head" --><!-- InstanceEndEditable -->
+</head>
+
+<body>
+<div class="cabezote_contenido">
+	<strong>Algoritmos y Programación</strong> - Facultad de Ingeniería - Universidad de Antioquia 
+</div>
+<div class="marco_general">
+  <div class="pit_body"> <!-- InstanceBeginEditable name="content_body" -->
+<h1>Edición, estructura y ejecución de programas en Python</h1>
+<div class="pit_bloque_autores">
+<ul>
+<li>Jaime A. Valencia V.</li>
+<li>Facultad de Ingeniería</li>
+<li>Universidad de Antioquia</li>
+</ul>
+</div>
+<p>Para editar un archivo en código de lenguaje Python es posible utilizar cualquier editor de textos, pero el interface de Python dispone de un editor que facilita su escritura y lectura mostrando en colores diferentes las palabras claves.</p>
+<div class="pit_anexo_interno pit_bloque_imagen"><img class="pit_imagen" src="imagenes/8_menu_de_edicion_nuevo_archivo.png" title="Menú de edición de nuevo archivo"><div class="pit_bloque_piedeimagen">Menú de edición de nuevo archivo</div></div> 
+<br class="pit_romper"/>
+<p>Para iniciar un nuevo archivo en el editor desde el interface de Python, se selecciona la opción mostrada en la imagen anterior. Esto abre una nueva ventana identificada en la parte superior como <span class="pit_enfasis">Untitled</span> debido a que aún no se ha dado ningún nombre al nuevo archivo. A partir de este momento se puede escribir líneas de código en Python y usar la opción <span class="pit_enfasis">Run</span> del menú para ejecutar el programa escrito. El editor está inicialmente configurado para guardar el nuevo archivo o sus cambios antes de realizar la ejecución del programa.</p>
+<p>El lenguaje Python no exige una estructura rígida en los códigos, pero se debe tener presente que los módulos y funciones deben ser programados o cargados antes de ser invocados en el código. La sintaxis se debe tener muy presente y poner especial atención en los espacios o INDENTACION, ya que Python identifica los finales de bloques con estos espacios.</p>
+<div class="pit_anexo_interno pit_bloque_imagen"><img class="pit_imagen" src="imagenes/8_secuencias_de_edicion_ejecucion_y_repuesta.png" title="Secuencias de edición, ejecución y respuesta"><div class="pit_bloque_piedeimagen">Secuencias de eedición, ejecución y respuesta</div></div> 
+<br class="pit_romper"/>
+<p>La imagen anterior muestra una secuencia de creación y ejecución de un archivo desde el editor.  El archivo <span class="pit_enfasis">pruebat1.py</span> se creó escribiendo un encabezamiento y luego se importó el módulo <span class="pit_enfasis">math</span> para mostrar en pantalla la constante PI. Al llamar en el menú <span class="pit_enfasis">Run</span> la opción de <span class="pit_enfasis">Run Module F5</span> aparece el cuadro de dialogo para guardar el archivo y luego de aceptar aparece el resultado de la ejecución en la otra ventana del interface de Python (<span class="pit_enfasis">Python Shell</span>).  Si no se han hecho cambios al archivo, la ventana de dialogo para guardar los cambios no aparecerá. La estructura recomendada es escribir un encabezamiento para explicar el código, luego importar los módulos necesarios y después las líneas de código del proceso.</p>
+<p>Una opción alternativa para ejecutar o correr un archivo <span class="pit_enfasis">.py</span> es hacer doble clic desde el explorador del Windows y el sistema hace un llamado del ejecutable  <span class="pit_enfasis">python.exe</span> y lo enlaza con el código para realizar la acción que presenta los resultados en una ventana del sistema. La próxima imagen muestra esta secuencia y el nuevo archivo al cual se le adiciona la instrucción nueva <span class="pit_enfasis">raw_input()</span> para hacer una pausa en la ventana hasta que el usuario accione la tecla <span class="pit_enfasis">enter</span> para cerrar la ventana. Sin esta última instrucción la ventana se abre por un instante y se cierra sin tener la oportunidad de observar los resultados.</p>
+<div class="pit_anexo_interno pit_bloque_imagen"><img class="pit_imagen" src="imagenes/8_ejecucion_desde_windows.png" title="Ejecución desde Windows"><div class="pit_bloque_piedeimagen">Ejecución desde Windows</div></div> 
+<br class="pit_romper"/>
+<p>Lo mismo se puede realizar directamente desde una ventana del sistema operativo escribiendo directamente las instrucciones de ejecución como lo muestra la siguiente imagen:</p>
+<div class="pit_anexo_interno pit_bloque_imagen"><img class="pit_imagen" src="imagenes/8_ejecucion_desde_el_sistema_operativo.png" title="Ejecución desde el sistema operativo"><div class="pit_bloque_piedeimagen">Ejecución desde el sistema operativo</div></div> 
+<br class="pit_romper"/>
+<p>Los archivos del lenguaje Python se escriben por convención con la extensión .py ; así el editor del interface los presenta con los diferentes colores para la identificación de palabras claves y funciones. Si por error o por gusto se usa otra terminación, el editor no mostrará el texto del archivo como se muestra en las imágenes de Secuencia de edición, ejecución y respuesta así como en la Ejecución desde Windows.</p>
+    <p>Estos archivos de Python no requieren ninguna compilación para su ejecución 
+      desde el código fuente en texto, sólo tener en la máquina el python.exe 
+      para realizar la interpretación o si desea puede generar ejecutables usando 
+      el modulo py2exe como lo describen las referencias (<a href="../presentacion/referencias_bibliograficas.html#Logix4u, 2011" target="_blank">Logix4u, 
+      2011</a>; <a href="../presentacion/referencias_bibliograficas.html#effbot.org, 2011" target="_blank">effbot.org, 
+      2011</a>).</p>
+<!-- InstanceEndEditable --></div>
+</div>
+<div id="footer">
+	<img src="../estilos/imgs/Creative_commons.png" width="88" height="31" alt="Licencia">
+	<p>	Esta obra esta protegida bajo una licencia de <a href="../presentacion/licencia.html" target="licencia" onclick="window.open(this.href,this.target,'resizable=1,scrollbars=1,directories=,location=,menubar=,toolbar=,status=1,width=620,height=450');" title="Licencia">creative commons</a><br>
+      Universidad de Antioquia
+          <br>
+          2010
+    </p>
+</div>
+</body>
+<!-- InstanceEnd -->

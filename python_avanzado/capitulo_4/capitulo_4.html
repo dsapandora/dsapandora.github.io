@@ -1,0 +1,264 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><!-- InstanceBegin template="/Templates/plantilla.dwt" codeOutsideHTMLIsLocked="false" -->
+<head>
+<!-- InstanceBeginEditable name="doctitle" -->
+<title>Algoritmos y Programación - Capítulo IV - Subprogramas</title>
+<!-- InstanceEndEditable --> 
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<link rel="stylesheet" type="text/css" href="../estilos/estilos.css" />
+<meta name="description" content="Curso Algoritmos y Programación. Proyecto Open Course Ware de la Universidad de Antioquia" />
+<!-- InstanceBeginEditable name="head" --><!-- InstanceEndEditable -->
+</head>
+
+<body>
+<div class="cabezote_contenido">
+	<strong>Algoritmos y Programación</strong> - Facultad de Ingeniería - Universidad de Antioquia 
+</div>
+<div class="marco_general">
+  <div class="pit_body"> <!-- InstanceBeginEditable name="content_body" --> 
+<h1>Capítulo IV - Subprogramas</h1>
+    <div class="div_intro"> 
+      <p>Una conocida frase de los políticos es <strong>divide y vencerás</strong>. 
+        Esto mismo es aplicable en programación de computadores o en la solución 
+        de cualquier problema complejo. La estrategia es identificar en el análisis 
+        inicial del problema cuáles son las partes en las que se puede dividir 
+        el problema para solucionar cada una de las partes individualmente y luego 
+        ensamblarlas dando solución al problema originalmente planteado.</p>
+      <p>Los subprogramas son porciones de código que reciben unos argumentos 
+        de entrada, realizan un procedimiento con estos y responden con una información. 
+        La Imagen (GALEANO, 2011u) esquematiza lo que es un subprograma y adicionalmente 
+        muestra un concepto adicional que hace de estas particiones una herramienta 
+        muy poderosa, es el concepto de <strong>variable local</strong>.</p>
+      <div class="pit_anexo_interno pit_bloque_imagen"><img class="pit_imagen" src="imagenes/4_esquema_de_funcion.png" title="Esquema de función"> 
+        <div class="pit_bloque_piedeimagen"><span class="pit_etiqueta"><a class="pit_enlace" href="../presentacion/glosario.html#(GALEANO, 2011u)" target="_blank">(GALEANO, 
+          2011u)</a>.</span> Esquema de función</div>
+      </div>
+      <br class="pit_romper"/>
+      <p>En programación se hace una clasificación de las variables según el ambiente 
+        en el cual se puede acceder a ellas, así una <strong>variable global</strong> 
+        es de acceso general, mientras que a una <strong>variable local</strong> 
+        solo puede accederse en su ambiente o subprograma específico. Esto permite 
+        reducir conflictos de nombre en los diferentes subprogramas, ya que se 
+        puede usar el mismo nombre en los subprogramas sin ningún inconveniente. 
+        En los subprogramas todas las variables que se asignen son de tipo <strong>local</strong>, 
+        a menos que se especifique explícitamente que es una variable <strong>global</strong>.</p>
+      <p>En <em>PYTHON</em> la palabra clave para designar una variable como global 
+        es <span class="pit_enfasis">global</span> dentro de la respectiva estructura 
+        de subprograma.</p>
+      <h3>Objetivos de aprendizaje</h3>
+      <ul>
+        <li>Identificar las partes en las que se puede dividir el problema.</li>
+        <li>Comprender los conceptos de subprograma, variable global, variable 
+          local.</li>
+        <li>Conocer diferentes estrategias para fragmentar o modularizar un programa 
+          o aplicación de computador.</li>
+      </ul>
+      <h3><a name="Contenido_Indice"></a>Subtemas del capítulo</h3>
+      <p>Los lenguajes de programación disponen de diferentes estrategias para 
+        fragmentar o modularizar un programa o una aplicación de computador que 
+        se requiera desarrollar. En este capítulo discutiremos 3 formas de fragmentación 
+        que denominaremos así:</p>
+      <ul>
+        <li><a class="pit_enlace" href="#Funciones_en_linea">Funciones en línea.</a></li>
+        <li><a class="pit_enlace" href="#Funciones_independientes">Funciones independientes.</a></li>
+        <li><a class="pit_enlace" href="#Subprogramas">Subprogramas o módulos.</a></li>
+      </ul>
+    </div>
+<hr/>
+<h2><a name="Funciones_en_linea"></a>Funciones en línea</h2>
+<p>Las <strong>funciones en línea</strong>, o también denominadas funciones anónimas, nos permiten programar funciones matemáticas que podrán ser llamadas posteriormente en el programa.  </p>
+<p>Para su codificación en <em>PYTHON</em> se usa la palabra clave “lambda”, seguida de la variable que se va a usar, luego los dos punto “ : ” y al final la expresión matemática que se va a calcular. Veamos el siguiente ejemplo en el interface (python shell):</p>
+<div class="pit_codigo_anexo"><pre><code>>>> f1 = lambda x:x**2</code></pre></div>
+<p>Con esta instrucción, a la variable f1 se le asigna la función elevar al cuadrado un valor x cualquiera, el cual será el argumento de entrada de la función. Este valor de entrada lo elevara a la potencia 2 y retornara este valor a donde se asigne.</p>
+<p>Para acceder o utilizar posteriormente esta función basta escribir el nombre asignado con el argumento de entrada entre paréntesis. Por ejemplo si deseamos calcular el cuadrado del valor 5, se escribe:</p>
+<div class="pit_codigo_anexo"><pre><code>>>> f1(5)</code></pre></div>
+<p>su resultado en pantalla será 25.</p>
+<p>Este valor también podrá ser asignado a otras variables, por ejemplo:</p>
+<div class="pit_codigo_anexo"><pre><code>>>> t = f1(5)</code></pre></div>
+<p>Aquí el valor 25 será asignado a la nueva variable t.</p>
+<p>Las funciones lambda en PYTHON también permiten entrada y salida de datos múltiples.  </p>
+<p>Veamos el siguiente ejemplo:</p>
+<div class="pit_codigo_anexo"><pre><code>>>> sures = lambda x,y : [x+y, x-y]</code></pre></div>
+<p>Esta función se programa para dos datos de entrada x,y. Responde con dos datos, la suma <span class="pit_ecuacion">x+y</span>, y la resta <span class="pit_ecuacion">x-y</span>. Si se hace el llamado de la función sures(8,10) se tendrá como respuesta [18, -2].</p>
+<p style="text-align: right;"><a class="pit_enlace" href="#Contenido_Indice">(subir <img alt="Subir" src="../estilos/imgs/subir.png" title="Subir" />)</a></p>
+<hr/>
+<h2><a name="Funciones_independientes"></a>Funciones independientes</h2>
+<p>Las <strong>funciones independientes</strong> son fraccionamientos de programas más flexibles, en el sentido de que permiten cualquier tipo de código en el procedimiento. Su estructura básica tiene un esquema como el de la Imagen <strong>esquema de función</strong> con su nombre propio definido por el programador.</p>
+  <div class="pit_anexo_interno pit_bloque_imagen"><img class="pit_imagen" src="imagenes/4_esquema_de_funcion.png" title="Esquema de función"> 
+        <div class="pit_bloque_piedeimagen"><span class="pit_etiqueta"><a class="pit_enlace" href="../presentacion/glosario.html#(GALEANO, 2011u)" target="_blank">(GALEANO, 
+          2011u)</a>.</span> Esquema de función</div>
+      </div>
+      <br class="pit_romper"/>
+<p>En lenguaje <em>PYTHON</em> la palabra clave que se utiliza para programar una función es <span class="pit_enfasis">def</span> seguida de su nombre y los argumentos de entrada y los dos puntos “ : ”. Luego en indentación el código del procedimiento y termina con la palabra clave <span class="pit_enfasis">return</span> cuando se requiere programar valores de salida. Veamos los siguientes ejemplos para mostrar la flexibilidad de estas funciones:</p>
+<ul>
+<li>Función sin argumentos</li>
+<li>Función con argumentos de entrada</li>
+<li>Función con argumentos de entrada opcionales</li>
+<li>Función con argumentos de entrada y salida</li>
+<li>Función con documentación propia</li>
+</ul>
+<p>Ejemplo de función sin argumentos en interface (python shell):</p>
+<div class="pit_codigo_anexo"><pre><code>
+&gt;&gt;&gt;def saludo():
+	print 'Hola'
+	print 'Afectuoso saludo de tu PC'
+</code></pre></div>
+<p>La función que se programa se denomina saludo y el procedimiento que realiza ésta en las dos líneas siguientes después de los dos puntos “ : ”. No requiere de argumentos de entrada, pero por sintaxis se deben colocar los paréntesis vacíos. Para llamar la función se escribe su nombre con los paréntesis como se muestra a continuación:</p>
+<div class="pit_codigo_anexo"><pre><code>
+&gt;&gt;&gt; saludo()
+Hola
+Afectuoso saludo de tu PC
+</code></pre></div>
+<p>El ordenador responde con las dos líneas en la pantalla y no devuelve ningún tipo de dato. Por tanto si escribimos q = saludo(), se obtendrían las mismas líneas y q sería una variable sin información.</p>
+<p>Ejemplo de función con argumentos de entrada en interface (python shell):</p>
+<div class="pit_codigo_anexo"><pre><code>
+&gt;&gt;&gt; def saludo1(nombre):
+	print 'Hola, amigo ' , nombre
+	print 'Un afectuoso saludo de tu PC'
+</code></pre></div>
+<p>Esta función denominada saludo1 tiene como argumento de entrada la variable nombre y su procedimiento es escribir en pantalla un saludo con el dato del argumento de entrada.</p>
+<p>Veamos el llamado y respuesta de esta función en el interface (python shell):</p>
+<div class="pit_codigo_anexo"><pre><code>
+&gt;&gt;&gt; saludo1('Pepe')
+Hola, amigo Pepe
+Un afectuoso saludo de tu PC
+</code></pre></div>
+<p>Ejemplo de función con argumentos de entrada opcionales en interface (python shell):</p>
+<div class="pit_codigo_anexo"><pre><code>
+&gt;&gt;&gt; def saludo2(nombre='Fulano',apellido='De Tal'):
+	print ' Hola, mister ',nombre , ' ', apellido
+	print ' Un afectuoso saludo de este PC'
+</code></pre></div>
+<p>En este ejemplo la función saludo2 se programa con dos argumentos de entrada: nombre y apellido.  Al argumento nombre se le asigna la opción 'Fulano' si no se especifica explícitamente otro nombre, y al argumento apellido se le asigna la opción 'De Tal'. Así el llamado de la función puede variar según los argumentos que se especifiquen, como se muestra:</p>
+<div class="pit_codigo_anexo"><pre><code>
+&gt;&gt;&gt; saludo2() #llamado sin argumentos
+Hola, mister Fulano De Tal
+Un afectuoso saludo de este PC
+
+&gt;&gt;&gt; saludo2('Andrew','Valens') #llamado con los dos argumentos
+Hola, mister Andrew Valens
+Un afectuoso saludo de este PC
+
+&gt;&gt;&gt; saludo2(apellido='Cualquiera') #llamado con un solo argumento
+Hola, mister Fulano Cualquiera
+Un afectuoso saludo de este PC
+
+&gt;&gt;&gt;
+</code></pre></div>
+
+<p>En cada caso se muestra cómo se hace el llamado de la función y su respuesta, donde el programa asume un dato si no se le especifica explícitamente el argumento de entrada.</p>
+<p>Ejemplo de función con argumentos de entrada y salida en interface (python shell):</p>
+<div class="pit_codigo_anexo"><pre><code>
+&gt;&gt;&gt; def saludo3(nombre='Fulano',apellido='De Tal'):
+	print ' Hola, mister ',nombre , ' ', apellido
+	print ' Un afectuoso saludo de este PC'
+	ID = 'Sr. ' + nombre + ' ' + apellido
+	return ID
+</code></pre></div>
+<p>En esta función aparece al final la palabra clave 'return' que especifica qué variable o variables locales de salida devuelve la función, además de realizar el procedimiento completo definido por el código. Para este caso al llamar la función su respuesta es la realización del procedimiento y termina entregando la variable de salida ID, como se muestra a continuación:</p>
+<div class="pit_codigo_anexo"><pre><code>
+&gt;&gt;&gt; saludo3()
+Hola, mister Fulano De Tal
+Un afectuoso saludo de este PC
+'Sr. Fulano De Tal'
+</code></pre></div>
+<p>También es posible asignar la salida a otra variable:</p>
+<div class="pit_codigo_anexo"><pre><code>
+&gt;&gt;&gt; y = saludo3()
+Hola, mister Fulano De Tal
+Un afectuoso saludo de este PC
+&gt;&gt;&gt; print y
+Sr. Fulano De Tal
+</code></pre></div>
+<p>Aquí la salida de la función saludo3 es asignada a la variable y que se muestra en pantalla al usar la instrucción <span class="pit_enfasis">print</span>.</p>
+<p>Ejemplo de función con documentación propia en interface (python shell):</p>
+<div class="pit_codigo_anexo"><pre><code>
+&gt;&gt;&gt; def saludo4(nombre='Fulano',apellido='De Tal'):
+	"Esta funcion es un ejemplo con documentacion propia"
+	print ' Hola, mister ',nombre , ' ', apellido
+	print ' Un afectuoso saludo de este PC'
+	ID = 'Sr. ' + nombre + ' ' + apellido
+	return ID
+</code></pre></div>
+<p>Esta función saludo4 tiene adicionalmente un texto después de los dos puntos que permite documentar dentro de la estructura de la función una breve información o primera ayuda del uso de la función. Para acceder a esta información basta escribir:</p>
+<div class="pit_codigo_anexo"><pre><code>
+&gt;&gt;&gt;saludo4.__doc__
+'Esta funcion es un ejemplo con documentacion propia'
+&gt;&gt;&gt; 
+</code></pre></div>
+<p>El programa responde con el texto inicial que se escribió en la función.</p>
+ <p style="text-align: right;"><a class="pit_enlace" href="#Contenido_Indice">(subir <img alt="Subir" src="../estilos/imgs/subir.png" title="Subir" />)</a></p>
+<hr/>
+<h2><a name="Subprogramas"></a>Subprogramas o módulos</h2>
+<p>Los <strong>subprogramas</strong> o módulos son en sí códigos completos que pueden tener su propia estructura y ser llamados por otros programas según las necesidades. Estos subprogramas no están restringidos a tener entradas y salidas específicas.</p>
+<p>En lenguaje PYTHON estos subprogramas son códigos independientes que se invocan o incluyen en cualquier otro programa con la palabra clave <span class="pit_enfasis">import</span>. Veamos el ejemplo de crear un subprograma con unas constantes y una función que deseamos llamar desde otro programa o desde el interface (python shell):</p>
+<p>Subprograma escrito en el editor y guardado con el nombre subprog1.py</p>
+<div class="pit_bloque_ecuacion pit_ecuacion">Cpi = 3.141592</div>
+<div class="pit_bloque_ecuacion pit_ecuacion">Ce = 2.718281</div>
+<div class="pit_codigo_anexo"><pre><code>
+def recordar():
+	print '1. 180 grados son PI radianes '
+	print '2. La constante neperiana e se debe a John Napier'
+</code></pre></div>
+<p>Este subprograma define la constante Cpi que contiene el número pi, la constante Ce que contiene el número Neperiano y una función que se llama recordar y que presenta en pantalla dos frases para recordar una información escrita.  </p>
+<p>Una forma de invocar el subprograma para utilizar sus constantes y su función en el ambiente del interface (python shell) es usando la palabra clave  <span class="pit_enfasis">import</span> seguida del nombre del archivo:</p>
+<div class="pit_codigo_anexo"><pre><code>>>> import subprog1</code></pre></div>
+<p>Con esta instrucción ya podemos invocar las constantes y la función que están programadas en el archivo subprog1.py usando la siguiente escritura:</p>
+<div class="pit_codigo_anexo"><pre><code>
+&gt;&gt;&gt;subprog1.Ce
+2.718281
+&gt;&gt;&gt; subprog1.Cpi
+3.141592
+&gt;&gt;&gt; subprog1.recordar()
+1. 180 grados son PI radianes
+2. La constante neperiana e se debe a John Napier
+&gt;&gt;&gt;
+</code></pre></div>
+<p>Observe que se escribe primero el nombre del archivo y después del punto, el nombre de la variable respectiva o la función.</p>
+<p>Una forma alternativa de invocar sólo parte de un subprograma, es usando la palabra clave <span class="pit_enfasis">from</span> como en el ejemplo siguiente:</p>
+<div class="pit_codigo_anexo"><pre><code>
+&gt;&gt;&gt;from subprog1 import Cpi
+&gt;&gt;&gt; Cpi
+3.141592
+</code></pre></div>
+<p>Aquí se especifica que del archivo subprog1.py se incluya en el ambiente la constante Cpi, la cual puede ser llamada directamente con su nombre original. La otra constante Ce y la función recordar() no quedan incluidas en el ambiente hasta tanto no son llamadas explícitamente. Por ejemplo, podemos hacer el llamado así:</p>
+<div class="pit_codigo_anexo"><pre><code>
+&gt;&gt;&gt; from subprog1 import Ce, recordar
+&gt;&gt;&gt; Ce
+2.718281
+&gt;&gt;&gt; recordar()
+1. 180 grados son PI radianes 
+2. La constante neperiana e se debe a John Napier
+&gt;&gt;&gt;
+</code></pre></div>
+<p>De esta manera se puede ser selectivo en la parte o porción del subprograma que se desea incluir.</p>
+<p>Más adelante discutiremos otros tipos de estructuras de programación que permiten la fragmentación de los programas facilitando la solución de los problemas y la escritura de códigos en los lenguajes de programación.</p>
+ <p style="text-align: right;"><a class="pit_enlace" href="#Contenido_Indice">(subir <img alt="Subir" src="../estilos/imgs/subir.png" title="Subir" />)</a></p>
+<hr/>
+<p class="pit_nota"><span class="pit_etiqueta">Nota:</span> A continuación se encuentran las referencias bibliográficas utilizadas para la construcción de los contenidos de este capítulo:
+<ul>
+      <li>(<a class="pit_enlace" href="../presentacion/referencias_bibliograficas.html#Secnetix, 2011" target="_blank">Secnetix, 2011</a>)</li>
+	  <li>(<a class="pit_enlace" href="../presentacion/referencias_bibliograficas.html#Tutorials Point, 2011a" target="_blank">Tutorials 
+        Point, 2011a</a>)</li>
+	  <li>(<a class="pit_enlace" href="../presentacion/referencias_bibliograficas.html#Tutorials Point, 2011b" target="_blank">Tutorials 
+        Point, 2011b</a>)</li>
+	  <li>(<a class="pit_enlace" href="../presentacion/referencias_bibliograficas.html#Python, 2011c" target="_blank">Python, 2011c</a>)</li>
+</ul>
+</p>
+<div style="text-align:center; "> 
+<a class="pit_enlace" href="../capitulo_3/capitulo_3.html">Anterior<img alt="Anterior" src="../estilos/imgs/anterior.png"></a>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	  <a class="pit_enlace" href="../index.html">Inicio<img alt="Inicio" src="../estilos/imgs/home.png" title="Inicio" /></a>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a class="pit_enlace" href="../capitulo_5/capitulo_5.html">Siguiente<img alt="Siguiente" src="../estilos/imgs/siguiente.png"></a></div>	
+    <!-- InstanceEndEditable --></div>
+</div>
+<div id="footer">
+	<img src="../estilos/imgs/Creative_commons.png" width="88" height="31" alt="Licencia">
+	<p>	Esta obra esta protegida bajo una licencia de <a href="../presentacion/licencia.html" target="licencia" onclick="window.open(this.href,this.target,'resizable=1,scrollbars=1,directories=,location=,menubar=,toolbar=,status=1,width=620,height=450');" title="Licencia">creative commons</a><br>
+      Universidad de Antioquia
+          <br>
+          2010
+    </p>
+</div>
+</body>
+<!-- InstanceEnd -->

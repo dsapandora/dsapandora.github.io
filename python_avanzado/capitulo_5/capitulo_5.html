@@ -1,0 +1,142 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><!-- InstanceBegin template="/Templates/plantilla.dwt" codeOutsideHTMLIsLocked="false" -->
+<head>
+<!-- InstanceBeginEditable name="doctitle" -->
+<title>Algoritmos y Programación - Capítulo V - Programación orientada a objetos</title>
+<!-- InstanceEndEditable --> 
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<link rel="stylesheet" type="text/css" href="../estilos/estilos.css" />
+<meta name="description" content="Curso Algoritmos y Programación. Proyecto Open Course Ware de la Universidad de Antioquia" />
+<!-- InstanceBeginEditable name="head" --><!-- InstanceEndEditable -->
+</head>
+
+<body>
+<div class="cabezote_contenido">
+	<strong>Algoritmos y Programación</strong> - Facultad de Ingeniería - Universidad de Antioquia 
+</div>
+<div class="marco_general">
+  <div class="pit_body"> <!-- InstanceBeginEditable name="content_body" -->
+
+<h1>Capítulo V - Programación orientada a objetos</h1>
+    <div class="div_intro"> 
+      <div class="pit_anexo_interno pit_bloque_imagen"><img class="pit_imagen" src="imagenes/5_objetos.png" title="Objetos"> 
+        <div class="pit_bloque_piedeimagen"><span class="pit_etiqueta"><a class="pit_enlace" href="../presentacion/glosario.html#(GALEANO, 2011v)" target="_blank">(GALEANO, 
+          2011v)</a>.</span> Objetos</div>
+      </div>
+      <br class="pit_romper">
+      <p>La evolución de los lenguajes de programación de computadores ha creado 
+        nuevos elementos básicos de estructuras de datos y de códigos que facilitan 
+        la labor de programar e idear mejores formas de organización de los programas.</p>
+      <p>Se crean también nuevas maneras de pensar los programas o en otras palabras, 
+        nuevos paradigmas de programación a partir de esas nuevas estructuras.</p>
+      <p>En este capítulo estudiaremos los <strong>Objetos</strong>, partiendo 
+        de su concepto básico y luego definiendo sus aspectos prácticos de programación 
+        y código en el lenguaje Python.</p>
+      <h3>Objetivos de aprendizaje</h3>
+      <ul>
+        <li>Conocer lo que es un <strong>Objeto</strong> en programación de computadores.</li>
+        <li>Comprender los que es una <strong>Clase</strong>.</li>
+        <li>Comprender el paradigma de programación por objetos.</li>
+        <li>Utiliza y programar una <strong>Clase</strong> en Python.</li>
+        <li>Utiliza y programar un <strong>Objeto</strong> en Python.</li>
+      </ul>
+      <h3><a name="Contenido_Indice"></a>Subtemas del capítulo</h3>
+      <ul>
+        <li><a class="pit_enlace" href="#Conceptos_generales_programacion_orientada_objetos">Conceptos 
+          generales de programación orientada a objetos.</a> </li>
+        <li><a class="pit_enlace" href="#Programacion_objetos_Python">Programación 
+          de objetos en PYTHON.</a></li>
+      </ul>
+    </div>
+<hr/>
+<h2><a name="Conceptos_generales_programacion_orientada_objetos"></a>Conceptos generales de programación orientada a objetos</h2>
+    <p>La programación orientada a objetos (<a class="pit_enlace" href="../presentacion/referencias_bibliograficas.html#Wikipedia, 2011k" target="_blank">Wikipedia, 
+      2011k</a>) es lo que se denomina un paradigma de programación. Los paradigmas 
+      de programación son estilos en el diseño de aplicaciones de computadores 
+      que pueden tener una relación directa con el mismo lenguaje de programación, 
+      en el sentido de que algunos se crean pensados en el estilo o paradigma 
+      que soportarán. También cuando surgen nuevos paradigmas de programación, 
+      se adaptan algunos de los lenguajes para soportar esos paradigmas, a pesar 
+      de haber sido ideados en otro paradigma. Existe ya una amplia gama de paradigmas 
+      de programación y cada uno tiene sus ventajas y desventajas (<a class="pit_enlace" href="../presentacion/referencias_bibliograficas.html#Wikipedia, 2011l" target="_blank">Wikipedia, 
+      2011l</a>).</p>
+    <p>En la programación orientada a objetos surge una nueva forma de fragmentación 
+      de programas a partir de los conceptos de <strong>Clase</strong> y <strong>Objeto</strong> 
+      que se consideran como unidades de programación en el diseño de aplicaciones 
+      de computador. También se puede considerar como una comunidad de agentes 
+      que interactúan unos con otros, donde cada uno juega su papel como proveedor 
+      de servicios y ejecutor de acciones (<a class="pit_enlace" href="../presentacion/referencias_bibliograficas.html#Pillay, 2007" target="_blank">Pillay, 
+      2007</a>). Veamos primero una aproximación a estos conceptos (<a class="pit_enlace" href="../presentacion/referencias_bibliograficas.html#Pillay, 2007" target="_blank">Pillay, 
+      2007</a>; <a class="pit_enlace" href="../presentacion/referencias_bibliograficas.html#Nirosh, 2011" target="_blank">Nirosh, 
+      2011</a>; <a class="pit_enlace" href="../presentacion/referencias_bibliograficas.html#Oracle, 2011" target="_blank">Oracle, 
+      2011</a>; <a class="pit_enlace" href="../presentacion/referencias_bibliograficas.html#Soa, 2011" target="_blank">Soa, 
+      2011</a>; <a class="pit_enlace" href="../presentacion/referencias_bibliograficas.html#Aonaware, 2011" target="_blank">Aonaware, 
+      2011</a>):</p>
+<dl>
+<dt>Objeto</dt>
+<dd>Es un elemento de programación que contiene un conjunto de datos propios y de procedimientos que determinan su comportamiento y la forma de interactuar con otros elementos del programa.</dd>
+<dt>Clase</dt>
+<dd>Define un conjunto de objetos que comparten ciertas características. Puede considerarse como un molde para la construcción de objetos.</dd>
+<dd>Los objetos tienen como características sus datos internos o campos de información, denominados VARIABLES O ATRIBUTOS y unas funciones internas que determinan su comportamiento y se denominan MÉTODOS. Estas características internas suelen programarse a partir de códigos básicos de programación estructurada, asignando variables y programando funciones.</dd>
+<p></p>
+<div class="pit_anexo_interno pit_bloque_imagen"><img class="pit_imagen" src="imagenes/5_clase_y_objeto.png" title="Clases y objetos"><div class="pit_bloque_piedeimagen"><span class="pit_etiqueta"><a class="pit_enlace" href="../presentacion/glosario.html#(GALEANO, 2011w)" target="_blank">(GALEANO, 2011w)</a>.</span> Clases y objetos</div></div>  
+</dl>
+<p>En la programación orientada a objetos se introduce también una serie de características especiales que son inherentes al objeto, tales como encapsulamiento (encapsulation), herencia (inheritance), polimorfismo (polymorphism) y otros que se especifican en los diferentes lenguajes de programación. Estas características especiales dependen de la forma como el lenguaje de programación hace la manipulación del objeto y lo que debe tener en cuenta el programador al usar estas estructuras de código. Veamos la definición de las características nombradas como un ejemplo del comportamiento de los objetos:</p>
+<br class="pit_romper"/> 
+<dl>
+<dt>Herencia</dt>
+<dd>Está relacionado con la capacidad de que nuevos objetos creados puedan recibir características de otros objetos.</dd>
+<dt>Encapsulamiento</dt>
+<dd>Está relacionado con la capacidad de encerrar en el objeto su información básica y dar o no acceso a ella desde otra parte del ambiente del programa.</dd>
+<dt>Polimorfismo</dt>
+<dd>Está relacionado con la capacidad del objeto para responder y adaptarse a diferentes tipos de datos cuando interactúa con otros objetos.</dd>
+</dl>
+<p>Estas características en los objetos realmente se tienen que consultar y usar según el lenguaje de programación especifico. Existen ciertas similitudes en estos conceptos pero son muy importantes los detalles de comportamiento que se definen en los manuales específicos de los lenguajes de programación.</p>
+<p style="text-align: right;"><a class="pit_enlace" href="#Contenido_Indice">(subir <img alt="Subir" src="../estilos/imgs/subir.png" title="Subir" />)</a></p>
+<hr/>
+<h2><a name="Programacion_objetos_Python"></a>Programación de objetos en PYTHON</h2>
+<p>El lenguaje PYTHON dispone de herramientas para la programación orientada a objetos. Estas herramientas son elementos adicionales de fraccionamiento o modularización y complementan lo presentado en el capítulo IV. En sí cuando asignamos una variable, esta ya es un objeto, puesto que se dispone de unas funciones internas  o métodos que permiten realizar procesos específicos con esa variable. Por ejemplo, al asignar una variable de número complejo en el interface (python shell):</p>
+<div class="pit_codigo_anexo"><pre><code>>>> c = 2 + 5j</code></pre></div>
+<p>Podemos consultar al programa el tipo de dato que es c usando la función interna type() :</p>
+<div class="pit_codigo_anexo"><pre><code>
+&gt;&gt;&gt; type(c)
+&lt;type 'complex'&gt;</code></pre></div>
+<p>A su vez, <em>c</em> dispone de unas funciones propias por ser en sí un objeto de tipo <strong>complex</strong> que pueden ser usadas escribiendo su nombre seguido de un punto y el respectivo método:</p>
+<div class="pit_codigo_anexo"><pre><code>
+&gt;&gt;&gt;c.real
+2.0
+&gt;&gt;&gt;c.imag
+5.0
+&gt;&gt;&gt;c.conjugate
+&lt;built-in method conjugate of complex object at 0x02ABA6B0&gt;
+&gt;&gt;&gt;c.conjugate()
+(2-5j)
+&gt;&gt;&gt;</code></pre></div>
+<p>Los métodos .real, .imag  y .conjugate() estarán disponibles con la acción de asignar a c un número complejo. En otras palabras, c no es sólo una <strong>Variable</strong> en python, es un <strong>Objeto</strong>.</p>
+ <p><a href="cap5_2.html" class="pit_enlace" name="ver_mas_2" target="_blank">Ver mas...</a></p>
+ <p style="text-align: right;"><a class="pit_enlace" href="#Contenido_Indice">(subir <img alt="Subir" src="../estilos/imgs/subir.png" title="Subir" />)</a></p>
+ <hr/>
+<p class="pit_nota"><span class="pit_etiqueta">Nota:</span> A continuación se encuentran las referencias bibliográficas utilizadas para la construcción de los contenidos de este capítulo:
+<ul>
+      <li>(<a class="pit_enlace" href="../presentacion/referencias_bibliograficas.html#Langtangen, 2011" target="_blank">Langtangen, 2011</a>)</li>
+</ul>
+</p>
+ <div style="text-align:center;"> 
+<a class="pit_enlace" href="../capitulo_4/capitulo_4.html">Anterior<img alt="Anterior" src="../estilos/imgs/anterior.png"></a>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	  <a class="pit_enlace" href="../index.html">Inicio<img alt="Inicio" src="../estilos/imgs/home.png" title="Inicio" /></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a class="pit_enlace" href="../capitulo_6/capitulo_6.html">Siguiente<img alt="Siguiente" src="../estilos/imgs/siguiente.png"></a></div>
+
+
+
+<!-- InstanceEndEditable --></div>
+</div>
+<div id="footer">
+	<img src="../estilos/imgs/Creative_commons.png" width="88" height="31" alt="Licencia">
+	<p>	Esta obra esta protegida bajo una licencia de <a href="../presentacion/licencia.html" target="licencia" onclick="window.open(this.href,this.target,'resizable=1,scrollbars=1,directories=,location=,menubar=,toolbar=,status=1,width=620,height=450');" title="Licencia">creative commons</a><br>
+      Universidad de Antioquia
+          <br>
+          2010
+    </p>
+</div>
+</body>
+<!-- InstanceEnd -->

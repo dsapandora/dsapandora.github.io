@@ -1,0 +1,365 @@
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 13px;	
+	margin: 0;
+	padding: 0;
+	background: transparent url(imgs/corcho.jpg) repeat;
+}
+
+.cabezote_contenido {
+	background-color: #22546B;
+	color: #fff;
+	padding: 10px;
+}
+
+.marco_general {
+	border: 1px solid #22546B;
+	background-color: #F2FBFE;
+	margin: 10px;
+	padding: 10px;
+}
+
+br.partir, br.romper {
+    clear: both;
+}
+
+/**PORTADA DE CURSOS*/
+.portada_curso {
+    background-image: url(imgs/categoria_fondo.png);
+    background-repeat: no-repeat;
+    width: 663px;
+    margin: auto;
+}
+
+.portada_curso .contenido_portada {
+    background-repeat: repeat;
+    background-image: url(imgs/categoria_contenido.png);
+    font-size: 14px;
+    color: #FFF;
+    padding-top: 20px;
+    height: 257px;
+    overflow: auto;   
+    text-align: center;    
+    line-height: 20px;
+}
+.portada_curso .tit_curso {
+    font-size: 12px;
+    color: #0a0909;
+    font-weight: normal;
+    float: left;
+    text-align: center;
+    width: 310px;
+}
+.portada_curso .tit_curso img {
+    height: 248px;
+    width: 258px;
+    border: 5px solid #fdfcfc;
+    margin-top: 20px;
+}
+.portada_curso .tit_descripcion {
+    font-size: 12px;
+    color: #201e1e;
+    background-color: #eff7d7;
+    background-repeat: repeat;
+    padding-left: 5px;
+    height: 23px;
+    text-align: left;
+    padding-top: 2px;
+}
+
+.portada_curso .descripcion {
+    width: 353px;
+    float: left;
+}
+
+.portada_curso .descripcion  h1 {
+    background-color: transparent;
+    color: #fff;
+}
+
+/**PIE*/
+/**--------------------------------------------------------*/
+#footer {
+    background-color: #22546B;
+    color: #ffffff;
+    padding-top: 20px;
+    padding-bottom: 10px;
+    text-align: center;
+    font-size: 12px;
+    margin-top: 0px;
+}
+
+#footer a {
+    color: #f86b0d;
+    text-decoration: underline;
+}
+/***** ocw/contenidos.css start *****/
+
+.pit_body {
+    text-align: justify;
+    border: 1px dashed #f29843;
+    padding: 20px;
+}
+
+.pit_body h1 {
+    color: #002D42;
+    background-color: none;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.pit_body h2 {
+    color: #002D42;
+    background-image: url(imgs/imatit.png);
+    background-repeat: no-repeat;
+    background-position: left top;
+    min-height: 60px;
+    margin-top: 20px;
+}
+
+.pit_body h3 {
+    color: #002D42;
+}
+
+.pit_body h4 {
+    color: #002D42;
+}
+
+a.pit_enlace, a {
+    color: #069;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+a.pit_ancla {
+    color: #669A18;
+    font-weight: bold;
+}
+
+a.pit_enlace:hover, a:hover, a.pit_ancla:hover {
+    color: #C00;
+}
+
+.pit_body hr {
+    background-color: #002D42;
+    border: 1px dotted #09C;
+    clear: left;
+}
+
+.pit_body ul li {
+    list-style-image: url(imgs/icon_flecha.png);
+}
+
+.pit_anexo_interno {
+}
+
+.pit_anexo_interno img.pit_imagen {
+}
+
+.pit_anexo_interno table.pit_tabla_datos {
+    padding: 10px;
+    text-align: center;
+    float: none;
+    border-top-style: none;
+    border-right-style: none;
+    border-bottom-style: none;
+    border-left-style: none;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.pit_tabla_datos td, .pit_tabla_datos th {
+    border-right-width: 1px;
+    border-bottom-width: 1px;
+    border-left-width: 1px;
+    border-right-style: dotted;
+    border-bottom-style: dotted;
+    border-left-style: dotted;
+    border-right-color: #F60;
+    border-bottom-color: #F60;
+    border-left-color: #F60;
+    padding: 10px;
+    color: #151515;
+    font-weight: bold;
+}
+
+.pit_tabla_datos_tit {
+    font-weight: bold;
+    color: #22546b;
+    font-style: normal;
+    border-bottom-width: 1px;
+    border-bottom-style: dotted;
+    border-bottom-color: #6a8616;
+    text-align: center;
+    border-top-width: 1px;
+    border-right-width: 1px;
+    border-left-width: 1px;
+    border-top-style: dotted;
+    border-right-style: dotted;
+    border-left-style: dotted;
+    border-top-color: #F90;
+    border-right-color: #F90;
+    border-left-color: #F90;
+    font-size: 14px;
+    padding: 10px;
+}
+
+.pit_anexo_interno img.pit_grafico{
+}
+        
+.pit_literal {
+    font-style: italic;
+    font-size: 14px;
+}
+
+.pit_enfasis {
+    font-weight: bold;
+    font-style: normal;
+}
+
+.pit_codigo_anexo {
+    font-style: italic;
+    color: #036;
+}
+
+.pit_codigo_anexo code {
+}
+
+.pit_nota .pit_etiqueta {
+    font-weight: bold;
+}
+
+.pit_piedegrafico{
+    color: #333;
+    font-weight: bold;
+    margin-right: auto;
+    margin-left: auto;
+    font-size: 12px;
+    font-style: italic;
+}
+
+.pit_body .pit_anexo_interno.pit_bloque_imagen img {
+    /*border: 10px solid #CCC;*/
+    padding-right: 10px;
+    padding-bottom: 10px;
+    margin-right: auto;
+    margin-left: auto;
+    text-align: center;
+}
+.pit_bloque_imagen {
+    float: left;
+    margin-right: 20px;
+    margin-bottom: 10px;
+    clear:left;
+    border-bottom: 1px solid #dddddd;
+}
+
+.pit_moodle{
+    font-weight: bold;
+    color: #F09100;
+    font-size: 14px;
+}
+
+.pit_ecuacion{
+    color: #B96F24;
+    font-weight: bold;
+    font-size: 14px;
+}
+
+.pit_actualizado{
+    background-color: #EEE;
+    text-align: center;
+    font-size: 11px;
+    color: #22546b;
+    font-weight: bold;
+    border-bottom-width: 1px;
+    border-bottom-style: dotted;
+    border-bottom-color: #F90;
+}
+
+.pit_celda_numero{
+    color: #F90;
+    text-align: right;
+}
+
+.pit_etiqueta {
+    font-style: italic;
+    color: #036;
+    font-weight: bold;
+}
+
+.pit_cita_corta{
+    text-align: left;
+}
+
+.pit_body p .pit_ancla img {
+    border: none;
+}
+
+.pit_cita_larga{
+    text-align: left;
+    font-style: italic;
+    font-size: 11px;
+}
+
+.div_intro {
+    position: relative;
+    float: none;
+    padding: 30px;
+    border: 1px dashed #22546b;
+    background-image: url(imgs/categoria_fondo.png);
+    background-repeat: no-repeat;
+    background-position: left;
+    text-align: justify;
+    width: 80%;
+    margin-top: 20px;
+    margin-right: auto;
+    margin-bottom: 20px;
+    margin-left: auto;
+    background-color: #b5da4a;
+}
+
+.pit_piedetabla {
+    color: #B96F24;
+    font-weight: bold;
+    font-size: 14px;
+}
+
+.pit_body dl dt {
+    color: #0A3A76;
+    font-weight: bold;
+    font-size: 14px;
+    font-style: italic;
+    border-bottom-width: 1px;
+    border-bottom-style: dotted;
+    border-bottom-color: #F60;
+    padding: 5px;
+    background-color: #E8E8E8;
+}
+
+.pit_body dl dd {
+    font-style: italic;
+    padding: 5px;
+}
+.pit_romper {
+    clear: both;
+}
+
+.pit_body blockquote {
+    font-style: italic;
+}
+
+.pit_bloque_autores {
+   text-align: right;
+}
+
+.pit_bloque_autores li{
+    list-style: none;
+    font-weight: bold;
+    font-style: italic;
+}
+.pit_body .div_intro .pit_bloque_imagen {
+    text-align: center;
+    float: none;
+
+}/***** ocw/contenidos.css end *****/

@@ -1,0 +1,212 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><!-- InstanceBegin template="/Templates/plantilla.dwt" codeOutsideHTMLIsLocked="false" -->
+<head>
+<!-- InstanceBeginEditable name="doctitle" -->
+<title>Algoritmos y Programación - Capítulo VIII - Lenguaje de programación Python</title>
+<!-- InstanceEndEditable --> 
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<link rel="stylesheet" type="text/css" href="../estilos/estilos.css" />
+<meta name="description" content="Curso Algoritmos y Programación. Proyecto Open Course Ware de la Universidad de Antioquia" />
+<!-- InstanceBeginEditable name="head" --><!-- InstanceEndEditable -->
+</head>
+
+<body>
+<div class="cabezote_contenido">
+	<strong>Algoritmos y Programación</strong> - Facultad de Ingeniería - Universidad de Antioquia 
+</div>
+<div class="marco_general">
+  <div class="pit_body"> <!-- InstanceBeginEditable name="content_body" -->
+<h1>Capítulo VIII - Lenguaje de programación Python</h1>
+    <div class="div_intro"> 
+      <div class="pit_anexo_interno pit_bloque_imagen"><img class="pit_imagen" src="imagenes/8_logos_phython.jpg" title="Iconos de Python y Monty Python"> 
+        <div class="pit_bloque_piedeimagen"><span class="pit_etiqueta"><a class="pit_enlace" href="../presentacion/glosario.html#(GALEANO, 2011ad)" target="_blank">(GALEANO, 
+          2011ad)</a>.</span> Iconos de Python y Monty Python</div>
+      </div>
+      <br class="pit_romper"/>
+      <p>Todos los lenguajes de programación comparten aspectos generales para 
+        escribir las instrucciones necesarias que harán que el computador u ordenador 
+        realice una tarea específica, pero a su vez, tienen sus particularidades, 
+        tales como sus palabras claves, su sintaxis, su propia historia: su origen 
+        y su evolución.</p>
+      <p>En este capítulo se presenta una breve historia del origen del lenguaje 
+        de programación Python y aspectos particulares para iniciarse en el uso 
+        del lenguaje para desarrollar programas o aplicaciones. </p>
+      <p>Se parte de la instalación del programa en el sistema operativo Windows 
+        (no se incluye para otros sistemas operativos) y luego como se editan 
+        y ejecutan programas en código de Python. Se incluyen referencias de las 
+        ayudas para consultar los comandos de Python y sobre los módulos que permitirán 
+        extender y personalizar el lenguaje.</p>
+      <h3>Objetivos de aprendizaje</h3>
+      <ul>
+        <li>Conocer origen y procedencia del lenguaje Python.</li>
+        <li>Aprender a instalar Python en Windows.</li>
+        <li>Acceder a las ayudas para estudiar el lenguaje Python.</li>
+        <li>Aprender a editar y ejecutar programas en Python.</li>
+        <li>Conocer de los módulos en Python.</li>
+      </ul>
+      <h3><a name="Contenido_Indice"></a>Subtemas del capítulo</h3>
+      <ul>
+        <li><a class="pit_enlace" href="#Lenguaje_programacion_Python_reseña">Lenguaje 
+          de programación Python, breve reseña histórica.</a></li>
+        <li><a class="pit_enlace" href="#Instalacion_Python_en_windows">Instalación 
+          de Python en Windows.</a></li>
+        <li><a class="pit_enlace" href="#Elementos_generales_lenguaje">Elementos 
+          generales del lenguaje.</a></li>
+        <li><a class="pit_enlace" href="#Edicion_estructura_ejecucion_programas">Edición, 
+          estructura y ejecución de programas en Python.</a></li>
+        <li><a class="pit_enlace" href="#Algunos_modulos_interes">Algunos módulos 
+          de Interés.</a></li>
+      </ul>
+    </div>
+<hr/>
+    <h2><a name="Lenguaje_programacion_Python_reseña"></a>Lenguaje de programación 
+      Python, breve reseña Histórica </h2>
+	<p>(<a class="pit_enlace" href="../presentacion/referencias_bibliograficas.html#Van Rossum, 2011a" target="_blank">Van 
+      Rossum, 2011a</a>; <a class="pit_enlace" href="../presentacion/referencias_bibliograficas.html#Python, 2011d" target="_blank">Python, 
+      2011d</a>; <a class="pit_enlace" href="../presentacion/referencias_bibliograficas.html#Python, 2011a" target="_blank">Python, 
+      2011a</a>; <a class="pit_enlace" href="../presentacion/referencias_bibliograficas.html#Van Rossum, 2011b" target="_blank">Van 
+      Rossum, 2011b</a>)</p>
+    <p>El lenguaje de programación Python es de los denominados lenguajes dinámicos 
+      tipo guion (en ingles 'script'). Se puede considerar como un lenguaje moderno 
+      de alto nivel y que permite trabajar en varios paradigmas de programación. 
+      Fue creado a principios de 1990 por Guido van Rossum en Stichting Mathematisch 
+      Centrum (<a class="pit_enlace" href="../presentacion/referencias_bibliograficas.html#Pycon, 2011" target="_blank">Pycon, 
+      2011</a>). Como lo escribe el mismo Guido en (<a class="pit_enlace" href="../presentacion/referencias_bibliograficas.html#Van Rossum, 2011b" target="_blank">Van 
+      Rossum, 2011b</a>), fue Lambert Meertens quien le ofreció el trabajo en 
+      su equipo de programadores del centro de investigación y quien estaba diseñando 
+      un lenguaje de programación que luego se denominó ABC y del que se creó 
+      luego Python. El grupo de programadores estaba trabajando en ese momento 
+      en un intérprete de lenguaje que derivó en el concepto de máquina virtual.</p>
+    <p>Escribir sobre la historia de Python es escribir sobre la vida Guido (<a class="pit_enlace" href="../presentacion/referencias_bibliograficas.html#Van Rossum, 2011a" target="_blank">Van 
+      Rossum, 2011a</a>; <a class="pit_enlace" href="../presentacion/referencias_bibliograficas.html#Python, 2011d" target="_blank">Python, 
+      2011d</a>; <a class="pit_enlace" href="../presentacion/referencias_bibliograficas.html#Python, 2011a" target="_blank">Python, 
+      2011a</a>; <a class="pit_enlace" href="../presentacion/referencias_bibliograficas.html#Van Rossum, 2011b" target="_blank">Van 
+      Rossum, 2011b</a>) quien nació en Holanda en 1956 y a quien se consideró 
+      como un filántropo y filósofo del “open source”, ya que desde sus inicios 
+      compartió sus códigos y trabajos realizados en el centro y posteriormente 
+      el lenguaje Python, creando Python Software Foundation (<a class="pit_enlace" href="../presentacion/referencias_bibliograficas.html#Python, 2011a" target="_blank">Python, 
+      2011a</a>).</p>
+<div class="pit_anexo_interno pit_bloque_imagen"><img class="pit_imagen" src="imagenes/400px_guido_van_rossum_oscon_2006.jpg" title="Guido_van_Rossum_OSCON_2006">
+      <div class="pit_bloque_piedeimagen"><span class="pit_etiqueta"><a class="pit_enlace" href="../presentacion/glosario.html#(Guido van Rossum, 2006)" target="_blank">(Guido 
+        van Rossum, 2006)</a>.</span> Foto de Guido (<a class="pit_enlace" href="../presentacion/referencias_bibliograficas.html#Blogger, 2011" target="_blank">Blogger, 
+        2011</a>) </div>
+    </div> 
+<br class="pit_romper"/>
+<p>La primera versión de Python 0.9.0 fue liberada en 1991 y en el 2010 se liberó la primera versión Python 2.7. En este curso he trabajado con la versión Python 2.7.2 liberada en julio 3 del 2010 y ya se tienen las versiones de Python 3.2.2 para diferentes sistemas operativos.</p>
+    <p>Las referencias (<a class="pit_enlace" href="../presentacion/referencias_bibliograficas.html#Van Rossum, 2011a" target="_blank">Van 
+      Rossum, 2011a</a>; <a class="pit_enlace" href="../presentacion/referencias_bibliograficas.html#Van Rossum, 2011b" target="_blank">Van 
+      Rossum, 2011b</a>) describen detalles muy interesantes de la historia del 
+      Python contadas por su propio autor.</p>
+    <p>Existen comunidades y conferencias (<a class="pit_enlace" href="../presentacion/referencias_bibliograficas.html#Tiobe, 2011" target="_blank">Tiobe, 
+      2011</a>) en todo el mundo que utilizan el Python como lenguaje de programación 
+      principal y referencias de ser un gran incremento de su uso en los años 
+      2007 y 2010 (<a class="pit_enlace" href="../presentacion/referencias_bibliograficas.html#CWI, 2011" target="_blank">CWI, 
+      2011</a>; <a class="pit_enlace" href="../presentacion/referencias_bibliograficas.html#Blogger, 2011" target="_blank">Blogger, 
+      2011</a>).</p>
+ <p style="text-align: right;"><a class="pit_enlace" href="#Contenido_Indice">(subir 
+      <img alt="Subir" src="../estilos/imgs/subir.png" title="Subir" />)</a></p>
+<hr/>
+<h2><a name="Instalacion_Python_en_windows"></a>Instalación de Python en Windows</h2>
+    <p>El archivo de instalación del lenguaje Python se obtiene en su página principal 
+      (<a class="pit_enlace" href="../presentacion/referencias_bibliograficas.html#Python, 2011a" target="_blank">Python, 2011a</a>), 
+      entrando a su menú izquierdo en la pestaña de DOWNLOAD como se muestra en 
+      la siguiente imagen:</p>
+<div class="pit_anexo_interno pit_bloque_imagen"><img class="pit_imagen" src="imagenes/8_menu_de_pagina_principal_python.png" title="Menú página principal"><div class="pit_bloque_piedeimagen">Menú página principal </div></div>
+<br class="pit_romper"/>
+<p>La nueva carpeta creada será designada  <strong>C:\Python27</strong> y se creará en el menú de programas una nueva pestaña como lo muestra la siguiente imagen:</p>
+<p>Para mi caso particular, al estar trabajando en un portátil con sistema operativo Windows Vista, selecciono la opción <strong>Python 2.7.2 Windows installer</strong>, lo cual hace que se descargue el archivo  Python 2.7.2.msi de un tamaño de 15.596 kB.</p>
+<p>Al ejecutar el archivo desde el Windows, se inicia el programa de instalación creando una nueva carpeta en el disco principal si no se especifica nada diferente. La siguiente imagen ilustra la primera ventana de dialogo para iniciar la instalación.</p>
+ <p><a class="pit_enlace" href="cap8_2.html" class="pit_enlace" name="ver_mas_2" target="_blank">Ver mas...</a></p>
+<p style="text-align: right;"><a class="pit_enlace" href="#Contenido_Indice">(subir 
+      <img alt="Subir" src="../estilos/imgs/subir.png" title="Subir" />)</a></p>
+<hr/>
+    <h2><a name="Elementos_generales_lenguaje"></a>Elementos generales del lenguaje </h2>
+<p>(<a class="pit_enlace" href="../presentacion/referencias_bibliograficas.html#Python, 2011a" target="_blank">Python, 2011a</a>)</p>
+<p>El lenguaje de programación Python cuenta con una buena cantidad de tipos de variables ('type'), funciones propias ('Built-in function'), comandos ('statement') y formas de fraccionar y ampliar esto creando nuevas funciones, objetos y módulos. Todo esto permite que se tengan incontables combinaciones para realizar códigos de programas. </p>
+<p>En esta sección haremos un breve resumen de los elementos básicos del lenguaje que se han discutido en los capítulos precedentes de este documento.</p>
+<p>Para el manejo de datos o información, el lenguaje Python cuenta con diferentes tipos de variables, de los cuales se presentaron en el capítulo 3 los siguientes:</p>
+<ul>
+<li>Tipo carácter o cadenas de carácter ('str')</li>
+<div class="pit_codigo_anexo"><pre><code>
+&gt;&gt;&gt;s = 'aqui'
+&gt;&gt;&gt;type(s)
+&lt;type 'str'&gt;
+&gt;&gt;&gt;</code></pre></div>
+<li>Tipo número entero ('int')</li>
+<div class="pit_codigo_anexo"><pre><code>
+&gt;&gt;&gt;n = 10
+&gt;&gt;&gt;type(n)
+&lt;type 'int'&gt;
+&gt;&gt;&gt;</code></pre></div>
+<li>Tipo número real ('float')</li>
+<div class="pit_codigo_anexo"><pre><code>
+&gt;&gt;&gt;r = 3.2334
+&gt;&gt;&gt;type(r)
+&lt;type 'float'&gt;
+&gt;&gt;&gt;</code></pre></div></ul>
+ <p><a class="pit_enlace" href="cap8_3.html" class="pit_enlace" name="ver_mas_3" target="_blank">Ver mas...</a></p>
+<p style="text-align: right;"><a class="pit_enlace" href="#Contenido_Indice">(subir 
+      <img alt="Subir" src="../estilos/imgs/subir.png" title="Subir" />)</a></p>
+<hr/>
+<h2><a name="Edicion_estructura_ejecucion_programas"></a>Edición, estructura y ejecución de programas en Python</h2>
+<p>Para editar un archivo en código de lenguaje Python es posible utilizar cualquier editor de textos, pero el interface de Python dispone de un editor que facilita su escritura y lectura mostrando en colores diferentes las palabras claves.</p>
+<div class="pit_anexo_interno pit_bloque_imagen"><img class="pit_imagen" src="imagenes/8_menu_de_edicion_nuevo_archivo.png" title="Menú de edición de nuevo archivo"><div class="pit_bloque_piedeimagen">Menú de edición de nuevo archivo</div></div> 
+<br class="pit_romper"/>
+<p>Para iniciar un nuevo archivo en el editor desde el interface de Python, se selecciona la opción mostrada en la imagen anterior. Esto abre una nueva ventana identificada en la parte superior como <strong>Untitled</strong> debido a que aún no se ha dado ningún nombre al nuevo archivo. A partir de este momento se puede escribir líneas de código en Python y usar la opción <strong>Run</strong> del menú para ejecutar el programa escrito. El editor está inicialmente configurado para guardar el nuevo archivo o sus cambios antes de realizar la ejecución del programa.</p>
+ <p><a class="pit_enlace" href="cap8_4.html" class="pit_enlace" name="ver_mas_4" target="_blank">Ver mas...</a></p>
+<p style="text-align: right;"><a class="pit_enlace" href="#Contenido_Indice">(subir 
+      <img alt="Subir" src="../estilos/imgs/subir.png" title="Subir" />)</a></p>
+<hr/>
+<h2><a name="Algunos_modulos_interes"></a>Algunos módulos de Interés</h2>
+<p>Los módulos permiten ampliar y personalizar las funciones y los objetos que estarán disponibles en el ambiente de programación para facilitar la escritura de códigos.</p>
+<p>Al instalar el Python se tienen disponible ya un gran número de los cuales se pueden consultar usando <strong>help</strong> o en la documentación oficial en la sección de <strong>global module index</strong>. La siguiente imagen muestra el índice general de la documentación y cómo al usar la palabra <strong>modules</strong> en la ayuda del interfaces de Python, se puede obtener un listado de todos los módulos que se pueden invocar con el comando <strong>import</strong>.</p>
+<div class="pit_anexo_interno pit_bloque_imagen"><img class="pit_imagen" src="imagenes/8_indice_y_ayuda_de_modulos.png" title="Indices y ayudas de módulos"><div class="pit_bloque_piedeimagen">Indices y ayudas de módulos</div></div> 
+<br class="pit_romper"/>
+    <p>También se puede obtener una gran cantidad de sitios en Internet con listados 
+      y enlaces de módulos y paquetes en Python. La referencia (<a class="pit_enlace" href="../presentacion/referencias_bibliograficas.html#Python, 2011f" target="_blank">Python, 2011f</a>) es un índice de la página oficial de Python en orden alfabético 
+      del nombre del módulo. </p>
+    <p>La referencia (<a class="pit_enlace" href="../presentacion/referencias_bibliograficas.html#Jung, 2008" target="_blank">Jung, 
+      2008</a>) presenta una lista de 50 módulos y los enlaces discriminados según 
+      su aplicación, por ejemplo, en el tema de ciencias y matemáticas figuran 
+      los módulos scipy, Numpy, numarray, matplotlib los cuales disponen de un 
+      buen conjunto de funciones y objetos en Python que aproximan su ambiente 
+      al del programa Matlab en cuanto a manejo gráfico y computación numérica. 
+      En aplicaciones de gráficos tridimensionales figura el módulo Vpython que 
+      dispone de una colección de objetos y funciones para desarrollar ventanas 
+      gráficas de tres dimensiones y su interacción con el usuario.</p>
+    <p>La referencia (<a class="pit_enlace" href="../presentacion/referencias_bibliograficas.html#SourceForge, 2011" target="_blank">SourceForge, 
+      2011</a>) presenta una colección de 660 módulos ordenados según el número 
+      de solicitudes de descarga en la semana y dispone de su enlace para descargar 
+      el módulo de interés. Esta es una página importante de hospedaje de programas 
+      de libre licencia.</p>
+    <p>En la referencia (<a class="pit_enlace" href="../presentacion/referencias_bibliograficas.html#Hellmann, 2011" target="_blank">Hellmann, 
+      2011</a>) de la página de Doug Hellmann denominada el módulo Python de la 
+      semana (en inglés <strong>Python Module of the Week</strong>) se pone a disposición un 
+      libro en pdf con una buena colección de módulos ordenados según su función 
+      principal y dispone de ejemplos de uso de cada uno de los módulos. Su versión 
+      1.132 es del 8 de julio del 2011.</p>
+    <p>Así como los módulos en Python tienen sus ventajas, también tienen sus desventajas, 
+      en el Blog de Allen (<a class="pit_enlace" href="../presentacion/referencias_bibliograficas.html#Allen, 2011" target="_blank">Allen, 
+      2011</a>) se argumenta sobre las ventajas y desventajas, y se proponen soluciones 
+      a algunas de las inquietudes planteadas, tales como la acción de recargar 
+      los módulos al estar trabajando en el ambiente de programación. Se incluyen 
+      adicionalmente enlaces a otros tópicos de Python.</p>
+<p>Cada módulo en Python requiere de un estudio aparte y el módulo requerido depende de los intereses particulares al estar frente a un desarrollo de una aplicación específica. Aquí tan sólo se hizo una mínima selección de sitios con módulos de interés, ya que en Internet al buscar en Google con las palabras “module python index”, se obtienen más de 71 millones de sitios, esto da una idea de la gran cantidad de información relacionada con módulos de Python.</p>
+<p style="text-align: right;"><a class="pit_enlace" href="#Contenido_Indice">(subir 
+      <img alt="Subir" src="../estilos/imgs/subir.png" title="Subir" />)</a></p>
+<div style="text-align:center;"> <a class="pit_enlace" href="../capitulo_7/capitulo_7.html">Anterior<img alt="Anterior" src="../estilos/imgs/anterior.png"></a> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      <a class="pit_enlace" href="../index.html">Inicio<img alt="Inicio" src="../estilos/imgs/home.png" title="Inicio" /></a> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      </div>
+
+<!-- InstanceEndEditable --></div>
+</div>
+<div id="footer">
+	<img src="../estilos/imgs/Creative_commons.png" width="88" height="31" alt="Licencia">
+	<p>	Esta obra esta protegida bajo una licencia de <a href="../presentacion/licencia.html" target="licencia" onclick="window.open(this.href,this.target,'resizable=1,scrollbars=1,directories=,location=,menubar=,toolbar=,status=1,width=620,height=450');" title="Licencia">creative commons</a><br>
+      Universidad de Antioquia
+          <br>
+          2010
+    </p>
+</div>
+</body>
+<!-- InstanceEnd -->

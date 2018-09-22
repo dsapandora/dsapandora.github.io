@@ -1,0 +1,139 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><!-- InstanceBegin template="/Templates/plantilla.dwt" codeOutsideHTMLIsLocked="false" -->
+<head>
+<!-- InstanceBeginEditable name="doctitle" -->
+<title>Algoritmos y Programación - Capítulo III - Programación estructurada</title>
+<!-- InstanceEndEditable --> 
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<link rel="stylesheet" type="text/css" href="../estilos/estilos.css" />
+<meta name="description" content="Curso Algoritmos y Programación. Proyecto Open Course Ware de la Universidad de Antioquia" />
+<!-- InstanceBeginEditable name="head" --><!-- InstanceEndEditable -->
+</head>
+
+<body>
+<div class="cabezote_contenido">
+	<strong>Algoritmos y Programación</strong> - Facultad de Ingeniería - Universidad de Antioquia 
+</div>
+<div class="marco_general">
+  <div class="pit_body"> <!-- InstanceBeginEditable name="content_body" -->
+    <h1>Capítulo III - Programación estructurada</h1>
+    <div class="div_intro"> 
+      <div class="pit_anexo_interno pit_bloque_imagen"><img class="pit_imagen" src="imagenes/3_de_grafos_a_codigos.png" alt="De grafos a códigos" title="De grafos a códigos"> 
+        <div class="pit_bloque_piedeimagen"><span class="pit_etiqueta"><a class="pit_enlace" href="../presentacion/glosario.html#(GALEANO, 2011k)" target="_blank">(GALEANO, 
+          2011k)</a>. </span>De grafos a códigos</div>
+      </div>
+      <br class="pit_romper"/>
+      <p>En general, los lenguajes de programación de computadores cuentan con 
+        ciertas estructuras básicas para hacer que el ordenador realice tareas 
+        como la definición de variables para almacenar información, tomar decisiones 
+        en función de sus necesidades o repetir procedimientos según se requiera.</p>
+      <p>Estas estructuras básicas de los algoritmos las estudiaremos y las aplicaremos 
+        en códigos específicos usando Python como lenguaje de práctica de estas 
+        instrucciones.</p>
+      <h3>Objetivos de aprendizaje</h3>
+      <ul>
+        <li>Conocer y usar formas de describir algoritmos de computador.</li>
+        <li>Comprender la asignación y definición de variables.</li>
+        <li>Comprender las estructuras de decisión en algoritmos.</li>
+        <li>Comprender las estructuras de ciclos en algoritmos.</li>
+        <li>Aplicar estructuras de asignación en Python.</li>
+        <li>Programar estructuras de decisión en Python.</li>
+        <li>Programar estructuras de ciclos en Python.</li>
+      </ul>
+      <h3><a name="Contenido_Indice"></a>Subtemas del capítulo</h3>
+      <ul>
+        <li><a class="pit_enlace" href="#Algoritmos_formas_programacion">Los algoritmos 
+          y las formas de representación. </a></li>
+        <li><a class="pit_enlace" href="#Instrucciones_comando_control_en_programacion">Instrucciones 
+          y comando de control en programación.</a></li>
+      </ul>
+    </div>
+<hr/>
+<h2><a name="Algoritmos_formas_programacion"></a>Los algoritmos y las formas de representación</h2>
+<p>El algoritmo lo podemos definir como una secuencia de actividades que se deben realizar para lograr un objetivo. Retomando lo discutido en el capitulo II, el algoritmo es la etapa de planeación que realizamos para solucionar nuestro problema. Los algoritmos los podemos enmarcar en el tema general de representación del conocimiento (en inglés <strong>knowledge representation</strong>) y describe lo más detallado posible un procedimiento para seguir.</p>
+    <p>En programación de computadores, el objetivo del algoritmo es describir un 
+      procedimiento que más adelante será codificado o escrito en un lenguaje 
+      de programación. Las representaciones de los algoritmos son en general independientes 
+      de los lenguajes que se van a usar y presentaremos las más usadas (<a class="pit_enlace" href="../presentacion/referencias_bibliograficas.html#Barrueto, 2011" target="_blank">Barrueto, 2011</a>):</p>
+<ul>
+<li>Diagramas de flujo ( en inglés <strong>Flowchart</strong>)</li>
+<li>Diagramas rectangulares </li>
+<li>Pseudocódigo</li>
+</ul>
+<p>Los <strong>Diagramas de flujo</strong> describen el algoritmo con figuras geométricas que representan una actividad específica y con flechas que conectan las figuras geométricas definiendo la secuencia que se va a seguir de las actividades.  </p>
+<div class="pit_anexo_interno pit_bloque_imagen"><img class="pit_imagen" src="imagenes/3_esquema_de_un_diagrama_de_flujo.png" title="Diagrama de flujo"><div class="pit_bloque_piedeimagen"><span class="pit_etiqueta"><a class="pit_enlace" href="../presentacion/glosario.html#(GALEANO, 2011l)" target="_blank">(GALEANO, 2011l)</a></span> Esquema de un diagrama de flujo</div></div>
+<br class="pit_romper"/>
+    <p>La figura (GALEANO, 2011l) muestra una secuencia básica de actividades 
+      y las flechas que definen su orden de realización. Veremos en cada una de 
+      las diferentes estructuras o comandos de control su respectiva representación 
+      geométrica. La referencia (<a class="pit_enlace" href="../presentacion/referencias_bibliograficas.html#Chapra, 2002" target="_blank">Chapra, 
+      2002</a>; <a class="pit_enlace" href="../presentacion/referencias_bibliograficas.html#Landau, 2008" target="_blank">Landau, 
+      2008</a>) muestra algunas de las convenciones de las geometrías usadas en 
+      los diagramas de flujo.</p>
+    <p>Los <strong>Diagramas rectangulares</strong>, también conocidos como diagramas 
+      de Nassi - Schneiderman (<a class="pit_enlace" href="../presentacion/referencias_bibliograficas.html#Barrueto, 2011" target="_blank">Barrueto, 
+      2011</a>), describen el algoritmo usando una secuencia de rectángulos que 
+      se lee desde la parte superior y continúan hacia abajo las actividades subsecuentes. 
+      Estos diagramas, a diferencia de los diagramas de flujo, no usan convenciones 
+      de figuras geométricas y presentan sin usar flechas los pasos consecutivos 
+      del algoritmo. La Imagen (GALEANO, 2011m), muestra un esquema básico de 
+      un diagrama rectangular.</p>
+<div class="pit_anexo_interno pit_bloque_imagen"><img class="pit_imagen" src="imagenes/3_esquema_de_un_diagrama_rectangular.png" title="Diagrama rectangular"><div class="pit_bloque_piedeimagen"><span class="pit_etiqueta"><a class="pit_enlace" href="../presentacion/glosario.html#(GALEANO, 2011m)" target="_blank">(GALEANO, 2011m)</a></span> Esquema de un diagrama rectangular</div></div>
+<br class="pit_romper"/>
+    <p>La representación en <strong>Pseudocódigo</strong> simplemente describe 
+      en palabras del lenguaje <strong>cotidiano</strong> las actividades o instrucciones que 
+      se van a realizar. La Imagen (GALEANO, 2011n) muestra un esquema de un pseudocódigo 
+      (<a class="pit_enlace" href="../presentacion/referencias_bibliograficas.html#Barrueto, 2011" target="_blank">Barrueto, 
+      2011</a>; <a class="pit_enlace" href="../presentacion/referencias_bibliograficas.html#Larrosa, 2011" target="_blank"> 
+      Larrosa, 2011</a>; <a class="pit_enlace" href="../presentacion/referencias_bibliograficas.html#Chapra, 2002" target="_blank">Chapra, 
+      2002</a>; <a class="pit_enlace" href="../presentacion/referencias_bibliograficas.html#Landau, 2008" target="_blank">Landau, 
+      2008</a>).</p>
+<div class="pit_anexo_interno pit_bloque_imagen"><img class="pit_imagen" src="imagenes/3_esquema_de_representacion_de_pseudicodigo.png" title="Pseudo código"><div class="pit_bloque_piedeimagen"><span class="pit_etiqueta"><a class="pit_enlace" href="../presentacion/glosario.html#(GALEANO, 2011n)" target="_blank">(GALEANO, 2011n)</a>.</span> Esquema de representación en Pseudo código</div></div>
+<br class="pit_romper"/>
+<p>Un aspecto importante es que los algoritmos describen una secuencia de actividades o de instrucciones, y ese orden de realización es muy importante y no necesariamente son conmutables. Se debe poner especial atención en estas secuencias como unidades básicas de programación.</p>
+<p style="text-align: right;"><a class="pit_enlace" href="#Contenido_Indice">(subir <img alt="Subir" src="../estilos/imgs/subir.png" title="Subir" />)</a></p>
+<hr/>
+<h2><a name="Instrucciones_comando_control_en_programacion"></a>Instrucciones y comando de control en programación</h2>
+<p>Iniciamos presentando los comandos básicos que se utilizan en la programación secuencial y que cada lenguaje de programación tiene su forma particular o palabra clave para describir esta acción. Los siguientes son los grupos de instrucciones que discutiremos:</p>
+<ul>
+<li>Asignación (aritmética, lógica, variable, constante).</li>
+<li>Decisión lógica: (funcionamiento y ejemplos. (if))</li>
+<li>Ciclos: (do, while,  Rompimientos)</li>
+</ul>
+<p>La <strong>asignación</strong> es la manera de dar un nombre a una información determinada en el ambiente de programación. La Imagen (GALEANO, 2011o) muestra cómo se simboliza en cada uno de los métodos de descripción de algoritmos. El significado en palabras de esta instrucción es que el valor o dato 5 lo guarde en alguna posición de memoria del ordenador y lo pueda recordar nombrando la letra A. Este dato o información podrá ser usado posteriormente para realizar alguna operación, también puede ser reemplazado por otro dato.</p>
+<div class="pit_anexo_interno pit_bloque_imagen"><img class="pit_imagen" src="imagenes/3_representacion_de_la_asignacion.png" title="Representación de la asignación"><div class="pit_bloque_piedeimagen"><span class="pit_etiqueta"><a class="pit_enlace" href="../presentacion/glosario.html#(GALEANO, 2011o)" target="_blank">(GALEANO, 2011o)</a>.</span> Representación de la asignación</div></div>
+<br class="pit_romper"/>
+    <p>En lenguaje de programación <em>PYTHON</em> (<a class="pit_enlace" href="../presentacion/referencias_bibliograficas.html#Python, 2011b" target="_blank">Python, 
+      2011b</a>), el símbolo igual <strong>=</strong> se utiliza para codificar la instrucción 
+      de asignación:</p>
+<div class="pit_bloque_ecuacion pit_ecuacion">A = 5</div>
+<p>En esta instrucción <em>PYTHON</em> hace distinción entre las letras mayúsculas y minúsculas para nombrar una información. El nombre que está a la izquierda del signo igual puede tener más letras o números, pero no se debe utilizar palabras que el lenguaje tiene reservadas para otras instrucciones. Lo que está a la derecha del signo igual es la información que será guardada y puede ser de diferentes tipos. </p>
+ <p><a href="cap3_2.html" class="pit_enlace" name="ver_mas_2" target="_blank">Ver mas...</a></p>
+ <p style="text-align: right;"><a class="pit_enlace" href="#Contenido_Indice">(subir <img alt="Subir" src="../estilos/imgs/subir.png" title="Subir" />)</a></p>
+<hr/>
+<p class="pit_nota"><span class="pit_etiqueta">Nota:</span> A continuación se encuentran las referencias bibliográficas utilizadas para la construcción de los contenidos de este capítulo:
+<ul>
+<li>(<a class="pit_enlace" href="../presentacion/referencias_bibliograficas.html#Slideshare, 2011" target="_blank">Slideshare, 2011</a>)</li>
+</ul>
+<div style="text-align:center; "> 
+<a class="pit_enlace" href="../capitulo_2/capitulo_2.html">Anterior<img alt="Anterior" src="../estilos/imgs/anterior.png"></a>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	  <a class="pit_enlace" href="../index.html">Inicio<img alt="Inicio" src="../estilos/imgs/home.png" title="Inicio" /></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a class="pit_enlace" href="../capitulo_4/capitulo_4.html">Siguiente<img alt="Siguiente" src="../estilos/imgs/siguiente.png"></a></div>	
+
+
+
+
+
+
+<!-- InstanceEndEditable --></div>
+</div>
+<div id="footer">
+	<img src="../estilos/imgs/Creative_commons.png" width="88" height="31" alt="Licencia">
+	<p>	Esta obra esta protegida bajo una licencia de <a href="../presentacion/licencia.html" target="licencia" onclick="window.open(this.href,this.target,'resizable=1,scrollbars=1,directories=,location=,menubar=,toolbar=,status=1,width=620,height=450');" title="Licencia">creative commons</a><br>
+      Universidad de Antioquia
+          <br>
+          2010
+    </p>
+</div>
+</body>
+<!-- InstanceEnd -->

@@ -1,0 +1,162 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><!-- InstanceBegin template="/Templates/plantilla.dwt" codeOutsideHTMLIsLocked="false" -->
+<head>
+<!-- InstanceBeginEditable name="doctitle" -->
+<title>Algoritmos y Programación - Capítulo VII - Manejo de archivos</title>
+<!-- InstanceEndEditable --> 
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<link rel="stylesheet" type="text/css" href="../estilos/estilos.css" />
+<meta name="description" content="Curso Algoritmos y Programación. Proyecto Open Course Ware de la Universidad de Antioquia" />
+<!-- InstanceBeginEditable name="head" --><!-- InstanceEndEditable -->
+</head>
+
+<body>
+<div class="cabezote_contenido">
+	<strong>Algoritmos y Programación</strong> - Facultad de Ingeniería - Universidad de Antioquia 
+</div>
+<div class="marco_general">
+  <div class="pit_body"> <!-- InstanceBeginEditable name="content_body" -->
+    <h1>Manejo de Archivos </h1>
+<div class="pit_bloque_autores">
+<ul>
+<li>Jaime A. Valencia V.</li>
+<li>Facultad de Ingeniería</li>
+<li>Universidad de Antioquia</li>
+</ul>
+</div>
+<p>(<a class="pit_enlace" href="../presentacion/referencias_bibliograficas.html#Wikibooks, 2011" target="_blank">Wikibooks, 2011</a>; <a class="pit_enlace" href="../presentacion/referencias_bibliograficas.html#Docs Python, 2011b" target="_blank">Docs Python, 2011b</a>; <a class="pit_enlace" href="../presentacion/referencias_bibliograficas.html#Dev Shed Tutorials, 2011" target="_blank">Dev Shed Tutorials, 2011</a>)</p>
+<p>Cuando se desarrollan aplicaciones de computador se requiere en muchos casos escribir o leer información que está o se requiere almacenar  en alguna otra parte, por ejemplo, en el mismo disco duro, en una memoria USB o en algún sitio de Internet. </p>
+<p>Los lenguajes de programación disponen de comandos pare realizar la conexión entre el ambiente del programa y unidades de almacenamiento de información apoyándose en el sistema operativo que se trabaja. Python dispone para esta acción de interactuar con archivos de datos la clase <strong>file</strong>, la cual es convocada para generar objetos de intercambio de información mediante la función <strong>open()</strong>.</p>
+<p>La función <strong>open()</strong> requiere como mínimo de un argumento, el nombre del archivo y un segundo argumento que define el modo de uso del archivo con uno de los siguientes caracteres: </p>
+<div class="pit_codigo_anexo"><pre><code>
+'r' modo solo de lectura (de la palabra en ingles 'read')
+'w' modo solo de escritura (de la palabra en ingles 'write')
+'a' modo de adición de datos (de la palabra en ingles 'append')</code></pre></div>
+<p>El modo <strong>r</strong> permite la opción del carácter '+' para acciones simultáneas de lectura y escritura, y el carácter 'b' para intercambiar información en modo binario. Al omitir este argumento se asume que el archivo está en modo de lectura. El modo binario de intercambio de información no lo discutiremos en esta sección, sólo usaremos el modo de información formateado que podremos leer directamente desde un editor de texto cualquiera.</p>
+<p>Veamos un ejemplo para crear un archivo y escribir en él una información:</p>
+<div class="pit_codigo_anexo"><pre><code>
+&gt;&gt;&gt;myf1 = open('archivo1.txt','w')
+&gt;&gt;&gt;myf1.write('Este es el primer renglo \n y el segundo.')
+&gt;&gt;&gt;myf1.close()
+</code></pre></div>
+<p>Aquí la función <strong>open()</strong> tiene dos argumento, el primero indica el nombre completo del archivo y el segundo indica que el modo es de escritura 'w'. Se asigna un nuevo objeto tipo <strong>file</strong> que dispone de un método <strong>.write()</strong> que escribe los caracteres que están en su argumento directamente en el archivo. Este método se utiliza de forma similar al comando 'print' y se pueden aplicar todos los formatos. El método “.close()” cierra el archivo y lo desconecta del ambiente del programa. Este archivo lo podemos visualizar desde un editor cualquiera, como por ejemplo el bloc de notas que se muestra en la siguiente imagen.</p>
+<div class="pit_anexo_interno pit_bloque_imagen"><img class="pit_imagen" src="imagenes/7_archivo_generado_y_datos.png" title="Archivo generado y datos"></div>
+<br class="pit_romper"/>
+<p>Este archivo ya existente puede volver a conectarlo al ambiente del programa, pero se debe tener cuidado al llamarlo. Veamos este caso:</p>
+<div class="pit_codigo_anexo">
+      <pre><code>
+&gt;&gt;&gt;myf1 = open('archivo1.txt')
+&gt;&gt;&gt;type(myf1)
+&lt;type 'file'&gt;
+&gt;&gt;&gt;myf1
+&lt;open file 'archivo1.txt', mode 'r' at 0x02AB54F0&gt;
+&gt;&gt;&gt;myf5 = open('archivo5.txt')
+
+Traceback (most recent call last):
+  File "&lt;pyshell#5&gt;", line 1, in 
+	myf5 = open('archivo5.txt')
+IOError: [Errno 2] No such file or directory: 'archivo5.txt'
+&gt;&gt;&gt;</code></pre></div>
+<p>Observe que se abrió el archivo ya creado de nombre 'archivo1.txt' y en modo de lectura, pues no se escribió explícitamente otro modo. El objeto myf1 creado es de tipo 'file' en  modo de lectura como informa el programa al usar la función 'type()'. Al intentar abrir 'archivo5.txt' se obtiene un mensaje de error <strong>No such file or directory</strong> informando que el archivo no se encuentra.</p>
+<p>Para acceder a la información dentro del archivo se utilizan otros métodos disponibles de lectura como el siguiente:</p>
+<div class="pit_codigo_anexo"><pre><code>
+&gt;&gt;&gt;myf2 = open('archivo1.txt', 'r')
+&gt;&gt;&gt;myf2.readline()
+'Este es el primer renglo \n'
+&gt;&gt;&gt;myf2.readline()
+' y el segundo.'
+&gt;&gt;&gt;myf2.readline()
+''
+&gt;&gt;&gt;</code></pre></div>
+<p>El objeto 'myf2' conecta el mismo archivo en el modo de lectura y podemos leer renglón por renglón usando el método <strong>.readline()</strong>. Esta información se lee de manera secuencial y puede asignarse a otro objeto o presentarse directamente en pantalla como en este caso.</p>
+<div class="pit_anexo_interno pit_bloque_imagen"><img class="pit_imagen" src="imagenes/7_metodos_en_open.png" title="Métodos en open()"></div>
+<br class="pit_romper"/>
+    <p>La anterior imagen muestra todos los métodos disponibles (a la fecha, ya 
+      que esto puede evolucionar) en los objetos creados con la función <strong>open()</strong> 
+      (<a class="pit_enlace" href="../presentacion/referencias_bibliograficas.html#Docs Python, 2011d" target="_blank">Docs 
+      Python, 2011d</a>; <a class="pit_enlace" href="../presentacion/referencias_bibliograficas.html#Docs Python, 2011e" target="_blank">Docs 
+      Python, 2011e</a>). Veamos algunos ejemplos del su uso y aplicación:</p>
+<div class="pit_codigo_anexo"><pre><code>
+&gt;&gt;&gt;myf2.readline()
+'Este es el primer renglo \n'
+&gt;&gt;&gt;myf2.readline()
+' y el segundo.'
+&gt;&gt;&gt;myf2.readline()
+''
+&gt;&gt;&gt;myf2.readline()
+''
+&gt;&gt;&gt;</code></pre></div>
+<p>El método <strong>.readline()</strong> hace lectura secuencial de los renglones, en otras palabras, cada que se usa lee un renglón y dispone de un apuntador para tener en memoria donde está leyendo.</p>
+<div class="pit_codigo_anexo"><pre><code>
+&gt;&gt;&gt;myf2.seek(0)
+&gt;&gt;&gt;</code></pre></div>
+<p>Aquí se utiliza el método <strong>.seek()</strong> para colocar el apuntador en la posición inicial de nuevo (0). Si no se hace esto, una nueva instrucción de lectura respondería con información vacía.</p>
+<div class="pit_codigo_anexo"><pre><code>
+&gt;&gt;&gt;todo = myf2.read()
+&gt;&gt;&gt;todo
+'Este es el primer renglo \n y el segundo.'
+&gt;&gt;&gt;</code></pre></div>
+<p>El método <strong>.read()</strong> permite leer toda la información del archivo y se asigna a la variable todo de tipo carácter.</p>
+<div class="pit_codigo_anexo"><pre><code>
+&gt;&gt;&gt;myf2.seek(0)
+&gt;&gt;&gt;myf2.tell()
+0L
+&gt;&gt;&gt;myf2.readline()
+'Este es el primer renglo \n'
+&gt;&gt;&gt;myf2.tell()
+27L
+&gt;&gt;&gt;myf2.readline()
+' y el segundo.'
+&gt;&gt;&gt;myf2.tell()
+41L
+&gt;&gt;&gt;</code></pre></div>
+<p>El método <strong>.tell()</strong> informa la posición del señalador o apuntador de lectura del archivo. Aquí se usa <strong>.seek()</strong> para colocar el señalador en la posición inicial (0) y luego hacemos lectura secuencial y usamos <strong>.tell()</strong> para mostrar la posición del señalador en cada lectura de renglón.</p>
+<div class="pit_codigo_anexo"><pre><code>
+&gt;&gt;&gt;myf2.seek(0)
+&gt;&gt;&gt;otro = myf2.readlines()
+&gt;&gt;&gt;otro
+['Este es el primer renglo \n', ' y el segundo.']
+&gt;&gt;&gt;</code></pre></div>
+<p>El método <strong>.readlines()</strong> lee todas las líneas como un objeto tipo lista de la información. Aquí la variable otro    es de tipo lista ('list') y tienen tantos elementos como renglones en el archivo.</p>
+<p>Una forma opcional que se tiene para escribir en un archivo es usando la función <strong>print()</strong> (para esta versión Python 2.7 no está incluida directamente) la cual dispone de un argumento adicional para asignar donde se escribirá la información formateada. Veamos el ejemplo siguiente:</p>
+<div class="pit_codigo_anexo"><pre><code>
+&gt;&gt;&gt;from __future__ import print_function
+&gt;&gt;&gt;myf3 = open('archivo1.txt','a')
+&gt;&gt;&gt;s = '\n un renglon usando  \n \t La funcionprint(). '
+&gt;&gt;&gt;print(s, file = myf3)
+&gt;&gt;&gt;myf3.close()
+&gt;&gt;&gt;</code></pre></div>
+<p>Primero se debe importar explícitamente la función <strong>print</strong> y después de generar el objeto tipo archivo myf3  se manda a escribir el contenido de la variables  indicando dónde con el argumento <strong>file = myf3</strong>. En la siguiente imagen se visualiza el resultado después de cerrar el archivo desde el programa y visualizarlo con el bloc de notas. Puede usarse cualquier editor de textos.</p>
+<div class="pit_anexo_interno pit_bloque_imagen"><img class="pit_imagen" src="imagenes/7_archivo_con_adicion_de_texto.png" title="Archivo con adición de texto"></div>
+<br class="pit_romper"/>
+<p>Para terminar este capítulo, es importante tener presente el sistema operativo en el cual se está trabajando y cómo es la escritura de la posición de los archivos. Si no se define explícitamente esto, el programa direcciona la escritura de archivos a lo que se conoce como directorio de trabajo (<strong>working directory</strong>).  Para conocer esto se debe escribir lo siguiente en el intérprete de Python (Pythonshell):</p>
+<div class="pit_codigo_anexo"><pre><code>
+&gt;&gt;&gt;import os
+&gt;&gt;&gt;os.getcwd()
+'C:\\Python27'
+&gt;&gt;&gt;os.listdir(os.getcwd()) #para mostrar la lista de archivos en directorio de trabajo
+['archivo1.txt', ….....
+&gt;&gt;&gt;</code></pre></div>
+<p>Al importar el módulo os se dispone de algunos métodos para usar el sistema operativo. El método <strong>.getcwd()</strong> (<strong>get current working directory</strong>) responde informado cuál es el directorio del momento y es el que usa el programa para definir la ruta o posición de escritura del archivo. El método <strong>.listdir(ruta)</strong> responde con la lista de archivos del directorio definido por el argumento de la ruta, el cual en el ejemplo es el directorio de trabajo donde está el archivo generado de nombre 'archivo1.txt'</p>
+<p>Este directorio de trabajo lo podemos cambiar si deseamos, usando el método <strong>.chdir(ruta)</strong> (<strong>change directory</strong>) para seleccionar la ruta de trabajo que deseamos y en la cual se direccionan los archivos que se generen. Veamos el uso de este método:</p>
+<div class="pit_codigo_anexo"><pre><code>
+&gt;&gt;&gt;os.chdir('C:\Python27\ejemplosp27 2011-07-05')
+&gt;&gt;&gt;os.getcwd()
+'C:\\Python27\\ejemplosp27 2011-07-05'
+&gt;&gt;&gt;</code></pre></div>
+<p>Al usar este método, todo archivo que se genere se guardará en la dirección <strong>'C:\\Python27\\ejemplosp27 2011-07-05'</strong> que se definió como nuevo directorio de trabajo.</p>
+<p>Para terminar este capítulo, es importante aclarar que siempre será posible programar una aplicación para interactuar con cualquier elemento de entrada o salida de información, pero será necesario tener en cuenta el sistema operativo y los programas específicos de cada equipo o periférico con el cual se quiere trabajar.</p>
+
+
+<!-- InstanceEndEditable --></div>
+</div>
+<div id="footer">
+	<img src="../estilos/imgs/Creative_commons.png" width="88" height="31" alt="Licencia">
+	<p>	Esta obra esta protegida bajo una licencia de <a href="../presentacion/licencia.html" target="licencia" onclick="window.open(this.href,this.target,'resizable=1,scrollbars=1,directories=,location=,menubar=,toolbar=,status=1,width=620,height=450');" title="Licencia">creative commons</a><br>
+      Universidad de Antioquia
+          <br>
+          2010
+    </p>
+</div>
+</body>
+<!-- InstanceEnd -->

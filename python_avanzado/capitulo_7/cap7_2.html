@@ -1,0 +1,117 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><!-- InstanceBegin template="/Templates/plantilla.dwt" codeOutsideHTMLIsLocked="false" -->
+<head>
+<!-- InstanceBeginEditable name="doctitle" -->
+<title>Algoritmos y Programación - Capítulo VII - Comandos de entrada de datos</title>
+<!-- InstanceEndEditable --> 
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<link rel="stylesheet" type="text/css" href="../estilos/estilos.css" />
+<meta name="description" content="Curso Algoritmos y Programación. Proyecto Open Course Ware de la Universidad de Antioquia" />
+<!-- InstanceBeginEditable name="head" --><!-- InstanceEndEditable -->
+</head>
+
+<body>
+<div class="cabezote_contenido">
+	<strong>Algoritmos y Programación</strong> - Facultad de Ingeniería - Universidad de Antioquia 
+</div>
+<div class="marco_general">
+  <div class="pit_body"> <!-- InstanceBeginEditable name="content_body" -->
+    <h1>Comandos de entrada de datos </h1>
+<div class="pit_bloque_autores">
+<ul>
+<li>Jaime A. Valencia V.</li>
+<li>Facultad de Ingeniería</li>
+<li>Universidad de Antioquia</li>
+</ul>
+</div>
+<p>(<a class="pit_enlace" href="../presentacion/referencias_bibliograficas.html#Wikibooks, 2011" target="_blank">Wikibooks, 2011</a>; <a class="pit_enlace" href="../presentacion/referencias_bibliograficas.html#Docs Python, 2011b" target="_blank">Docs Python, 2011b</a>; <a class="pit_enlace" href="../presentacion/referencias_bibliograficas.html#Penzilla, 2011" target="_blank">Penzilla, 2011</a>)</p>
+<p>El teclado en el ordenador es el primer elemento disponible para entrada de información y  los lenguajes de programación disponen de comando para esperar que el usuario ingrese algún dato antes de continuar el proceso.</p>
+<p>En Python se dispone de dos funciones para la entrada de información desde el teclado: los comandos raw_input() e input(). El comando raw_input() recibe la información siempre como una cadena de caracteres directamente desde el teclado y hace la pausa en el programa hasta cuando se ingresa totalmente la información terminada por la tecla de entrar ( 'enter').  El argumento de entrada en la función es un comentario que aparecerá en la pantalla antes del espacio de ingreso de datos. Veamos un ejemplo de su aplicación en el interface de Python (Python shell):</p>
+<div class="pit_codigo_anexo"><pre><code>
+&gt;&gt;&gt;dato1 = raw_input('Escriba un dato aqui: ')
+Escriba un dato aquí: TECLADO
+&gt;&gt;&gt;dato1
+'TECLADO'
+&gt;&gt;&gt;type(dato1)
+&lt;type 'str'&gt;
+&gt;&gt;&gt;</code></pre></div>
+<p>La primera línea define que se asignará en la variable dato1 lo que se escriba desde el teclado y aparecerá primero un mensaje diciendo <span class="pit_enfasis">Escriba un datos aquí:</span> para esperar la entrada del dato. Al escribir la palabra TECLADO, ésta se guardará en la variable tipo alfanumérica ( 'str' ) denominada dato1 como se muestra al usar la función <span class="pit_enfasis">type()</span>.</p>
+<p>Es importante recalcar que aún cuando se solicita un número, la función siempre interpretará la entrada como caracteres, tal como se muestra en el siguiente ejemplo:</p>
+<div class="pit_codigo_anexo"><pre><code>
+&gt;&gt;&gt;dato2 = raw_input('Escriba un numero: ')
+Escriba un numero: 6.2827
+&gt;&gt;&gt;dato2
+'6.2827'
+&gt;&gt;&gt;type(dato2)
+&lt;type 'str'&gt;
+&gt;&gt;&gt;dato2n=float(dato2)
+&gt;&gt;&gt;type(dato2n)
+&lt;type 'float'&gt;
+&gt;&gt;&gt;</code></pre></div>
+<p>La variable dato2 es una cadena de caracteres y no un número para realizar operaciones matemáticas. Si se requiere un número será necesario transformar la variable dato2, usando float() y obtener una nueva variable numérica dato2n como lo muestran las últimas líneas.</p>
+<p>Una opción alternativa que dispone Python es el comando <span class="pit_enfasis">input()</span>, el cual interpreta la información de entrada a un tipo de variable adecuado. Veamos el siguiente ejemplo:</p>
+<div class="pit_codigo_anexo"><pre><code>
+&gt;&gt;&gt;dato3 = input('Entre un numero entero : ')
+Entre un numero entero : 34
+&gt;&gt;&gt;dato3
+34
+&gt;&gt;&gt;type(dato3)
+&lt;type 'int'&gt;
+&gt;&gt;&gt;dato4 = input('Entre un numero real : ')
+Entre un numero real : 4.3421
+&gt;&gt;&gt;dato4
+4.3421
+&gt;&gt;&gt;type(dato4)
+&lt;type 'float'&gt;
+&gt;&gt;&gt;</code></pre></div>
+<p>Observe que dato3 y dato4 son variables de diferente tipo, la primera es de tipo entero ('int') y la segunda de tipo real ('float'). Este proceso de interpretación lo realiza directamente el comando antes de asignar el dato a la variable.</p>
+<p>El uso de la función <span class="pit_enfasis">input()</span> requiere especial atención cuando se requiere usar información de tipo alfanumérico o lógico, ya que puede presentar un error al ingreso de la información. Veamos estos dos casos para ilustrar el resultado:</p>
+<div class="pit_codigo_anexo"><pre><code>
+&gt;&gt;&gt;dato5 = input('Escriba Si o No : ')
+Escriba Si o No : si
+
+Traceback (most recent call last): 
+  File "&lt;pyshell#19>", line 1, in &lt;module&gt;
+  	dato5 = input('Escriba Si o No : ')
+  File "&lt;string>", line 1, in &lt;module&gt;
+NameError: name 'si' is not defined
+&gt;&gt;&gt;dato5 = input('Escriba Si o No : ')
+Escriba Si o No : 'si'
+&gt;&gt;&gt;dato5
+'si'
+&gt;&gt;&gt;type(dato5)
+&lt;type 'str'&gt;
+&gt;&gt;&gt;</code></pre></div>
+<p>Aquí en el primer intento aparece un mensaje de error informando que el nombre si no está definido (“name 'si' is not defined”), ya que el comando trató de interpretar si como un objeto y no encontró ninguna referencia de esa palabra. En la segunda opción se escribió entre comillas la palabra si ('si') y se interpretó como un dato tipo caracteres o alfanumérico.</p>
+<div class="pit_codigo_anexo"><pre><code>
+&gt;&gt;&gt;dato6 = input('Es true or false ? ')
+Es true or false ? true
+
+Traceback (most recent call last):
+  File "&lt;pyshell#23&gt;", line 1, in &lt;module&gt;
+	dato6 = input('Es true or false ? ')
+  File "&lt;string&gt;", line 1, in &lt;module&gt;
+NameError: name 'true' is not defined
+&gt;&gt;&gt;dato6 = input('Es true or false ? ')
+Es true or false ? True
+&gt;&gt;&gt;dato6
+True
+&gt;&gt;&gt;type(dato6)
+&lt;type 'bool'&gt;
+&gt;&gt;&gt;</code></pre></div>
+<p>Aquí también se presenta el mismo mensaje de error ya que el dato lógico True requiere ser escrito con una mayúscula inicial.</p>
+
+
+
+<!-- InstanceEndEditable --></div>
+</div>
+<div id="footer">
+	<img src="../estilos/imgs/Creative_commons.png" width="88" height="31" alt="Licencia">
+	<p>	Esta obra esta protegida bajo una licencia de <a href="../presentacion/licencia.html" target="licencia" onclick="window.open(this.href,this.target,'resizable=1,scrollbars=1,directories=,location=,menubar=,toolbar=,status=1,width=620,height=450');" title="Licencia">creative commons</a><br>
+      Universidad de Antioquia
+          <br>
+          2010
+    </p>
+</div>
+</body>
+<!-- InstanceEnd -->

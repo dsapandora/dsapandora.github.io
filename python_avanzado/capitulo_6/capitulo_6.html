@@ -1,0 +1,344 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><!-- InstanceBegin template="/Templates/plantilla.dwt" codeOutsideHTMLIsLocked="false" -->
+<head>
+<!-- InstanceBeginEditable name="doctitle" -->
+<title>Algoritmos y Programación - Capítulo VI - Arreglos, vectores y/o matrices</title>
+<!-- InstanceEndEditable --> 
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<link rel="stylesheet" type="text/css" href="../estilos/estilos.css" />
+<meta name="description" content="Curso Algoritmos y Programación. Proyecto Open Course Ware de la Universidad de Antioquia" />
+<!-- InstanceBeginEditable name="head" --><!-- InstanceEndEditable -->
+</head>
+
+<body>
+<div class="cabezote_contenido">
+	<strong>Algoritmos y Programación</strong> - Facultad de Ingeniería - Universidad de Antioquia 
+</div>
+<div class="marco_general">
+  <div class="pit_body"> <!-- InstanceBeginEditable name="content_body" --> 
+    <h1>Capítulo VI - Arreglos, vectores y/o matrices</h1>
+    <div class="div_intro"> 
+      <div class="pit_anexo_interno pit_bloque_imagen"><img class="pit_imagen" src="imagenes/6_arreglos_en_programacion.png" title="Arreglos de datos"> 
+        <div class="pit_bloque_piedeimagen"><span class="pit_etiqueta"><a class="pit_enlace" href="../presentacion/glosario.html#(GALEANO, 2011x)" target="_blank">(GALEANO, 
+          2011x)</a>.</span> Arreglos de datos</div>
+      </div>
+      <br class="pit_romper">
+      <p>En el desarrollo de aplicaciones de computador se requiere de diferentes 
+        formas para el manejo de datos e información. También es importante como 
+        se escribe de manera sencilla el código para procesar y acceder a los 
+        datos. </p>
+      <p>Los arreglos son variables especiales de las que disponen prácticamente 
+        todos los lenguajes de programación de diferentes formas para facilitar 
+        los procesos de almacenamiento y acceso de grupos de datos.</p>
+      <p>Se presentará el concepto de arreglos en computadores y se describirá 
+        en más detalle sus diferentes formas en el lenguaje Python.</p>
+      <h3>Objetivos de aprendizaje</h3>
+      <ul>
+        <li>Entender el concepto de arreglo en el ordenador.</li>
+        <li>Conocer los diferentes tipos de arreglos en Python.</li>
+        <li>Utilizar y generar los diferentes arreglos en Python.</li>
+        <li>Usar arreglos en la programación de funciones en Python.</li>
+      </ul>
+      <h3><a name="Contenido_Indice"></a>Subtemas del capítulo</h3>
+      <ul>
+        <li><a class="pit_enlace" href="#Concepto_general_arreglo">Concepto general 
+          de arreglo.</a></li>
+        <li><a class="pit_enlace" href="#Variable_tipo_lista">Variables tipo LISTA 
+          en Python.</a></li>
+        <li><a class="pit_enlace" href="#Variable_tipo_tupla">Variables tipo TUPLA 
+          en Python.</a></li>
+        <li><a class="pit_enlace" href="#Variable_tipo_diccionario">Variable tipo 
+          DICCIONARIO en Python.</a></li>
+        <li><a class="pit_enlace" href="#Variable_tipo_conjunto">Variable tipo 
+          CONJUNTO en Python.</a></li>
+        <li><a class="pit_enlace" href="#Funciones_argumentos_arreglos">Funciones 
+          con argumentos de arreglos.</a></li>
+      </ul>
+    </div>
+    <hr/>
+    <h2><a name="Concepto_general_arreglo"></a>Concepto general de arreglo</h2>
+    <p>Los arreglos en general son variables de asignación de datos en los lenguajes 
+      de programación que permiten adicionalmente guardar un grupo o conjunto 
+      de datos. Podemos imaginarlos como cajas donde podemos guardar un grupo 
+      de cosas, pero con la capacidad adicional de marcar cada una de las cosas 
+      dentro de la caja como muestra la Imagen (GALEANO, 2011y) (<a class="pit_enlace" href="../presentacion/referencias_bibliograficas.html#Van Tassel, 2004" target="_blank">Van 
+      Tassel, 2004</a>; <a class="pit_enlace" href="../presentacion/referencias_bibliograficas.html#Wikipedia, 2011m" target="_blank">Wikipedia, 2011m</a>; <a class="pit_enlace" href="../presentacion/referencias_bibliograficas.html#Lecky, 2007" target="_blank">Lecky, 
+      2007</a>).</p>
+    <div class="pit_anexo_interno pit_bloque_imagen"><img class="pit_imagen" src="imagenes/6_cajas.png" title="Cajas">
+      <div class="pit_bloque_piedeimagen"><span class="pit_etiqueta"><a class="pit_enlace" href="../presentacion/glosario.html#(GALEANO, 2011y)" target="_blank">(GALEANO, 
+        2011y)</a>.</span> Cajas</div>
+    </div>
+    <br class="pit_romper"/>
+    <p>En todos los lenguajes de programación se tiene una o varias maneras de 
+      denominar o definir cuándo una variable es de tipo arreglo y cómo se marcarán 
+      cada una de las cosas dentro de esa variable (<a class="pit_enlace" href="../presentacion/referencias_bibliograficas.html#Exforsys, 2011" target="_blank">Exforsys, 
+      2011</a>; <a class="pit_enlace" href="../presentacion/referencias_bibliograficas.html#MSDN, 2010" target="_blank">MSDN, 
+      2010</a>). El nombre de asignación dentro de la variable a cada cajón se 
+      denomina el índice, como se esquematiza en la Imagen (GALEANO, 2011z).</p>
+    <div class="pit_anexo_interno pit_bloque_imagen"><img class="pit_imagen" src="imagenes/6_variable_arreglo.png" title="Variable arreglo">
+      <div class="pit_bloque_piedeimagen"><span class="pit_etiqueta"><a class="pit_enlace" href="../presentacion/glosario.html#(GALEANO, 2011z)" target="_blank">(GALEANO, 
+        2011z)</a>.</span> Variable arreglo</div>
+    </div>
+    <br class="pit_romper"/>
+    <p>Se debe definir claramente en un programa o aplicación de computador cuando 
+      el tipo de variable que se requiere es un arreglo y cómo es la marcación 
+      interior o índice. Estos conceptos los abordaremos para el caso particular 
+      del lenguaje Python en las secciones siguientes.</p>
+    <p style="text-align: right;"><a class="pit_enlace" href="#Contenido_Indice">(subir 
+      <img alt="Subir" src="../estilos/imgs/subir.png" title="Subir" />)</a></p>
+    <hr/>
+    <h2><a name="Variable_tipo_lista"></a>Variables tipo LISTA en Python </h2>
+	<p>(<a class="pit_enlace" href="../presentacion/referencias_bibliograficas.html#Docs Python, 2011a" target="_blank">Docs Python, 2011a</a>)</p>
+    <p>En Python las listas son uno de los tipos de básicos de variables u objetos.  Para generar una lista basta hacer una asignación a un nombre de variable con los elementos dentro de corchetes cuadrados <strong> [ ]</strong>. Veamos un ejemplo en el intérprete de Python (Python shell) :</p>
+<div class="pit_codigo_anexo"><pre><code>
+&gt;&gt;&gt; L1 = [1, 2, 3, 4]
+&gt;&gt;&gt; type(L1)
+&lt;type 'list'>
+&gt;&gt;&gt; print L1
+[1, 2, 3, 4]
+&gt;&gt;&gt;
+</code></pre></div>
+<p>Se asigna al nombre L1 una lista con los datos 1, 2, 3, y 4. En Python este tipo de variable se denomina <strong>list</strong> y se puede llamar como una variable simplemente.</p>
+    <p><a class="pit_enlace" href="cap6_2.html" class="pit_enlace" name="ver_mas_2" target="_blank">Ver mas...</a></p>
+    <p style="text-align: right;"><a class="pit_enlace" href="#Contenido_Indice">(subir 
+      <img alt="Subir" src="../estilos/imgs/subir.png" title="Subir" />)</a></p>
+    <hr/>
+    <h2><a name="Variable_tipo_tupla"></a>Variables tipo TUPLA en Python</h2>
+        <p>La TUPLA es otro tipo de arreglo que dispone el Python. Esta variable está 
+      más cerca al concepto matemático de vector, puesto que en Python la tupla 
+      se maneja como una lista más cerrada porque no puede cambiar elementos individuales, 
+      en otras palabras, es inmutable según lo definen los manuales (<a class="pit_enlace" href="../presentacion/referencias_bibliograficas.html#Docs Python, 2011a" target="_blank">Docs 
+      Python, 2011a</a>). Veamos cómo se genera una tupla y esta característica 
+      en un ejemplo:</p>
+<div class="pit_codigo_anexo"><pre><code>
+&gt;&gt;&gt; t1 = 1, 3, 5
+&gt;&gt;&gt; t1
+(1, 3, 5)
+&gt;&gt;&gt; t2 = ('salud', 'dinero', 'amor', 1, 2, 3)
+&gt;&gt;&gt; t2
+('salud', 'dinero', 'amor', 1, 2, 3)
+&gt;&gt;&gt; t1[0]
+1
+&gt;&gt;&gt; t1[0]= 5
+
+Traceback (most recent call last):
+  File "&lt;pyshell#12&gt;", line 1
+	t1[0]= 5
+TypeError: 'tuple' object does not support item assignment
+&gt;&gt;&gt;
+</code></pre></div>
+<p>Se generan las tuplas t1 y t2, la primera solo separando elementos con comas y la segunda usando paréntesis para encerrar los elementos de la tupla. Los índices se usan igual a las listas, pero al intentar asignar la posición 0 de t1 aparece un error de asignación no soportada ('tuple' object does not support item assignment), es el concepto de inmutabilidad.</p>
+    <p><a href="cap6_3.html" class="pit_enlace" name="ver_mas_3" target="_blank">Ver mas...</a></p>
+    <p style="text-align: right;"><a class="pit_enlace" href="#Contenido_Indice">(subir 
+      <img alt="Subir" src="../estilos/imgs/subir.png" title="Subir" />)</a></p>
+    <hr/>
+    <h2><a name="Variable_tipo_diccionario"></a>Variable tipo DICCIONARIO en Python</h2>
+    <div class="pit_anexo_interno pit_bloque_imagen"><img class="pit_imagen" src="imagenes/6_arreglo_tipo_diccionario.png" title="Arreglo tipo diccionario">
+      <div class="pit_bloque_piedeimagen"><span class="pit_etiqueta"><a class="pit_enlace" href="../presentacion/glosario.html#(GALEANO, 2011aa)" target="_blank">(GALEANO, 
+        2011aa)</a>.</span> Arreglo tipo diccionario</div>
+    </div>
+    <br class="pit_romper">
+    <p>Un arreglo tipo diccionario (en inglés <strong>dictionary</strong>) lo podemos definir 
+      como una variable indexada libremente, ya que los índices no son números 
+      con un orden predefinido. En la Imagen (GALEANO, 2011aa) se esquematiza 
+      un diccionario como un conjunto de datos en cajones, con una clave especial 
+      cada cajón. Este tipo de arreglos también se conoce como memorias asociativas 
+      en otros lenguajes. En Python la restricción en las palabras claves de los 
+      diccionarios es que deben ser objetos inmutables, tales como números, caracteres 
+      o tuplas, y no se deben repetir en un mismo diccionario.</p>
+    <p>Para crear un diccionario se puede proceder como sigue:</p>
+<div class="pit_codigo_anexo"><pre><code>
+&gt;&gt;&gt; dic1 = {'carro1': 4745, 'carro2': 4139, 'carrop': 7892}
+&gt;&gt;&gt;dic1
+{'carro2': 4139, 'carro1': 4745, 'carrop': 7892}
+&gt;&gt;&gt;dic2 = dict([(1, 'carro1'), (2, 'carro2')])
+&gt;&gt;&gt;dic2
+{1: 'carro1', 2: 'carro2'}
+&gt;&gt;&gt;
+</code></pre></div>
+<p>Se muestran dos formas de generar un diccionario, la primera escribe entre 
+      corchetes redondos <strong>{ }</strong> las palabras claves y su dato respectivo separado 
+      por los dos puntos <strong>:</strong> . En el diccionario dic1 las claves son alfabéticas, 
+      mientras que en el diccionario dic2 las claves son numéricas.</p>
+    <div class="pit_anexo_interno pit_bloque_imagen"><img class="pit_imagen" src="imagenes/6_metodos_en_los_diccionarios.png" title="Métodos en los diccionarios"></div>
+    <br class="pit_romper"/>
+    <p>La Imagen anterior muestra los diferentes métodos que tienen los objetos 
+      tipo diccionario en Python para acceder a su información o realizar algún 
+      procedimiento específico. Por ejemplo, los métodos <strong>.viewvalues</strong> y <strong>.keys</strong> 
+      nos sirven para listar sus datos y palabras claves respectivas:</p>
+<div class="pit_codigo_anexo"> <pre><code>
+&gt;&gt;&gt; dic1
+{'carro2': 4139, 'carro1': 4745, 'carrop': 7892}
+&gt;&gt;&gt;dic2
+{1: 'carro1', 2: 'carro2'}
+&gt;&gt;&gt; dic1.viewvalues()
+dict_values([4139, 4745, 7892])
+&gt;&gt;&gt;dic1.keys()
+['carro2', 'carro1', 'carrop']
+&gt;&gt;&gt;dic2.keys()
+[1, 2]
+&gt;&gt;&gt;
+</code></pre></div>
+<p>Para acceder a cualquier dato de un diccionario se debe especificar su 
+      palabra índice o palabra clave, de forma similar a los arreglos tipo lista 
+      o tupla, por ejemplo:</p>
+<div class="pit_codigo_anexo"><pre><code>
+&gt;&gt;&gt;dic1['carro2']
+4139
+&gt;&gt;&gt;dic2[2]
+'carro2'
+&gt;&gt;&gt;
+</code></pre></div>
+    <p>Al utilizar estos arreglos se debe poner especial atención cuando se requiere 
+      realizar iteraciones con estas variables, ya que su principal información 
+      de iteración son las palabras claves. El siguiente ejemplo muestra como 
+      al usar el nombre de la variable <strong>dic1</strong> en un ciclo <strong>for</strong>, la iteración 
+      se hace con sus palabras claves; si se quiere acceder directamente a la 
+      palabra clave y su dato respectivo, debemos usar en el ciclo el método <strong>.iteritems()</strong> 
+      :</p>
+<div class="pit_codigo_anexo"><pre><code>
+&gt;&gt;&gt;for q in dic1:
+	print q
+carro2
+carro1
+carrop
+&gt;&gt;&gt;for p, q in dic1.iteritems():
+	print p, q
+
+carro2 4139
+carro1 4745
+carrop 7892
+&gt;&gt;&gt;
+</code></pre></div>
+    <p>Aquí el primer ciclo muestra sólo las palabras claves y el segundo, las 
+      claves y su dato respectivo.</p>
+    <p>Los diccionarios en Python disponen de una gran cantidad de funciones y 
+      aplicaciones que se irán trabajando más adelante.</p>
+    <p style="text-align: right;"><a class="pit_enlace" href="#Contenido_Indice">(subir 
+      <img alt="Subir" src="../estilos/imgs/subir.png" title="Subir" />)</a></p>
+    <hr/>
+    <h2><a name="Variable_tipo_conjunto"></a>Variable tipo CONJUNTO en Python</h2>
+    <p>En Python existe un tipo de arreglo denominado CONJUNTO (en inglés <strong>set</strong>). 
+      Este tipo de arreglo soporta operaciones matemáticas de la teoría de conjuntos 
+      y no permite duplicación de elementos. Para crear un arreglo tipo conjunto 
+      se escribe como sigue:</p>
+<div class="pit_codigo_anexo"><pre><code>
+&gt;&gt;&gt;digitos = [1,2,3,2,3,4,5,6,5,7,8,9,0,7,8,6,5,4,3,4,5,6,0]
+&gt;&gt;&gt;SetA = set(digitos)
+&gt;&gt;&gt;enteros = [12, 3, 4, 5,-3, -6, 19, 13, -5,7,8,17,-3]
+&gt;&gt;&gt;SetB = set(enteros)
+&gt;&gt;&gt;SetA
+set([0, 1, 2, 3, 4, 5, 6, 7, 8, 9])
+&gt;&gt;&gt;SetB
+set([3, 4, 5, 7, 8, 12, 13, 17, 19, -6, -5, -3])
+&gt;&gt;&gt;
+</code></pre></div>
+    <p>Los arreglos tipo conjunto soportan operaciones de la teoría de conjuntos, 
+      tales como unión, intersección, diferencia y pertenecía entre otros. Veamos 
+      cómo se usan estos operadores para conjuntos:</p>
+<div class="pit_codigo_anexo"><pre><code>
+&gt;&gt;&gt;LA = ['a', 'b', 'c', 'd', 'e', 'd', 'c', 'a', 'b', 'd', 'e', 'c']
+&gt;&gt;&gt;SetA = set(LA)
+&gt;&gt;&gt;print SetA
+set(['a', 'c', 'b', 'e', 'd'])
+&gt;&gt;&gt;LB = ['d','e','f','g','h','i','h','g','f','e','d','f','d','e','g','h']
+&gt;&gt;&gt;SetB = set(LB)
+&gt;&gt;&gt;print SetB
+set(['e', 'd', 'g', 'f', 'i', 'h'])
+&gt;&gt;&gt;SetA - SetB # diferencia de conjuntos
+set(['a', 'c', 'b'])
+&gt;&gt;&gt;SetA | SetB # union de conjuntos
+set(['a', 'c', 'b', 'e', 'd', 'g', 'f', 'i', 'h'])
+&gt;&gt;&gt;SetA & SetB # interseccion de cojuntos
+set(['e', 'd'])
+&gt;&gt;&gt;SetA ^ SetB # pertenecia exclusiva
+set(['a', 'c', 'b', 'g', 'f', 'i', 'h'])
+&gt;&gt;&gt;
+</code></pre></div>
+<strong>Para indagar sobre la pertenencia de un elemento a un conjunto se escribe</strong>
+<div class="pit_codigo_anexo"><pre><code>
+&gt;&gt;&gt;'a' in SetA
+&gt;&gt;&gt;True
+&gt;&gt;&gt;'o' in SetA
+False
+&gt;&gt;&gt;
+</code></pre></div>
+    <p>Los arreglos tipo conjunto disponen también de sus propios métodos y algunos 
+      de ellos son una alternativa de escritura para las operaciones de conjuntos. 
+      La siguiente imagen muestra todos los métodos que se tienen para los conjuntos 
+      y su utilización es similar a los arreglos anteriores.</p>
+    <div class="pit_anexo_interno pit_bloque_imagen"><img class="pit_imagen" src="imagenes/6_metodos_en_conjuntos.png" title="Métodos en conjunto"></div>
+    <br class="pit_romper"/>
+    <p style="text-align: right;"><a class="pit_enlace" href="#Contenido_Indice">(subir 
+      <img alt="Subir" src="../estilos/imgs/subir.png" title="Subir" />)</a></p>
+    <hr/>
+    <h2><a name="Funciones_argumentos_arreglos"></a>Funciones con argumentos de 
+      arreglos</h2>
+    <p>Cuando se programan funciónes en Python donde sus argumentos de entrada 
+      son arreglos, es posible usar los nombres de variables teniendo en cuenta 
+      su uso dentro de la función o especificar su variable con un asterisco (*nombre) 
+      delante de la variable, si es una lista o una tupla, o con dos asteriscos 
+      delante (**nombre) si se trata de aceptar los argumentos como un diccionario. 
+      Para el caso en que se requiera usar de los dos tipos, se debe tener en 
+      la secuencia de los argumentos primero las listas y luego los diccionarios. 
+      Veamos el siguiente ejemplo de una función con argumentos de arreglos, primero 
+      asumiendo nombres de variables directamente en los argumentos y luego con 
+      manejo especial:</p>
+<div class="pit_codigo_anexo"><pre><code>
+&gt;&gt;&gt;def arreglo1(p,e,A):
+	for k,q in A.iteritems():
+		print k, 'pesa ', p[q],' Kilos, y tiene ' ,e[q], 'años.'
+
+&gt;&gt;&gt;peso = [10.1, 23.5, 345.3]
+&gt;&gt;&gt; edad = [8, 7, 10]
+&gt;&gt;&gt;animales = {'gato': 0, 'perro': 1, 'vaca':2}
+&gt;&gt;&gt;arreglo1(peso, edad, animales)
+gato pesa  10.1  Kilos, y tiene  8 años.
+vaca pesa  345.3  Kilos, y tiene  10 años.
+perro pesa  23.5  Kilos, y tiene  7 años. 
+&gt;&gt;&gt;</code></pre></div>
+<p>Aquí se programó la función arreglo1() con los argumentos de entrada p, 
+      e y A que se manejan internamente según el tipo de variable. Observe que 
+      p y e deben ser listas o tuplas, mientras que A debe ser un diccionario 
+      para soportar el método <strong>.iteritems</strong>.</p>
+<div class="pit_codigo_anexo"><pre><code>
+&gt;&gt;&gt;def arreglo2(p,*e,**A):
+	for k,q in A.iteritems():
+		print k, 'pesa ', p[q],' Kilos, y tiene ' ,e[q], 'años.'
+
+&gt;&gt;&gt;arreglo2(peso, 8,7,10, gato=0, perro=1, vaca=2)
+gato pesa  10.1  Kilos, y tiene  8 años.
+vaca pesa  345.3  Kilos, y tiene  10 años.
+perro pesa  23.5  Kilos, y tiene  7 años. 
+&gt;&gt;&gt;
+</code></pre></div>
+<p>Aquí al usar los * y ** en las variables e y A, se asume un comportamiento 
+      especial para hacer el llamado de la función. La variable peso se asume 
+      como un argumento, luego los valores 7, 8 y 10 se leen como el argumento 
+      e, y al final el nombre de la información se asume como palabra clave con 
+      su respectivo dato en una variable A tipo diccionario.</p>
+    <p style="text-align: right;"><a class="pit_enlace" href="#Contenido_Indice">(subir 
+      <img alt="Subir" src="../estilos/imgs/subir.png" title="Subir" />)</a></p>
+	 <hr/>
+<p class="pit_nota"><span class="pit_etiqueta">Nota:</span> A continuación se encuentran las referencias bibliográficas utilizadas para la construcción de los contenidos de este capítulo:
+<ul>
+      <li>(<a class="pit_enlace" href="../presentacion/referencias_bibliograficas.html#Well House, 2011" target="_blank">Well House, 2011</a>)</li>
+      <li>(<a class="pit_enlace" href="../presentacion/referencias_bibliograficas.html#Baldwin, 2011" target="_blank">Baldwin, 2011</a>)</li>
+</ul>
+</p>
+    <div style="text-align:center;"> <a class="pit_enlace" href="../capitulo_5/capitulo_5.html">Anterior<img alt="Anterior" src="../estilos/imgs/anterior.png"></a> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      <a class="pit_enlace" href="../index.html">Inicio<img alt="Inicio" src="../estilos/imgs/home.png" title="Inicio" /></a> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      <a class="pit_enlace" href="../capitulo_7/capitulo_7.html">Siguiente<img alt="Siguiente" src="../estilos/imgs/siguiente.png"></a></div>
+
+    <!-- InstanceEndEditable --></div>
+</div>
+<div id="footer">
+	<img src="../estilos/imgs/Creative_commons.png" width="88" height="31" alt="Licencia">
+	<p>	Esta obra esta protegida bajo una licencia de <a href="../presentacion/licencia.html" target="licencia" onclick="window.open(this.href,this.target,'resizable=1,scrollbars=1,directories=,location=,menubar=,toolbar=,status=1,width=620,height=450');" title="Licencia">creative commons</a><br>
+      Universidad de Antioquia
+          <br>
+          2010
+    </p>
+</div>
+</body>
+<!-- InstanceEnd -->

@@ -1,0 +1,169 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><!-- InstanceBegin template="/Templates/plantilla.dwt" codeOutsideHTMLIsLocked="false" -->
+<head>
+<!-- InstanceBeginEditable name="doctitle" -->
+<title>Algoritmos y Programación - Capítulo I - Conocimiento del computador</title>
+<!-- InstanceEndEditable --> 
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<link rel="stylesheet" type="text/css" href="../estilos/estilos.css" />
+<meta name="description" content="Curso Algoritmos y Programación. Proyecto Open Course Ware de la Universidad de Antioquia" />
+<!-- InstanceBeginEditable name="head" --><!-- InstanceEndEditable -->
+</head>
+
+<body>
+<div class="cabezote_contenido">
+	<strong>Algoritmos y Programación</strong> - Facultad de Ingeniería - Universidad de Antioquia 
+</div>
+<div class="marco_general">
+  <div class="pit_body"> <!-- InstanceBeginEditable name="content_body" -->
+<h1>Capítulo I - Conocimiento del computador</h1>
+    <div class="div_intro"> 
+      <div class="pit_anexo_interno pit_bloque_imagen"><img class="pit_imagen" src="imagenes/1_claculadora_ti_55.JPG" title="Introducción"> 
+        <div class="pit_bloque_piedeimagen"><span class="pit_etiqueta"><a class="pit_enlace" href="../presentacion/glosario.html#(GALEANO, 2011b)" target="_blank">(GALEANO, 
+          2011b) </a></span>Calculadora programable</div>
+      </div>
+      <br class="pit_romper"/>
+      <p>En este capítulo se pretende contextualizar al futuro programador sobre 
+        los diferentes aspectos de esta compleja máquina que se conoce como computador 
+        u ordenador.</p>
+      <p>Partimos de la dimensión temporal o cronológica del computador con una 
+        breve historia de su evolución y cómo llegó a nuestro medio académico 
+        local este desarrollo tecnológico; luego se discutirán algunos conceptos 
+        de fundamental interés y relacionados con aspectos tecnológicos, tanto 
+        de su electrónica (en inglés se refiere a <strong>hardware</strong>) como 
+        de aspectos de programación (en inglés se refiere a <strong>software</strong>).</p>
+      <p>En el tema de sistemas numéricos se toca la relación entre el sistema 
+        numérico que usamos como humanos y el sistema binario que requiere la 
+        máquina, dando elementos que permitan la comprensión de los diferentes 
+        tipos de información básica que se utilizan en los ordenadores digitales.Conceptos 
+        como lo que es un BIT o cómo se representan las letras o números en el 
+        computador se aborda de forma simplificada, pero tratando de ser lo más 
+        profundo posible y necesario que se requiere en programación.</p>
+      <p>En la sección de partes funcionales se presentan aspectos relacionados 
+        con las partes electrónicas de los computadores con la intención de plantear 
+        un modelo funcional del computador sin discutir detalles de su ingeniería 
+        electrónica interna. Esta sección está relacionada con el <strong>hardware</strong>.</p>
+      <p>Por último, la sección sobre programas trabaja el tema relacionado con 
+        el <strong>software</strong>; plantea la diferencia entre los lenguajes 
+        de programación y las diferentes aplicaciones, contextualizando al futuro 
+        programador sobre las diferentes herramientas de programación que se utilizan.</p>
+      <h3>Objetivos de aprendizaje</h3>
+      <ul>
+        <li>Conocer elementos históricos de la evolución de los computadores.</li>
+        <li>Comprender las diferencias entre el sistema numérico humano y el del 
+          computador.</li>
+        <li>Entender las diferentes unidades de almacenamiento y su utilización 
+          según el tipo de información.</li>
+        <li>Entender las partes funcionales del ordenador.</li>
+        <li>Identificar las diferentes herramientas de programación de computadores.</li>
+      </ul>
+      <h3><a name="Contenido_Indice"></a>Subtemas del capítulo</h3>
+      <ul>
+        <li><a class="pit_enlace" href="#Breve_historia_computador">Breve historia 
+          del computador. </a></li>
+        <li><a class="pit_enlace" href="#Sistemas_numericos">Sistemas numéricos 
+          (decimal, binario, octal, hexadecimal).</a></li>
+        <li><a class="pit_enlace" href="#Unidades_almacenamiento_informacion">Unidades 
+          de almacenamiento de información.</a></li>
+        <li><a class="pit_enlace" href="#Partes_funcionales">Partes funcionales 
+          del computador .</a></li>
+        <li><a class="pit_enlace" href="#Conocimiento_computador">Conocimiento 
+          del computador.</a></li>
+        <li><a class="pit_enlace" href="#Programas_aplicaciones">Programas y aplicaciones.</a></li>
+      </ul>
+    </div>
+<hr/>
+<h2><a name="Breve_historia_computador"></a>Breve historia del computador</h2>
+<p>En este capítulo, más que hacer una recopilación histórica de la evolución del computador, de lo cual existe una gran cantidad de información almacenada en red, prefiero contar un poco algunas anécdotas sobre lo que he conocido del computador y enmarcarlo en la evolución histórica de este fascinante aparato.</p>
+  <p><a href="cap1_1.html" class="pit_enlace" name="ver_mas_1" target="_blank">Ver mas...</a></p>
+  <p style="text-align: right;"><a class="pit_enlace" href="#Contenido_Indice">(subir <img alt="Subir" src="../estilos/imgs/subir.png" title="Subir" />)</a></p>
+<hr/>
+<h2><a name="Sistemas_numericos"></a>Sistemas numéricos (decimal, binario, octal, hexadecimal)</h2>
+    <p>Como parte del mundo occidental, desde hace ya bastantes años nos hemos 
+      acostumbrado a representar los números con el denominado sistema decimal, 
+      pero realmente existen muchas formas de representar los números. Existen 
+      referencias de 1500 A.C.(<a class="pit_enlace" href="../presentacion/referencias_bibliograficas.html#Wikipedia, 2011a" target="_blank">Wikipedia, 
+      2011a</a>) del uso de números y en la actualidad se tiene ya un sistema 
+      numérico muy bien fundamentado y clasificado (<a class="pit_enlace" href="../presentacion/referencias_bibliograficas.html#Wikipedia, 2011b" target="_blank">Wikipedia, 
+      2011b</a>; <a class="pit_enlace" href="../presentacion/referencias_bibliograficas.html#Wikipedia, 2011c" target="_blank">Wikipedia, 
+      2011c</a>). </p>
+<p>En esta sección no trabajaremos los aspectos teóricos de lo que es un campo numérico o un sistema numérico, tan sólo la forma cómo podemos representar un mismo número usando diferentes sistemas, en particular, el sistema decimal y el sistema binario, el cual es de vital importancia en el tema de los computares porque toda la información que se procesa en estas maquinas tiene en última instancia que representarse con un sistema binario. El uso del sistema binario obedece a aspectos de construcción de los computadores, ya que en sistemas electrónicos se hace más fácil distinguir entre 2 niveles de voltaje, corriente, magnetización, etc.</p>
+    <p><a href="cap1_2.html" class="pit_enlace" name="ver_mas_2" target="_blank">Ver mas...</a></p>
+	<p style="text-align: right;"><a class="pit_enlace" href="#Contenido_Indice">(subir <img alt="Subir" src="../estilos/imgs/subir.png" title="Subir" />)</a></p>
+	<hr/>
+<h2><a name="Unidades_almacenamiento_informacion"></a>Unidades de almacenamiento de información</h2>
+<p>En un computador u ordenador no sólo se almacenan números, también se puede almacenar todo tipo de información, pero se requiere definir cómo se transforma esa información a unidades básicas de almacenamiento en el computador.</p>
+    <p>Es entonces importante partir de lo que significa unidad básica de almacenamiento, 
+      la cual denominaremos con la palabra <em>BIT</em>, la cual se acuñó desde 
+      1947 como una contracción de las palabras en inglés <strong>binary digit</strong> 
+      (<a class="pit_enlace" href="../presentacion/referencias_bibliograficas.html#Wikipedia, 2011d" target="_blank">Wikipedia, 
+      2011d</a>). Un <em>BIT</em> (<a class="pit_enlace" href="../presentacion/referencias_bibliograficas.html#Masadelante, 2011" target="_blank">Masadelante.com, 
+      2011</a>) es una posición de memoria que sólo puede tomar dos valores (binario); 
+      originalmente cuando se trabajaba con tarjetas, esa información era si la 
+      tarjeta tenía una perforación o no en una posición determinada. Por tanto, 
+      el <em>BIT</em> puede tener diferentes representaciones según el sistema 
+      físico que se utiliza para almacenar la información, pero en abstracto es 
+      sólo un dígito binario, 0 o 1.</p>
+<p>Otra unidad de información a la que se hace alusión es el <em>BYTE</em>, el cual es un arreglo ponderado de 8 <em>BIT</em>. Su aparición obedece más a necesidades en la construcción de los computadores y lo impuso la IBM desde inicios de la década del 60.  Esta unidad de almacenamiento está relacionada con la codificación de los caracteres del alfabeto y otros que se utilizan para las operaciones, los lenguajes de programación o sistemas operativos. Ejemplo de este tipo de tablas son el código <em>ASCII</em> y el <em>UTF-8</em>. Con un <em>BYTE</em> es posible representar hasta 256 (2<sup>8</sup>) caracteres diferentes, ya que ese es el máximo número posible de combinaciones de los 8 <em>BIT</em>.</p>
+<p>Una <em>PALABRA</em> (en inglés <strong>word</strong>) es una unidad que depende más del equipo electrónico y no es un número fijo de <em>BIT.</em> Sin embargo una <em>PALABRA</em> generalmente es un múltiplo de un <em>BYTE</em>, así se tienen procesadores de un <em>BYTE</em>, de 2<em>BYTE</em> o 16 <em>BIT</em>, de 4 <em>BYTE</em> o 32 <em>BIT</em> y de 8 <em>BYTE</em> o 64 <em>BIT</em>.  </p>
+<p>El último tipo de unidad de almacenamiento que consideraremos es el <em>ARCHIVO</em>,  aunque en otros documentos se habla también de registros, campos, bases de datos, etc. Todos estos conceptos adicionales los podemos incluir en la unidad de <em>ARCHIVO</em>, ya que es una unidad bastante flexible y depende del tipo de información y del programa que accesa y manipula el <em>ARCHIVO</em>.  </p>
+<p>El <em>ARCHIVO</em> es la unidad básica que manipulan los sistemas operativos y su estructura y número de <em>BIT</em> que puede tener es bastante variable. Como ejemplo se pueden tener archivos de música, de imágenes, de videos, de programas, de texto solamente, de texto con formatos, de bases de datos que suelen dividirse en campos de información, etc.</p>
+<p>Otras unidades de almacenamiento, como <em>MegaBYTE</em>, <em>KiloBYTE</em>, <em>GigaBYTE</em>, etc., con las que se define la capacidad de almacenamiento están definidos como múltiplos del <em>BYTE</em> y el prefijo define la potencia de 10 y al número de potencia de 2 más cercano a la potencia del prefijo, en otras palabras un <em>KiloBYTE</em> no es exactamente 10<sup>3</sup> <em>BYTE</em>.</p>
+<p style="text-align: right;"><a class="pit_enlace" href="#Contenido_Indice">(subir <img alt="Subir" src="../estilos/imgs/subir.png" title="Subir" />)</a></p>
+<hr/>
+<h2><a name="Partes_funcionales"></a>Partes funcionales del computador</h2>
+<div class="pit_anexo_interno pit_bloque_imagen"><img class="pit_imagen" title="Arquitectura de un computador" src="imagenes/1_esquema_arquitectura_de_un_computador.png">
+      <div class="pit_bloque_piedeimagen"><span class="pit_etiqueta"><a class="pit_enlace" href="../presentacion/glosario.html#(GALEANO, 2011e)" target="_blank">(GALEANO, 
+        2011e)</a> </span>Esquema de arquitectura de un computador u ordenador 
+        (<a class="pit_enlace" href="../presentacion/referencias_bibliograficas.html#Wikipedia, 2011e" target="_blank">Wikipedia, 
+        2011e</a>; <a class="pit_enlace" href="../presentacion/referencias_bibliograficas.html#Wikipedia, 2011f" target="_blank">Wikipedia, 
+        2011f</a>)</div>
+</div>
+<br class="pit_romper">
+<p>Esta sección está relacionada con lo que se conoce como arquitectura del computador que fue definida por el matemático John von Neumann,  considerado como el primer científico en computación.  </p>
+<p>Es posible definir y clasificar de manera diferente las partes funcionales de un computador, ya que dependen del diseño específico. Como ejemplo podemos comentar que en los primeros computadores personales, la unidad de procesamiento matemático era un circuito integrado aparte y más tarde se integro a circuito integrado de la unidad de procesamiento (o CPU de las siglas en ingles <strong>Control Processing Unit</strong>).</p>
+    <p><a href="cap1_4.html" class="pit_enlace" name="ver_mas_4" target="_blank">Ver mas...</a></p>
+	<p style="text-align: right;"><a class="pit_enlace" href="#Contenido_Indice">(subir <img alt="Subir" src="../estilos/imgs/subir.png" title="Subir" />)</a></p>
+<hr/>
+<h2><a name="Conocimiento_computador"></a>Conocimiento del computador</h2>
+<div class="pit_anexo_interno pit_bloque_imagen"><img class="pit_imagen" src="imagenes/1_clasificacion_de_tipo_de_datos.png" title="Clasificación de tipos de datos"><div class="pit_bloque_piedeimagen"><span class="pit_etiqueta"><a class="pit_enlace" href="../presentacion/glosario.html#(GALEANO, 2011f)" target="_blank">(GALEANO, 2011f)</a></span> Clasificación de tipos de datos</div></div>
+<br class="pit_romper"/>
+<h3>Tipos de información</h3>
+    <p>En programación de computadores podemos definir como tipo de información una 
+      unidad básica de datos que se procesa o se almacena para una actividad en 
+      el computador (<a class="pit_enlace" href="../presentacion/referencias_bibliograficas.html#Wikipedia, 2011g" target="_blank">Wikipedia, 
+      2011g</a>). </p>
+<p>La imagen (GALEANO, 2011f) esquematiza los diferentes tipos de datos. En primera instancia podemos distinguir los que denominamos datos base, que son en términos generales los tipos básicos que se manejan en buena parte de los lenguajes de programación. Los tipos base son los datos lógicos, los de caracteres y los numéricos.  </p> 
+	<p><a href="cap1_5.html" class="pit_enlace" name="ver_mas_5" target="_blank">Ver mas...</a></p>	
+	<p style="text-align: right;"><a class="pit_enlace" href="#Contenido_Indice">(subir <img alt="Subir" src="../estilos/imgs/subir.png" title="Subir" />)</a></p>
+<hr/>
+<h2><a name="Programas_aplicaciones"></a>Programas y aplicaciones</h2>
+    <p>El ordenador o computador es una máquina multifuncional; podemos atrevernos 
+      a decir que se puede programar para realizar cualquier tipo de actividades 
+      aún tan complejas como las que realiza un ser humano, basta sólo con adicionarles 
+      los elementos sensores y motrices apropiados. Los ROBOTS son un ejemplo 
+      ya real en el desarrollo tecnológico de los computadores; ya se presentan 
+      muchos videos demostrando sus habilidades tales como los de las referencias 
+      (<a class="pit_enlace" href="../presentacion/referencias_bibliograficas.html#Youtube, 2011a" target="_blank">YouTube, 
+      2011a</a>; <a class="pit_enlace" href="../presentacion/referencias_bibliograficas.html#Youtube, 2011b" target="_blank">YouTube 
+      2011b</a>;<a class="pit_enlace" href="../presentacion/referencias_bibliograficas.html#Youtube, 2011c" target="_blank"> YouTube 
+      2011c</a>). Sin embargo, es más lo que la ciencia ficción ha mostrado que 
+      lo que se ha logrado.</p>
+    <p><a href="cap1_6.html" class="pit_enlace" name="ver_mas_6" target="_blank">Ver mas...</a></p>
+<p style="text-align: right;"><a class="pit_enlace" href="#Contenido_Indice">(subir <img alt="Subir" src="../estilos/imgs/subir.png" title="Subir" />)</a></p>
+<div style="text-align:center;"> 
+	  <a class="pit_enlace" href="../index.html">Inicio<img alt="Inicio" src="../estilos/imgs/home.png" title="Inicio" /></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a class="pit_enlace" href="../capitulo_2/capitulo_2.html">Siguiente<img alt="Siguiente" src="../estilos/imgs/siguiente.png"></a></div>	
+
+
+<!-- InstanceEndEditable --></div>
+</div>
+<div id="footer">
+	<img src="../estilos/imgs/Creative_commons.png" width="88" height="31" alt="Licencia">
+	<p>	Esta obra esta protegida bajo una licencia de <a href="../presentacion/licencia.html" target="licencia" onclick="window.open(this.href,this.target,'resizable=1,scrollbars=1,directories=,location=,menubar=,toolbar=,status=1,width=620,height=450');" title="Licencia">creative commons</a><br>
+      Universidad de Antioquia
+          <br>
+          2010
+    </p>
+</div>
+</body>
+<!-- InstanceEnd -->

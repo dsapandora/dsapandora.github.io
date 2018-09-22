@@ -1,0 +1,138 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><!-- InstanceBegin template="/Templates/plantilla.dwt" codeOutsideHTMLIsLocked="false" -->
+<head>
+<!-- InstanceBeginEditable name="doctitle" -->
+<title>Algoritmos y Programación - Capítulo V - Programación de objetos Python</title>
+<!-- InstanceEndEditable --> 
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<link rel="stylesheet" type="text/css" href="../estilos/estilos.css" />
+<meta name="description" content="Curso Algoritmos y Programación. Proyecto Open Course Ware de la Universidad de Antioquia" />
+<!-- InstanceBeginEditable name="head" --><!-- InstanceEndEditable -->
+</head>
+
+<body>
+<div class="cabezote_contenido">
+	<strong>Algoritmos y Programación</strong> - Facultad de Ingeniería - Universidad de Antioquia 
+</div>
+<div class="marco_general">
+  <div class="pit_body"> <!-- InstanceBeginEditable name="content_body" -->
+<h1><a name="Programacion_objetos_Python"></a>Programación de objetos en PYTHON</h1>
+<div class="pit_bloque_autores">
+<ul>
+<li>Jaime A. Valencia V.</li>
+<li>Facultad de Ingeniería</li>
+<li>Universidad de Antioquia</li>
+</ul>
+</div>
+<p>El lenguaje PYTHON dispone de herramientas para la programación orientada a objetos. Estas herramientas son elementos adicionales de fraccionamiento o modularización y complementan lo presentado en el capítulo IV. En sí cuando asignamos una variable, esta ya es un objeto, puesto que se dispone de unas funciones internas  o métodos que permiten realizar procesos específicos con esa variable. Por ejemplo, al asignar una variable de número complejo en el interface (python shell):</p>
+<div class="pit_codigo_anexo"><pre><code>>>> c = 2 + 5j</code></pre></div>
+<p>Podemos consultar al programa el tipo de dato que es c usando la función interna type() :</p>
+<div class="pit_codigo_anexo"><pre><code>
+&gt;&gt;&gt; type(c)
+&lt;type 'complex'&gt;
+</code></pre></div>
+<p>A su vez, <em>c</em> dispone de unas funciones propias por ser en sí un objeto de tipo <strong>complex</strong> que pueden ser usadas escribiendo su nombre seguido de un punto y el respectivo método:</p>
+<div class="pit_codigo_anexo"><pre><code>
+&gt;&gt;&gt; c.real
+2.0
+&gt;&gt;&gt; c.imag
+5.0
+&gt;&gt;&gt;c.conjugate
+&lt;built-in method conjugate of complex object at 0x02ABA6B0&gt;
+&gt;&gt;&gt; c.conjugate()
+(2-5j)
+&gt;&gt;&gt; 
+</code></pre></div>
+<p>Los métodos .real, .imag  y .conjugate() estarán disponibles con la acción de asignar a c un número complejo. En otras palabras, c no es sólo una VARIABLE en python, es un <strong>OBJETO</strong>.</p>
+<p>Para la creación de un nuevo objeto en Python se usa la palabra clave 'class' seguida del nombre propio que se le da al objeto y debajo se programarán sus características y métodos específicos. Veamos un primer ejemplo:</p>
+<div class="pit_anexo_interno pit_bloque_imagen"><img class="pit_imagen" src="imagenes/5_ejemplo_creacion_objeto.png" title="Ejemplo creación de un objeto"></div>
+<br class="pit_romper"/>
+<p>Este código crea un nuevo tipo o clase denominado  Myobj1 con dos variables de entrada i, j y con dos métodos propios que se programan usando la estructura de función y con la palabra clave 'def'. La primera función con el nombre __init__ es denominada un constructor y se requiere para inicializar un objeto. La palabra 'self' se usa para denominar las variables propias y no es exactamente una palabra clave, pero suele usarse por convención en la programación. Esta clase ya programada permite crear objetos mediante asignación directa así:</p>
+<div class="pit_codigo_anexo"><pre><code>
+&gt;&gt;&gt; o1 = Myobj1(3,4)
+&gt;&gt;&gt; o1.i
+3
+&gt;&gt;&gt; o1.j
+4
+&gt;&gt;&gt; o1.muestre()
+Myobj1: i=  3  j=  4
+&gt;&gt;&gt; o1.saludo()
+Hola, soy un Objeto
+Puedes usar mis Atributos y Métodos
+</code></pre></div>
+<p>Con la clase creada de nombre Myobj1, podemos hacer una asignación a la variable o1, la cual será una instancia (en inglés se denomina 'instance') de la clase original con argumentos de entrada 3 y 4, o simplemente un nuevo objeto creado de la clase Myobj1. La instancia o1 hereda los atributos y métodos del objeto original, los cuales se invocan con un punto intermedio como muestra el ejemplo. </p>
+<p>También con la clase Myobj1 podemos usar argumentos de entrada de diferente tipo para crear nuevos objetos, lo cual significa que cumple con el concepto de polimorfismo en programación. Como ejemplo se puede crear una nueva instancia o2 con argumentos de entrada de otro tipo:</p>
+<div class="pit_codigo_anexo"><pre><code>
+&gt;&gt;&gt;o2 = Myobj1( 1.2, 'help')
+&gt;&gt;&gt; o2.i
+1.2
+&gt;&gt;&gt; o2.j
+'help'
+&gt;&gt;&gt; o2.muestre()
+Myobj1: i=  1.2  j=  help
+&gt;&gt;&gt; o2.saludo()
+Hola, soy un Objeto
+Puedes usar mis Atributos y Metodos
+&gt;&gt;&gt;
+</code></pre></div>
+<p>Aquí los argumentos de entrada son de tipo punto flotante y de caracteres. Observe que los atributos y métodos funcionan igualmente.</p>
+<p>Otro aspecto importante es que podemos crear nuevas clases a partir de clases ya existentes, las cuales se denominan subclases. Estas subclases heredan los atributos y métodos de la clase base. Veamos el siguiente ejemplo de la creación de una subclase:</p>
+<div class="pit_anexo_interno pit_bloque_imagen"><img class="pit_imagen" src="imagenes/5_ejemplo_subclases.png" title="Ejemplo subclases"></div>
+<br class="pit_romper"/>
+<p>En este código, después de la palabra clave 'class' viene el nombre de esta subclase  MySobj1 y entre paréntesis está el nombre de la clase base  Myobj1. En el constructor de inicio, llama el inicio de la clase base para asignar los dos primeros argumentos y luego se asigna el tercer argumento. Así queda la subclase con tres atributos, dos heredados i, j y su nuevo definido como q. La nueva subclase define dos métodos SUBmuestre y SUBsaluda, además de heredar los métodos de la clase base saludo y muestre. El nuevo método SUBsaluda tiene como argumento opcional de entrada el nombre para hacer un saludo más personalizado. Veamos la creación de un nuevo objeto usando esta subclase y exploremos sus atributos y métodos:</p>
+<div class="pit_codigo_anexo"><pre><code>
+&gt;&gt;&gt; o3 = MySobj1(1, 2, 3)
+&gt;&gt;&gt; o3.i
+1
+&gt;&gt;&gt; o3.j
+2
+&gt;&gt;&gt; o3.muestre()
+Myobj1: i=  1  j=  2
+&gt;&gt;&gt; o3.saludo()
+Hola, soy un Objeto
+Puedes usar mis Atributos y Metodos
+&gt;&gt;&gt; o3.q
+3
+&gt;&gt;&gt; o3.SUBmuestre()
+MySobj1: i=  1  j=  2  q=  3
+&gt;&gt;&gt; o3.SUBsaluda()
+Hola,  Fulano
+Soy una SUBCLASE de Myobj1
+&gt;&gt;&gt; o3.SUBsaluda('Andres')
+Hola,  Andres
+Soy una SUBCLASE de Myobj1
+</code></pre></div>
+<p>El nuevo objeto creado o3 a partir de la subclase  MySobj1 hereda los atributos i, j y los métodos muestre, saludo de la clase base Myobj1. Además cuenta con un nuevo atributo q y dos nuevos métodos SUBmuestre, SUBsaluda de la definición de la subclase. </p>
+<p>El siguiente ejemplo muestra un nuevo constructor en las clases, el cual permite que el objeto definido con esta clase responda con un valor calculado como en una función. Este código define un polinomio cuadrático con sus coeficientes definidos por el usuario si desea, o se asignaran por el código:</p>
+<div class="pit_anexo_interno pit_bloque_imagen"><img class="pit_imagen" src="imagenes/5_polinomio_cuadratico.png" title="Ejemplo polinomio cuadrático"></div>
+<br class="pit_romper"/>
+<p>Este ejemplo muestra el constructor de inicialización __init__ que define los coeficientes del polinomio cuadrático, ao, a1 y a2. Cuando se crea un objeto a partir de esta clase, se puede especificar los coeficientes del polinomio, o la clase asignará  al objeto ao=-1, a1=0, a2=1.  El constructor __call__ define la variable x como nuevo argumento de entrada y el cálculo del polinomio en x, que se asigna a la variable y para ser devuelta al ambiente del programa. Adicionalmente se cuenta con un método denominado  myroots, el cual calcula las raíces del polinomio y las presenta en pantalla usando una función para el cálculo de raíces cuadradas SQRT() que es importada del módulo de matemáticas MATH.</p>
+<p>Con esta clase de  PnomioC podemos crear nuevos objetos de polinomios con los coeficientes que se deseen y será posible evaluar el polinomio en cualquier valor  de la siguiente manera:</p>
+<div class="pit_codigo_anexo"><pre><code>
+&gt;&gt;&gt; f1 = PnomioC()
+&gt;&gt;&gt; f1.myroots()
+Las raíces del polinomio cuadrático
+( 1.0 )X**2 + ( 0.0 )X + ( -1.0 )
+ son :  1.0  y  -1.0
+&gt;&gt;&gt; z = f1(1)
+&gt;&gt;&gt; z
+0.0
+&gt;&gt;&gt; z = f1(0)
+&gt;&gt;&gt; z
+-1.0
+&gt;&gt;&gt; 
+</code></pre></div>
+<p>f1 se crea como un nuevo objeto de polinomio, el cual puede visualizarse con el método myroots y a su vez podemos evaluarlo como una función cualquiera y asignar su resultado a una nueva variable z. Esto último se logra con el constructor __call__ .</p>
+
+<!-- InstanceEndEditable --></div>
+</div>
+<div id="footer">
+	<img src="../estilos/imgs/Creative_commons.png" width="88" height="31" alt="Licencia">
+	<p>	Esta obra esta protegida bajo una licencia de <a href="../presentacion/licencia.html" target="licencia" onclick="window.open(this.href,this.target,'resizable=1,scrollbars=1,directories=,location=,menubar=,toolbar=,status=1,width=620,height=450');" title="Licencia">creative commons</a><br>
+      Universidad de Antioquia
+          <br>
+          2010
+    </p>
+</div>
+</body>
+<!-- InstanceEnd -->

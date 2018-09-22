@@ -1,0 +1,128 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><!-- InstanceBegin template="/Templates/plantilla.dwt" codeOutsideHTMLIsLocked="false" -->
+<head>
+<!-- InstanceBeginEditable name="doctitle" -->
+<title>Algoritmos y Programación - Capítulo VI - Variables tipo TUPLA en Python</title>
+<!-- InstanceEndEditable --> 
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<link rel="stylesheet" type="text/css" href="../estilos/estilos.css" />
+<meta name="description" content="Curso Algoritmos y Programación. Proyecto Open Course Ware de la Universidad de Antioquia" />
+<!-- InstanceBeginEditable name="head" --><!-- InstanceEndEditable -->
+</head>
+
+<body>
+<div class="cabezote_contenido">
+	<strong>Algoritmos y Programación</strong> - Facultad de Ingeniería - Universidad de Antioquia 
+</div>
+<div class="marco_general">
+  <div class="pit_body"> <!-- InstanceBeginEditable name="content_body" -->
+<h1>Variables tipo TUPLA en Python</h1>
+<div class="pit_bloque_autores">
+<ul>
+<li>Jaime A. Valencia V.</li>
+<li>Facultad de Ingeniería</li>
+<li>Universidad de Antioquia</li>
+</ul>
+</div>
+    <p>La TUPLA es otro tipo de arreglo que dispone el Python. Esta variable está 
+      más cerca al concepto matemático de vector, puesto que en Python la tupla 
+      se maneja como una lista más cerrada porque no puede cambiar elementos individuales, 
+      en otras palabras, es inmutable según lo definen los manuales (<a class="pit_enlace" href="../presentacion/referencias_bibliograficas.html#Docs Python, 2011a" target="_blank">Docs 
+      Python, 2011a</a>). Veamos cómo se genera una tupla y esta característica 
+      en un ejemplo:</p>
+<div class="pit_codigo_anexo"><pre><code>
+&gt;&gt;&gt; t1 = 1, 3, 5
+&gt;&gt;&gt; t1
+(1, 3, 5)
+&gt;&gt;&gt; t2 = ('salud', 'dinero', 'amor', 1, 2, 3)
+&gt;&gt;&gt; t2
+('salud', 'dinero', 'amor', 1, 2, 3)
+&gt;&gt;&gt; t1[0]
+1
+&gt;&gt;&gt; t1[0]= 5
+
+Traceback (most recent call last):
+  File "&lt;pyshell#12&gt;", line 1
+	t1[0]= 5
+TypeError: 'tuple' object does not support item assignment
+&gt;&gt;&gt;
+</code></pre></div>
+<p>Se generan las tuplas t1 y t2, la primera solo separando elementos con comas y la segunda usando paréntesis para encerrar los elementos de la tupla. Los índices se usan igual a las listas, pero al intentar asignar la posición 0 de t1 aparece un error de asignación no soportada ('tuple' object does not support item assignment), es el concepto de inmutabilidad.</p>
+<p>También se muestra que es posible tener elementos de diferente tipo en las tuplas y de manera natural se pueden generar tuplas multidimensionales tal como se describió en las listas. Veamos el ejemplo:</p>
+<div class="pit_codigo_anexo"><pre><code>
+&gt;&gt;&gt; t3 = (t1, t2)&gt;
+&gt;&gt;&gt; t3
+((1, 3, 5), ('salud', 'dinero', 'amor', 1, 2, 3))
+&gt;&gt;&gt; t3[0][2]
+5
+&gt;&gt;&gt; t3[1][1]
+'dinero'
+&gt;&gt;&gt;
+</code></pre></div>
+<p>La tupla t3 contiene 2 tuplas y es posible acceder a cualquiera de los datos usando los índices multidimensionales de manera similar a las listas.</p>
+<p>Los arreglos tipo tupla cuentan con menos métodos que las listas, como lo muestra la siguiente imagen</p>
+<div class="pit_anexo_interno pit_bloque_imagen"><img class="pit_imagen" src="imagenes/6_metodos_en_tuplas.png" title="Métodos en tuplas"></div>
+<br class="pit_romper"/>
+<div class="pit_codigo_anexo"><pre><code>
+&gt;&gt;&gt; t3
+((1, 3, 5), ('salud', 'dinero', 'amor', 1, 2, 3))
+&gt;&gt;&gt; t3.count(1)
+0
+&gt;&gt;&gt; t2.count(1)
+&gt;&gt;&gt;1
+&gt;&gt;&gt; t3.count((1,2,3))
+0
+&gt;&gt;&gt; t3.count((1,3,5))
+1
+&gt;&gt;&gt; 
+</code></pre></div>
+<p>El método <strong>count</strong> en las tuplas funciona similar al caso de las listas, cuenta los elementos dentro de la tupla que son iguales al argumento. Pero se debe tener especial atención cuando tenemos elementos que son tuplas, ya que compara el elemento completo y no lo que tienen dentro, como en la línea en que se usa <strong>count</strong> para t3 con el argumento 1, la respuesta es 0. Cuando se usa el argumento (1,3,5) sí se encuentra un elemento en t3 igual y su respuesta es 1.</p>
+<div class="pit_codigo_anexo"><pre><code>
+&gt;&gt;&gt; t1
+(1, 3, 5)
+&gt;&gt;&gt; t1.index(1)
+0
+&gt;&gt;&gt; t2
+('salud', 'dinero', 'amor', 1, 2, 3)
+&gt;&gt;&gt; t2.index(1)
+3
+&gt;&gt;&gt; t3.index((1,3,5))
+0
+&gt;&gt;&gt;
+</code></pre></div>
+<p>El método <strong>index</strong> en las tuplas encuentra en qué índice está el elemento igual al argumento, aquí el elemento 1 está en el índice 0 de la tupla t1 y en el índice 3 de la tupla t2. De igual forma (1,3,5) está en el índice 0 de la tupla t3.</p>
+<p>La tuplas como son arreglos más cerrados, ya que no permiten cambiar directamente sus elementos, sí tienen un mecanismo de desempacado (en inglés <strong>unpack</strong>) mediante la asignación de sus elementos a variables independientes para cada elemento. Veamos en el siguiente ejemplo como asignar nuevas variables a cada elemento de la tupla:</p>
+<div class="pit_codigo_anexo"><pre><code>
+&gt;&gt;&gt;t3
+((1, 3, 5), ('salud', 'dinero', 'amor', 1, 2, 3))
+&gt;&gt;&gt; A,B = t3
+&gt;&gt;&gt; A
+(1, 3, 5)
+&gt;&gt;&gt; B
+('salud', 'dinero', 'amor', 1, 2, 3)
+&gt;&gt;&gt; a,b = A
+
+Traceback (most recent call last):
+  File "&lt;pyshell#9&gt;", line 1
+	a,b = A
+ValueError: too many values to unpack
+&gt;&gt;&gt; a,b,c = A
+&gt;&gt;&gt; print a,b,c
+1 3 5
+&gt;&gt;&gt;
+</code></pre></div>
+<p>Aquí los dos elementos de la tupla t3 se asignan a las variables A y B. Al intentar desempacar A devuelve un mensaje de error informando que existen más valores para desempacar (<strong>too many values to unpack</strong>) mostrando que se deben tener un número de variables igual a la cantidad de elementos para asignar, como en este caso con a, b y c.</p>
+
+
+<!-- InstanceEndEditable --></div>
+</div>
+<div id="footer">
+	<img src="../estilos/imgs/Creative_commons.png" width="88" height="31" alt="Licencia">
+	<p>	Esta obra esta protegida bajo una licencia de <a href="../presentacion/licencia.html" target="licencia" onclick="window.open(this.href,this.target,'resizable=1,scrollbars=1,directories=,location=,menubar=,toolbar=,status=1,width=620,height=450');" title="Licencia">creative commons</a><br>
+      Universidad de Antioquia
+          <br>
+          2010
+    </p>
+</div>
+</body>
+<!-- InstanceEnd -->

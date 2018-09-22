@@ -1,0 +1,317 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><!-- InstanceBegin template="/Templates/plantilla.dwt" codeOutsideHTMLIsLocked="false" -->
+<head>
+<!-- InstanceBeginEditable name="doctitle" -->
+<title>Algoritmos y Programación - Capítulo I - Sistemas numérciso(decimal, binario, octal, hexadecimal)</title>
+<!-- InstanceEndEditable --> 
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<link rel="stylesheet" type="text/css" href="../estilos/estilos.css" />
+<meta name="description" content="Curso Algoritmos y Programación. Proyecto Open Course Ware de la Universidad de Antioquia" />
+<!-- InstanceBeginEditable name="head" --><!-- InstanceEndEditable -->
+</head>
+
+<body>
+<div class="cabezote_contenido">
+	<strong>Algoritmos y Programación</strong> - Facultad de Ingeniería - Universidad de Antioquia 
+</div>
+<div class="marco_general">
+  <div class="pit_body"> <!-- InstanceBeginEditable name="content_body" -->
+<h1>Sistemas numéricos (decimal, binario, octal, hexadecimal)</h1>
+<div class="pit_bloque_autores">
+<ul>
+<li>Jaime A. Valencia V.</li>
+<li>Facultad de Ingeniería</li>
+<li>Universidad de Antioquia</li>
+</ul>
+</div>
+    <p>Como parte del mundo occidental, desde hace ya bastantes años nos hemos 
+      acostumbrado a representar los números con el denominado sistema decimal, 
+      pero realmente existen muchas formas de representar los números. Existen 
+      referencias de 1500 A.C.(<a class="pit_enlace" href="../presentacion/referencias_bibliograficas.html#Wikipedia, 2011a" target="_blank">Wikipedia, 
+      2011a</a>) del uso de números y en la actualidad se tiene ya un sistema 
+      numérico muy bien fundamentado y clasificado (<a class="pit_enlace" href="../presentacion/referencias_bibliograficas.html#Wikipedia, 2011b" target="_blank">Wikipedia, 2011b</a>; <a class="pit_enlace" href="../presentacion/referencias_bibliograficas.html#Wikipedia, 2011c" target="_blank">Wikipedia, 2011c</a>).</p>
+<p>En esta sección no trabajaremos los aspectos teóricos de lo que es un campo numérico o un sistema numérico, tan sólo la forma cómo podemos representar un mismo número usando diferentes sistemas, en particular, el sistema decimal y el sistema binario, el cual es de vital importancia en el tema de los computares porque toda la información que se procesa en estas maquinas tiene en última instancia que representarse con un sistema binario. El uso del sistema binario obedece a aspectos de construcción de los computadores, ya que en sistemas electrónicos se hace más fácil distinguir entre 2 niveles de voltaje, corriente, magnetización, etc.</p>
+<p>Un número representado en base 10 o decimal, significa que se tienen diez dígitos (0 - 9) y una jerarquía en la posición del número, teniendo más peso si está más a la izquierda, por ejemplo:</p>
+  <div class="pit_bloque_ecuación pit_ecuacion">3462 = 3 x 10<sup>3</sup> + 4 x 10<sup>2</sup> + 6 x 10<sup>1</sup> + 2 x 10<sup>0</sup> = 3462</div>
+ <p>Un número representado en base 2 o binaria significa que se tienen dos dígitos (0, 1) y una jerarquía en la posición del número, teniendo más peso la posición de la izquierda, por ejemplo:</p>
+<div class="pit_bloque_ecuacion pit_ecuacion">101101 =  1 x 2<sup>5</sup> + 1 x 2<sup>4</sup> + 1 x 2<sup>3</sup> + 1 x 2<sup>2</sup> + 1 x 2<sup>1</sup> + 1 x 2<sup>0</sup> = 45</div>
+<p>El cálculo de la derecha se realiza en el sistema decimal y este es el método de obtener la representación decimal a partir de la representación binaria.</p>
+<p>Para realizar el proceso inverso, es decir, a partir de un número en representación decimal obtener su representación binaria, se requiere realizar divisiones repetidas por 2 y el residuo dará los coeficientes de número en binario, como ejemplo veamos la siguiente tabla 1 que muestra el ejemplo anterior.</p>
+<div class="pit_anexo_interno pit_bloque_tabla">
+<table class="pit_tabla_datos" cellpadding="10">
+          <th height="45">Iteración</th>
+<th>Valor</th>
+<th>División por 2</th>
+<th>Residuo</th>
+<tr>
+<td class="pit_celda_numero">0</td>
+<td class="pit_celda_numero">45</td>
+<td class="pit_celda_numero">22</td>
+<td class="pit_celda_numero">1</td>
+</tr>
+<tr>
+<td class="pit_celda_numero">1</td>
+<td class="pit_celda_numero">22</td>
+<td class="pit_celda_numero">11</td>
+<td class="pit_celda_numero">0</td>
+</tr>
+<tr>
+<td class="pit_celda_numero">2</td>
+<td class="pit_celda_numero">11</td>
+<td class="pit_celda_numero">5</td>
+<td class="pit_celda_numero">1</td>
+</tr>
+<tr>
+<td class="pit_celda_numero">3</td>
+<td class="pit_celda_numero">5</td>
+<td class="pit_celda_numero">2</td>
+<td class="pit_celda_numero">1</td>
+</tr>
+<tr>
+<td class="pit_celda_numero">4</td>
+<td class="pit_celda_numero">2</td>
+<td class="pit_celda_numero">1</td>
+<td class="pit_celda_numero">0</td>
+</tr>
+<tr>
+<td class="pit_celda_numero">5</td>
+<td class="pit_celda_numero">1</td>
+<td class="pit_celda_numero">0</td>
+<td class="pit_celda_numero">1</td>
+</tr>
+</table>
+<div class="pit_bloque_piedetabla">
+<span class="pit_etiqueta">Tabla 1.</span>  Ejemplo conversión decimal - binario
+</div>
+</div>
+<p>En la tabla la columna de Iteración nos da la potencia de la base 2, la columna de Residuo nos da los dígitos binarios ponderados respectivamente y en la columna División por 2 se muestra el resultado entero de la división por 2. El procedimiento termina cuando el resultado de la división por 2 sea nulo. Así podemos reescribir el número original 45 usando los coeficientes ponderados binarios, es decir:</p>
+<div class="pit_bloque_ecuación pit_ecuacion">45 =   1 x 2<sup>0</sup> + 0 x 2<sup>1</sup> + 1 x 2<sup>3</sup> + 1 x 2<sup>3</sup> + 0 x 2<sup>4</sup> + 1 x 2<sup>5</sup> = 101101</div>
+<p>Estos procedimientos se pueden generalizar para números con fracciones decimales. Veamos el siguiente ejemplo de la representación de un número de base 10:</p>
+<div class="pit_ecuacion">0,4507 = 0 x  10<sup>0</sup> + 4 x 10<sup>-1</sup> + 5 x 10<sup>-2</sup> + 0 x 10<sup>-3</sup> + 7 x 10<sup>-4</sup> = 0,4507</div>
+<p>Si se tiene un número con fracciones de base binaria, se escribe de igual forma:</p>
+<div class="pit_ecuacion">0,10111 =    0 x 2<sup>0</sup> + 1 x 2<sup>-1</sup> + 0 x 2<sup>-2</sup> + 1 x 2<sup>-3</sup> + 1 x 2<sup>-4</sup> + 1 x 2<sup>-5</sup> = 0,71875</div>
+<p>Este es el método para obtener la representación en base 10 de un número fraccionario en base 2. Para el proceso inverso, convertir un número fraccionario en base 10 a uno fraccionario en base 2, a diferencia del caso anterior, se multiplica por la base iteradamente y se obtienen los dígitos binarios respectivos. Como ejemplo realicemos en la tabla 2 un caso similar a la anterior.</p>
+<div class="pit_anexo_interno pit_bloque_tabla">
+<table class="pit_tabla_datos" cellpadding="10">
+<th>Iteración</th>
+<th>Valor</th>
+<th>Fracción de la multiplicación por 2</th>
+<th>Entero de la multiplicación por 2</th>
+<tr>
+<td class="pit_celda_numero">-1</td>
+<td class="pit_celda_numero">0,718750</td>
+<td class="pit_celda_numero">0,437500</td>
+<td class="pit_celda_numero">1</td>
+</tr>
+<tr>
+<td class="pit_celda_numero">-2</td>
+<td class="pit_celda_numero">0,437500</td>
+<td class="pit_celda_numero">0,875</td>
+<td class="pit_celda_numero">0</td>
+</tr>
+<tr>
+<td class="pit_celda_numero">-3</td>
+<td class="pit_celda_numero">0,875</td>
+<td class="pit_celda_numero">0,75</td>
+<td class="pit_celda_numero">1</td>
+</tr>
+<tr>
+<td class="pit_celda_numero">-4</td>
+<td class="pit_celda_numero">0,75</td>
+<td class="pit_celda_numero">0,5</td>
+<td class="pit_celda_numero">1</td>
+</tr>
+<tr>
+<td class="pit_celda_numero">-5</td>
+<td class="pit_celda_numero">0,5</td>
+<td class="pit_celda_numero">0</td>
+<td class="pit_celda_numero">1</td>
+</tr>
+</table>
+<div class="pit_bloque_piedetabla">
+<span class="pit_etiqueta">Tabla 2. </span>Ejemplo conversión fraccionario en base 10 - fraccionario en base 2</div>
+</div>
+<p>Este procedimiento se repite hasta que en la columna 3 de Multiplicación por 2 se obtenga un valor nulo. En la tabla, la columna de Iteración da la ponderación del dígito binario y la columna de Entero da los dígitos binarios respectivos, así se tiene que:</p>
+<div class="pit_ecuacion">0,71875 =    1 x 2<sup>-1</sup> + 0 x 2<sup>-2</sup> + 1 x 2<sup>-3</sup> + 1 x 2<sup>-4</sup> + 1 x 2<sup>-5</sup> = 0,10111 </div>
+<p>Un caso interesante en estas representaciones es que el hecho de tener un número finito de fracciones en una representación, no significa que se tendrá un número finito de fracciones en otra representación, el ejemplo clásico es el del número  0,1 en representación de base 10, el cual tienen infinitas fracciones en su representación binaria. Si intenta hacer una tabla como la anterior, se dará cuenta que en la columna 3 nunca obtendrá un valor nulo.</p>
+    <p>Los ejemplos mostrados no incluyen el signo para la representación de números 
+      negativos, así que se debe adicionar el signo como información adicional 
+      o definir otros modos de representación de los números en base 10. Esto 
+      significa que pueden definirse diferentes formas para representar en base 
+      binaria un número de base decimal. Veamos como ejemplo la tabla 3, donde 
+      se muestran dos representaciones de los números enteros. </p>
+<div class="pit_anexo_interno pit_bloque_tabla">
+<table class="pit_tabla_datos" cellpadding="10">
+<th>Número base 10</th>
+<th>Base 2 con signo</th>
+<th>Base 2 sesgado</th>
+<tr>
+<td class="pit_celda_numero">-3</td>
+<td class="pit_celda_numero">-011</td>
+<td class="pit_celda_numero">000</td>
+</tr>
+<tr>
+<td class="pit_celda_numero">-2</td>
+<td class="pit_celda_numero">-010</td>
+<td class="pit_celda_numero">001</td>
+</tr>
+<tr>
+<td class="pit_celda_numero">-1</td>
+<td class="pit_celda_numero">-001</td>
+<td class="pit_celda_numero">010</td>
+</tr>
+<tr>
+<td class="pit_celda_numero">0</td>
+<td class="pit_celda_numero">000</td>
+<td class="pit_celda_numero">011</td>
+</tr>
+<tr>
+<td class="pit_celda_numero">1</td>
+<td class="pit_celda_numero">+001</td>
+<td class="pit_celda_numero">100</td>
+</tr>
+<tr>
+<td class="pit_celda_numero">2</td>
+<td class="pit_celda_numero">+010</td>
+<td class="pit_celda_numero">101</td>
+</tr>
+<tr>
+<td class="pit_celda_numero">3</td>
+<td class="pit_celda_numero">+011</td>
+<td class="pit_celda_numero">110</t>
+</tr>
+<tr>
+<td class="pit_celda_numero">4</td>
+<td class="pit_celda_numero">+100</td>
+<td class="pit_celda_numero">111</td>
+</tr>
+</table>
+<div class="pit_bloque_piedetabla">
+<span class="pit_etiqueta">Tabla 3. </span>Representación de números enteros en base 2
+</div>
+</div>
+<p>Un sistema numérico octal dispone de 8 dígitos para la representación de un número y un sistema hexagecimal dispone de 16 dígitos. Estos sistemas se utilizan en algunas aplicaciones de computadores para simplificar notaciones y explicaciones de datos o posiciones de memoria. La tabla 4 muestra cómo contamos directamente en decimal, octal, hexagecimal y binario como ejemplo de comparación.</p>
+<div class="pit_anexo_interno pit_bloque_tabla">
+<table class="pit_tabla_datos" cellpadding="10">
+<th>Decimal</th>
+<th>Octal</th>
+<th>Hexagecimal</th>
+<th>Binario</th>
+<tr>
+<td class="pit_celda_numero">0</td>
+<td class="pit_celda_numero">0</td>
+<td class="pit_celda_numero">0</td>
+<td class="pit_celda_numero">0</td>
+</tr>
+<tr>
+<td class="pit_celda_numero">1</td>
+<td class="pit_celda_numero">1</td>
+<td class="pit_celda_numero">1</td>
+<td class="pit_celda_numero">1</td>
+</tr>
+<tr>
+<td class="pit_celda_numero">2</td>
+<td class="pit_celda_numero">2</td>
+<td class="pit_celda_numero">2</td>
+<td class="pit_celda_numero">10</td>
+</tr>
+<tr>
+<td class="pit_celda_numero">3</td>
+<td class="pit_celda_numero">3</td>
+<td class="pit_celda_numero">3</td>
+<td class="pit_cela_numero">11</td>
+</tr>
+<tr>
+<td class="pit_celda_numero">4</td>
+<td class="pit_celda_numero">4</td>
+<td class="pit_celda_numero">4</td>
+<td class="pit_celda_numero">100</td>
+</tr>
+<tr>
+<td class="pit_celda_numero">5</td>
+<td class="pit_celda_numero">5</td>
+<td class="pit_celda_numero">5</td>
+<td class="pit_celda_numero">101</td>
+</tr>
+<tr>
+<td class="pit_celda_numero">6</td>
+<td class="pit_celda_numero">6</td>
+<td class="pit_celda_numero">6</td>
+<td class="pit_celda_numero">110</td>
+</tr>
+<tr>
+<td class="pit_celda_numero">7</td>
+<td class="pit_celda_numero">7</td>
+<td class="pit_celda_numero">7</td>
+<td class="pit_celda_numero">111</td>
+</tr>
+<tr>
+<td class="pit_celda_numero">8</td>
+<td class="pit_celda_numero">10</td>
+<td class="pit_celda_numero">8</td>
+<td class="pit_celda_numero">1000</td>
+</tr>
+<tr>
+<td class="pit_celda_numero">9</td>
+<td class="pit_celda_numero">11</td>
+<td class="pit_celda_numero">9</td>
+<td class="pit_celda_numero">1001</td>
+</tr>
+<tr>
+<td class="pit_celda_numero">10</td>
+<td class="pit_celda_numero">12</td>
+<td class="pit_celda_numero">A</td>
+<td class="pit_celda_numero">1010</td>
+</tr>
+<tr>
+<td class="pit_celda_numero">11</td>
+<td class="pit_celda_numero">13</td>
+<td class="pit_celda_numero">B</td>
+<td class="pit_celda_numero">1011</td>
+</tr>
+<tr>
+<td class="pit_celda_numero">12</td>
+<td class="pit_celda_numero">14</td>
+<td class="pit_celda_numero">C</td>
+<td class="pit_celda_numero">1100</td>
+</tr>
+<tr>
+<td class="pit_celda_numero">13</td>
+<td class="pit_celda_numero">15</td>
+<td class="pit_celda_numero">D</td>
+<td class="pit_celda_numero">1101</td>
+</tr>
+<tr>
+<td class="pit_celda_numero">14</td>
+<td class="pit_celda_numero">16</td>
+<td class="pit_celda_numero">E</td>
+<td class="pit_celda_numero">1110</td>
+</tr>
+<tr>
+<td class="pit_celda_numero">15</td>
+<td class="pit_celda_numero">17</td>
+<td class="pit_celda_numero">F</td>
+<td class="pit_celda_numero">1111</td>
+</tr>
+</table>
+<div class="pit_bloque_piedetabla">
+<span class="pit_etiqueta">Tabla 4.</span>  Representación enteros en los 4 sistemas numéricos
+
+</div>
+</div>
+
+
+
+
+<!-- InstanceEndEditable --></div>
+</div>
+<div id="footer">
+	<img src="../estilos/imgs/Creative_commons.png" width="88" height="31" alt="Licencia">
+	<p>	Esta obra esta protegida bajo una licencia de <a href="../presentacion/licencia.html" target="licencia" onclick="window.open(this.href,this.target,'resizable=1,scrollbars=1,directories=,location=,menubar=,toolbar=,status=1,width=620,height=450');" title="Licencia">creative commons</a><br>
+      Universidad de Antioquia
+          <br>
+          2010
+    </p>
+</div>
+</body>
+<!-- InstanceEnd -->

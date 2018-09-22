@@ -1,0 +1,140 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><!-- InstanceBegin template="/Templates/plantilla.dwt" codeOutsideHTMLIsLocked="false" -->
+<head>
+<!-- InstanceBeginEditable name="doctitle" -->
+<title>Algoritmos y Programación - Capítulo VIII - Elementos generales del lenguaje</title>
+<!-- InstanceEndEditable --> 
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<link rel="stylesheet" type="text/css" href="../estilos/estilos.css" />
+<meta name="description" content="Curso Algoritmos y Programación. Proyecto Open Course Ware de la Universidad de Antioquia" />
+<!-- InstanceBeginEditable name="head" --><!-- InstanceEndEditable -->
+</head>
+
+<body>
+<div class="cabezote_contenido">
+	<strong>Algoritmos y Programación</strong> - Facultad de Ingeniería - Universidad de Antioquia 
+</div>
+<div class="marco_general">
+  <div class="pit_body"> <!-- InstanceBeginEditable name="content_body" -->
+    <h1>Elementos generales del lenguaje </h1>
+<div class="pit_bloque_autores">
+<ul>
+<li>Jaime A. Valencia V.</li>
+<li>Facultad de Ingeniería</li>
+<li>Universidad de Antioquia</li>
+</ul>
+</div>
+<p>(<a href="../presentacion/referencias_bibliograficas.html#Python, 2011a" target="_blank">Python, 2011a</a>)</p>
+<p>El lenguaje de programación Python cuenta con una buena cantidad de tipos de variables ('type'), funciones propias ('Built-in function'), comandos ('statement') y formas de fraccionar y ampliar esto creando nuevas funciones, objetos y módulos. Todo esto permite que se tengan incontables combinaciones para realizar códigos de programas. </p>
+<p>En esta sección haremos un breve resumen de los elementos básicos del lenguaje que se han discutido en los capítulos precedentes de este documento.</p>
+<p>Para el manejo de datos o información, el lenguaje Python cuenta con diferentes tipos de variables, de los cuales se presentaron en el capítulo 3 los siguientes:</p>
+<ul>
+<li>Tipo carácter o cadenas de carácter ('str')</li>
+<div class="pit_codigo_anexo"><pre><code>
+&gt;&gt;&gt;s = 'aqui'
+&gt;&gt;&gt;type(s)
+&lt;type 'str'&gt;
+&gt;&gt;&gt;</code></pre></div>
+<li>Tipo número entero ('int')</li>
+<div class="pit_codigo_anexo"><pre><code>
+&gt;&gt;&gt;n = 10
+&gt;&gt;&gt;type(n)
+&lt;type 'int'&gt;
+&gt;&gt;&gt;</code></pre></div>
+<li>Tipo número real ('float')</li>
+<div class="pit_codigo_anexo"><pre><code>
+&gt;&gt;&gt;r = 3.2334
+&gt;&gt;&gt;type(r)
+&lt;type 'float'&gt;
+&gt;&gt;&gt;</code></pre></div>
+<li>Tipo número complejo ('complex')</li>
+<div class="pit_codigo_anexo"><pre><code>
+&gt;&gt;&gt;c = 2+4j
+&gt;&gt;&gt;type(c)
+&lt;type 'complex'&gt;
+&gt;&gt;&gt;</code></pre></div>
+<li>Tipo lógico ('bool')</li>
+<div class="pit_codigo_anexo"><pre><code>
+&gt;&gt;&gt;L = True
+&gt;&gt;&gt;type(L)
+&lt;type 'bool'&gt;
+&gt;&gt;&gt;</code></pre></div>
+</ul>
+<p>Este tipo de variables se manejan en Python como objetos y disponen de sus propios métodos para cada uno de los tipos, los cuales se pueden invocar usando un punto después del nombre, por ejemplo:</p>
+<div class="pit_codigo_anexo"><pre><code>
+&gt;&gt;&gt; c.real
+2.0
+&gt;&gt;&gt;r.as_integer_ratio()
+(7280969517569881L, 2251799813685248L)
+&gt;&gt;&gt;</code></pre></div>
+<p>.real es un método del objeto complejo c, mientras que .as_integer_ratio() es un método del objeto real r.</p>
+<p>En el capítulo 6 se presentaron unos tipos de objetos o variables que permiten un manejo más simplificado de un grupo de datos, estos son:</p>
+<ul>
+<li>Tipo listas ('list')</li>
+<div class="pit_codigo_anexo"><pre><code>
+&gt;&gt;&gt;LL = ['a', 3, 2.5, True]
+&gt;&gt;&gt;type(LL)
+&lt;type 'list'&gt;
+&gt;&gt;&gt;</code></pre></div>
+<li>Tipo tupla ('tuple')</li>
+<div class="pit_codigo_anexo"><pre><code>
+&gt;&gt;&gt;t = (2,'b',False, 4.8)
+&gt;&gt;&gt;type(t)
+&lt;type 'tuple'&gt;
+&gt;&gt;&gt;</code></pre></div> 
+<li>Tipo diccionario ('dict')</li>
+<div class="pit_codigo_anexo"><pre><code>
+&gt;&gt;&gt; D = {'primer':3.4, 'segundo':23, 'tercero': 'ultimo'}
+&gt;&gt;&gt; type(D)
+&lt;type 'dict'&gt;
+&gt;&gt;&gt;</code></pre></div>
+<li>Tipo conjunto ('set')</li>
+<div class="pit_codigo_anexo"><pre><code>
+&gt;&gt;&gt;CA = set([1,3,4])
+&gt;&gt;&gt;type(CA)
+&lt;type 'set'&gt;
+&gt;&gt;&gt;</code></pre></div>
+</ul>
+<p>Se dispone en Python de operaciones matemáticas para realizar con las variables numéricas, comparadores lógicos  y operaciones de concatenación para variables tipo carácter. Estos operadores se muestran en la siguiente imagen:</p>
+<div class="pit_anexo_interno pit_bloque_imagen"><img class="pit_imagen" src="imagenes/8_caracteres_para_operaciones_de_variables.png" title="Caracteres para operaciones de variable"><div class="pit_bloque_piedeimagen">Caracteres para operaciones de variable</div></div> 
+<br class="pit_romper"/>
+<p>Con los diferentes tipos de datos se pueden realizar procesos que están definidos en sus propios métodos o en funciones internas que están en Python. La próxima imagen muestra el listado de funciones propias ('bulit-in') disponibles en la versión 2.7.</p>
+<div class="pit_anexo_interno pit_bloque_imagen"><img class="pit_imagen" src="imagenes/8_funciones_internas_de_python.png" title="Funciones internas de Python 2.7"><div class="pit_bloque_piedeimagen">Funciones internas de Python 2.7</div></div> 
+<br class="pit_romper"/>
+<p>Algunos ejemplos del uso de estas función se presentaron en el capítulo 7 para el manejo de entrada y salida de datos, tales como la función <span class="pit_enfasis">input()</span> para ingresar datos, la función <span class="pit_enfasis">open()</span> para conectar un archivo al ambiente de programación, la función <span class="pit_enfasis">raw_input()</span> que también permite la entrada de datos desde el teclado, capturando la información como una secuencia simple de caracteres.</p>
+    <p>Se han presentado otros ejemplos de funciones tales como <span class="pit_enfasis">type()</span>, que responde 
+      con el tipo de objeto que se tienen, la función <span class="pit_enfasis">dict()</span> para generar diccionarios 
+      o la función <span class="pit_enfasis">str()</span> para transformar el objeto en tipo carácter. Cada una 
+      de estas funciones tiene su aplicabilidad y su forma de uso que está explicado 
+      de forma extensa en la documentación oficial del lenguaje (<a href="../presentacion/referencias_bibliograficas.html#Python, 2011e" target="_blank">Python, 
+      2011e</a>) o se puede consultar usando un navegador cualquiera de Internet 
+      donde se encuentra bastante información.</p>
+<p>Los comandos para realizar comparaciones y ciclos se presentaron en el capítulo 3 de programación estructurada. Las palabras reservadas para estas instrucciones son:</p>
+<div class="pit_codigo_anexo"><pre><code>
+&gt;&gt;&gt;if  para comparación simple
+&gt;&gt;&gt;if – elif  para comparaciones múltiples
+&gt;&gt;&gt;for - in para programar ciclos</code></pre></div>
+<p>En los capítulos 4 y 5 se presentaron elementos para fraccionar los programas y adaptar el lenguaje a diferentes estilos o paradigmas de programación. Las palabras reservadas para estas instrucciones son:</p>
+<div class="pit_codigo_anexo"><pre><code>
+&gt;&gt;&gt;lambda para programar y asignar funciones en línea
+&gt;&gt;&gt;def   para programar cualquier tipo de función con nombre propio
+&gt;&gt;&gt;class para generación de nuevos objetos
+&gt;&gt;&gt;import para incluir utilidades disponibles en otros archivos o programas</code></pre></div>
+    <p>La documentación completa está en la referencia (<a href="../presentacion/referencias_bibliograficas.html#Python, 2011e" target="_blank">Python, 
+      2011e</a>), pero la referencia (<a href="../presentacion/referencias_bibliograficas.html#Gruet, 2011" target="_blank">Gruet, 
+      2011</a>) presenta un resumen bastante bueno de los elementos de programación 
+      con Python, aunque a la fecha de consulta sólo se tenía hasta la versión 
+      2.6. Sin embargo es una página para consulta rápida de todo lo fundamental 
+      del lenguaje de programación Python.</p>
+<!-- InstanceEndEditable --></div>
+</div>
+<div id="footer">
+	<img src="../estilos/imgs/Creative_commons.png" width="88" height="31" alt="Licencia">
+	<p>	Esta obra esta protegida bajo una licencia de <a href="../presentacion/licencia.html" target="licencia" onclick="window.open(this.href,this.target,'resizable=1,scrollbars=1,directories=,location=,menubar=,toolbar=,status=1,width=620,height=450');" title="Licencia">creative commons</a><br>
+      Universidad de Antioquia
+          <br>
+          2010
+    </p>
+</div>
+</body>
+<!-- InstanceEnd -->

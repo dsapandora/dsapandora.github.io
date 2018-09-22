@@ -1,0 +1,156 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><!-- InstanceBegin template="/Templates/plantilla.dwt" codeOutsideHTMLIsLocked="false" -->
+<head>
+<!-- InstanceBeginEditable name="doctitle" -->
+<title>Algoritmos y Programación - Capítulo III - Instrucciones y comando de control en programación</title>
+<!-- InstanceEndEditable --> 
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<link rel="stylesheet" type="text/css" href="../estilos/estilos.css" />
+<meta name="description" content="Curso Algoritmos y Programación. Proyecto Open Course Ware de la Universidad de Antioquia" />
+<!-- InstanceBeginEditable name="head" --><!-- InstanceEndEditable -->
+</head>
+
+<body>
+<div class="cabezote_contenido">
+	<strong>Algoritmos y Programación</strong> - Facultad de Ingeniería - Universidad de Antioquia 
+</div>
+<div class="marco_general">
+  <div class="pit_body"> <!-- InstanceBeginEditable name="content_body" -->
+<h1>Instrucciones y comando de control en programación</h1>
+<div class="pit_bloque_autores">
+<ul>
+<li>Jaime A. Valencia V.</li>
+<li>Facultad de Ingeniería</li>
+<li>Universidad de Antioquia</li>
+</ul>
+</div>
+<p>Iniciamos presentando los comandos básicos que se utilizan en la programación secuencial y que cada lenguaje de programación tiene su forma particular o palabra clave para describir esta acción. Los siguientes son los grupos de instrucciones que discutiremos:</p>
+<ul>
+<li>Asignación (aritmética, lógica, variable, constante).</li>
+<li>Decisión lógica: (funcionamiento y ejemplos. (if))</li>
+<li>Ciclos: (do , while,  Rompimientos)</li>
+</ul>
+<p>La <strong>asignación</strong> es la manera de dar un nombre a una información determinada en el ambiente de programación. La Imagen (GALEANO, 2011o) muestra cómo se simboliza en cada uno de los métodos de descripción de algoritmos. El significado en palabras de esta instrucción es que el valor o dato 5 lo guarde en alguna posición de memoria del ordenador y lo pueda recordar nombrando la letra A. Este dato o información podrá ser usado posteriormente para realizar alguna operación, también puede ser reemplazado por otro dato.</p>
+<div class="pit_anexo_interno pit_bloque_imagen"><img class="pit_imagen" src="imagenes/3_representacion_de_la_asignacion.png" title="Representación de la asignación"><div class="pit_bloque_piedeimagen"><span class="pit_etiqueta"><a class="pit_enlace" href="../presentacion/glosario.html#(GALEANO, 2011o)" target="_blank">(GALEANO, 2011o)</a>.</span> Representación de la asignación</div></div>
+<br class="pit_romper"/>
+    <p>En lenguaje de programación <em>PYTHON</em> (<a href="../presentacion/referencias_bibliograficas.html#Python, 2011b" target="_blank">Python, 
+      2011b</a>), el símbolo igual "=" se utiliza para codificar la instrucción 
+      de asignación:</p>
+<div class="pit_bloque_ecuacion pit_ecuacion">A = 5</div>
+<p>En esta instrucción <em>PYTHON</em> hace distinción entre las letras mayúsculas y minúsculas para nombrar una información. El nombre que está a la izquierda del signo igual puede tener más letras o números, pero no se debe utilizar palabras que el lenguaje tiene reservadas para otras instrucciones. Lo que está a la derecha del signo igual es la información que será guardada y puede ser de diferentes tipos. </p>
+<p>El lenguaje <em>PYTHON</em> puede usarse con un interfaces de usuario para trabajar como intérprete de manera interactiva o se pueden escribir las instrucciones en un archivo de texto sin formato; en este documento haremos la distinción así:</p>
+<ul>
+<li><span class="pit_bloque_ecuacion pit_ecuacion">>>> A = 5 </span> (cuando estamos usando el interface de usuario)</li>
+<li><span class="pit_bloque_ecuacion pit_ecuacion">A = 5 </span>(cuando estamos escribiendo el programa en el editor)</li>
+</ul>
+<p>Una característica importante del <em>PYTHON</em> es que no es necesario describir con anterioridad el tipo de información que se guarda, ya que <em>PYTHON</em> automáticamente reconoce su tipo y lo guarda con  esa característica. Veamos los siguientes ejemplos con diferentes tipos de datos:</p>
+<div class="pit_bloque_ecuacion pit_ecuacion">>>> a = 5</div>
+<p>La información 5 se guarda en a como un dato de tipo numérico entero ( en PYTHON  es “int”).</p>
+<div class="pit_bloque_ecuacion pit_ecuacion">>>>b = 1.2</div>
+<p>La información 1.2 se guarda en b como un dato numérico real o de punto flotante (en PYTHON es “float”).</p>
+<div class="pit_bloque_ecuacion pit_ecuacion">>>>c = 'casa'</div>
+<p>La información 'casa' se guarda en c como un dato de tipo alfabético ( en PYTHON es “str” ).</p>
+<div class="pit_bloque_ecuacion pit_ecuacion">>>> d = True</div>
+<p>La información True se guarda en d como un dato de tipo lógico o Booleano ( en PYTHON es “bool”).</p>
+<div class="pit_bloque_ecuacion pit_ecuacion">>>> e = 2 + 3j</div>
+<p>La información<span class="pit_ecuacion"> 2 + 3j </span>se guarda en d como un dato de tipo numérico complejo (en PYTHON es “complex”). </p>
+<p>Con los datos de tipo numérico podemos realizar las diferentes operaciones matemáticas. Veamos los siguientes ejemplos para mostrar las operaciones básicas y asignación de resultados o cálculos con esta operaciones:</p>
+<ul>
+<li><span class="pit_bloque_ecuacion pit_ecuacion">>>>n1 = 3</span></li>
+<li><span class="pit_bloque_ecuacion pit_ecuacion">>>>n2 = 4</span></li>
+<li><span class="pit_bloque_ecuacion pit_ecuacion">>>>n3 = n1 + n2</span></li>
+</ul>
+<p>n1 y n2 son datos de tipo entero y n3 es el resultado  7 de la suma que es un dato de tipo entero.</p>
+<div class="pit_bloque_ecuacion pit_ecuacion">>>>n4 = n1 – n2</div>
+<p>n4 es el resultado -1 de la resta y es un dato de tipo entero.</p>
+<div class="pit_bloque_ecuacion pit_ecuacion">>> n5 = n1 * n2</div>
+<p>n5 es 12 como resultado del producto de n1 y n2. Es un dato de tipo entero</p>
+<p>Con la operación de división se debe poner especial cuidado, ya que la división de dos números enteros no necesariamente es otro número entero. Esta operación describe un nuevo conjunto de números denominados <strong>racionales</strong>, que contiene los números <strong>enteros</strong> y a su vez, es un subconjunto de los números <strong>reales</strong>. Veamos el siguiente ejemplo de asignación:</p>
+<div class="pit_bloque_ecuacion pit_ecuacion">>>>n6 = n1 / n2</div>
+<p>a n6 se le asigna el valor entero 0 como resultado de la división del número entero 3 y el número entero 4.</p>
+<div class="pit_bloque_ecuacion pit_ecuacion">>>>n7 = 3.0 / 4.0</div>
+<p>A n7 se le asigna el valor 0.75 como resultado de la división del número real 3.0 y el 4.0. Este dato es del tipo “float”.</p>
+<p>Se puede argumentar que ambos resultados son igualmente correctos, ya que n6 es el número entero de la división y n7 es el resultado en otro conjunto de números. Este ejemplo nos muestra lo importante de definir el tipo de datos que se quiere procesar en el ordenador.</p>
+<p>La <strong>decisión lógica</strong> permite programar en el computador actividades o instrucciones que requieren tomar una decisión  según una evaluación de una expresión lógica. De estas instrucciones de decisión presentaremos las  siguientes 3 formas:</p>
+<ul>
+<li>Decisión simple</li>
+<li>Decisión  Doble</li>
+<li>Decisión  Múltiple</li>
+</ul>
+<div class="pit_anexo_interno pit_bloque_imagen"><img class="pit_imagen" src="imagenes/3_esquema_de_decision_simple.png" title="Esquema de decisión simple"><div class="pit_bloque_piedeimagen"><span class="pit_etiqueta"><a class="pit_enlace" href="../presentacion/glosario.html#(GALEANO, 2011p)" target="_blank">(GALEANO, 2011p)</a></span> Esquema de decisión simple</div></div>
+<br class="pit_romper"/>
+<p>En los diagramas de flujo, el rombo será la convención para el planteamiento de preguntas o evaluación de expresiones lógicas. Como se describe en la Imagen (GALEANO, 2011p), el ordenador verifica una condición o evalúa una expresión lógica para realizar una actividad o secuencia de actividades. Estas actividades se realizan sólo si el resultado es <strong>verdadero</strong> de lo contrario no realiza ninguna acción.</p>
+<p>En el lenguaje <em>PYTHON</em> la codificación de esta instrucción usa como palabra clave  <strong>IF</strong> y los dos puntos <strong>":"</strong> después de la expresión lógica que se va a evaluar. Luego se escribe la secuencia de instrucciones que se va a realizar. Veamos dos ejemplos de la codificación en <em>PYTHON</em> usando el interface de usuario:</p>
+<div class="pit_acodigo_anexo"><pre><code>
+&gt;&gt;&gt; if 1 < 5: print 'Esto es cierto'</code></pre></div>
+<p>La respuesta de esta línea será que en pantalla aparecerá  <strong>'Esto es cierto'</strong>, ya que la instrucción print de <em>PYTHON</em> realiza la acción de presentar por pantalla, que es un elemento de salida de información, lo que está entre comillas. La expresión que se evalúa es si 1 es menor que 5, lo cual es verdadero y el ordenador ejecuta las instrucciones.</p>
+<div class="pit_codigo_anexo"><pre><code>
+&gt;&gt;&gt;a = True
+&gt;&gt;&gt;if a:
+	print 'a es verdadero'
+&gt;&gt;&gt;a=1
+&gt;&gt;&gt;if a:
+	print'a puede ser también 1'
+		
+a puede ser tambien 1
+</code></pre></div>
+<p>en este ejemplo a es un valor <strong>verdadero</strong>, por tanto lo que está escrito después de print aparecerá en pantalla. Aquí  se muestra un aspecto fundamental en la escritura de códigos en <em>PYTHON</em>, es la <strong>indentación</strong>, , es decir, los espacios que se deben dejar en la línea siguiente de la instrucción IF. El bloque de código no se cierra con ninguna palabra clave, como se presenta en otros lenguajes, sólo con terminar la indotación.</p>
+<div class="pit_anexo_interno pit_bloque_imagen"><img class="pit_imagen" src="imagenes/3_esquema_de_decision_doble.png" title="Esquema de decisión doble"><div class="pit_bloque_piedeimagen"><span class="pit_etiqueta"><a class="pit_enlace" href="../presentacion/glosario.html#(GALEANO, 2011q)" target="_blank">(GALEANO, 2011q) </a></span> Esquema de decisión doble</div></div>
+<br class="pit_romper"/>
+<p>En el caso de <strong>Decisión doble</strong> se puede definir dos bloques de instrucciones que serán ejecutados según la evaluación de la expresión lógica. Como lo muestra la Imagen (GALEANO, 2011q), si la expresión lógica es verdadera, se ejecutan las instrucciones del bloque verdadero, y si la expresión lógica es falsa, se ejecutan las instrucciones del bloque falso. En este caso siempre habrá un conjunto de instrucciones que se ejecutará.</p>
+<p>En lenguaje <em>PYTHON</em> esta doble decisión utiliza las palabra clave <strong>IF</strong> y <strong>ELSE</strong> para su codificación. Veamos los dos ejemplos siguientes usando el interface de usuario (python shell):</p>
+<div class="pit_codigo_anexo"><pre><code>
+&gt;&gt;&gt;B = False
+&gt;&gt;&gt;if B: print 'B es considerado verdadero'
+else: print 'B es considerado falso'
+</code></pre></div>
+<p>La respuesta de este código es que se imprimirá la frase <strong>'B es considerado falso'</strong> porque la condición o expresión lógica B es evaluada como falsa.</p>
+<div class="pit_codigo_anexo"><pre><code>
+&gt;&gt;&gt;B = True
+&gt;&gt;&gt;if B: print 'B es considerado verdadero'
+else: print 'B es considerado falso'
+</code></pre></div>
+<p>En este caso se imprime <strong>'B es considerado verdadero'</strong>.</p>
+<div class="pit_anexo_interno pit_bloque_imagen"><img class="pit_imagen" src="imagenes/3_esquema_de_decision_multiple.png" title="Esquema de decisión múltiple"><div class="pit_bloque_piedeimagen"><span class="pit_etiqueta"><a class="pit_enlace" href="../presentacion/glosario.html#(GALEANO, 2011r)" target="_blank">(GALEANO, 2011r)</a></span> Esquema de decisión múltiple</div></div>
+<br class="pit_romper"/>
+<p>Para la <strong>Decisión múltiple</strong> se utiliza una secuencia de decisiones como se muestra en la Imagen (GALEANO, 2011r).  Para cada decisión se tendrá una expresión lógica para evaluar y se hará la evaluación siguiente en el caso de resultar la anterior falsa. En lenguaje <em>PYTHON</em> la implementación de esta decisión múltiple se hace con las palabras clave IF, ELIF y ELSE. Veamos el siguiente ejemplo de  codificando en <em>PYTHON</em> utilizando el editor:</p>
+<div class="pit_anexo_interno pit_bloque_imagen"><img class="pit_imagen" src="imagenes/3_ejemplo_decision_multiple.png" title="Ejemplo de decisión múltiple"></div>
+<br class="pit_romper"/>
+<p>En este programa escrito en <em>PYTHON</em> se utiliza el comando input() para habilitar el teclado y que el usuario ingrese su edad, luego con un bloque de decisión múltiple se clasifica el grupo de edad al que pertenece el usuario. Los grupos de edad contemplados son los mayores de 65 años, los que están entre 45 y 65 años, los que están entre 25 y 45, los que están entre 15 y 25, y por último los menores de 15 años. Observe que las preguntas en los ELIF consecutivos solo se realizaran si todas las anteriores han sido falsas. Al encontrar una de las expresiones lógicas verdadera, se ejecuta la instrucción respectiva y termina el bloque de decisión múltiple. Las instrucciones después del ELSE sólo se ejecutarán cuando todo lo anterior ha sido falso.</p>
+<p>Los <strong>Ciclos</strong> son procedimientos o comandos de programación que permiten repetir de manera controlada un conjunto de instrucciones. Para su presentación clasificaremos los ciclos según su modo de control en los siguientes casos:</p>
+<ul>
+<li>Ciclo controlado por variable de conteo (for)</li>
+<li>Ciclo controlado por una condición (while)</li>
+</ul>
+<div class="pit_anexo_interno pit_bloque_imagen"><img class="pit_imagen" src="imagenes/3_esquema_de_ciclo_controlado_por_variable.png" title="Esquema de ciclo controlado por variable"><div class="pit_bloque_piedeimagen"><span class="pit_etiqueta"><a class="pit_enlace" href="../presentacion/glosario.html#(GALEANO, 2011s)" target="_blank">(GALEANO, 2011s)</a> </span> Esquema de ciclo controlado por variable</div></div>
+<br class="pit_romper"/>
+<p>Los <strong>Ciclos controlados por variable</strong> sson estructuras básicas de programación que realizan una repetición tantas veces como la variable de control lo permita. Algunos lenguajes de programación incluyen la variable de control y su evolución en las palabras claves, otros sólo incluyen la variable de control.</p>
+<p>En <em>PYTHON</em> la variable de control está incluida junto con la palabra clave <strong>FOR</strong> y la forma cómo debe hacer el conteo o repetir el procedimiento depende de otra variable que define el usuario. Veamos el siguiente ejemplo de código en <em>PYTHON</em>:</p>
+<div class="pit_anexo_interno pit_bloque_imagen"><img class="pit_imagen" src="imagenes/3_for_en_python.png" title="For en Python"></div>
+<br class="pit_romper"/>
+<p>El objetivo de este programa es calcular la suma de los números del 1 al 8. En este código, la primera línea de asignación guarda el conjunto de números enteros del 1 al 8 en a, los cuales serán usados como datos para el control del ciclo. La siguiente línea de asignación inicia la variable sumaa en cero y ésta será la variable que se usará para calcular la suma de los números del 1 al 8. La línea siguiente es la codificación del ciclo con las palabras claves FOR, IN, y la variable de control del ciclo q. La variable a en esta línea indica dónde están los datos que uno a uno irá tomando la variable de control y ejecutará la línea de asignación de la variable sumaa, hasta recorrer todos los datos de a.</p>
+<p>Terminado el ciclo se continúa con la línea de print para mostrar el resultado de la suma que está ya acumulado en la variable sumaa.</p>
+<p>La variable q del ciclo de control asume en cada ciclo un solo valor de los que están en la variable a, hasta recorrerlos todos. Esta variable q puede tener cualquier nombre y puede accederse a su información, como en el caso de este ejemplo donde el dato que se tiene en cada ciclo se suma a la variable sumaa. La variable a es en <em>PYTHON</em> de tipo 'list' que lo podemos traducir como lista y nos permite guardar de forma ordenada un conjunto de datos de diferente tipo; para este ejemplo fueron valores enteros.</p>
+<p>Este ciclo permite como alternativa usar la palabra ELSE para realizar un bloque de instrucciones al terminar la variable de conteo.</p>
+<div class="pit_anexo_interno pit_bloque_imagen"><img class="pit_imagen" src="imagenes/3_ciclo_controlado_por_condicion.png" title="Ciclo controlado por condición"><div class="pit_bloque_piedeimagen"><span class="pit_etiqueta"><a class="pit_enlace" href="../presentacion/glosario.html#(GALEANO, 2011t)" target="_blank">(GALEANO, 2011t)</a></span> Ciclo controlado por condición</div></div>
+<br class="pit_romper"/>
+<p>El <strong>Ciclo controlado por condición</strong> realiza la ejecución de un mismo bloque de instrucciones tantas veces como lo permita una expresión lógica que se evalúa en cada ciclo. Cuando el resultado de la evaluación de la expresión lógica es  <em>VERDADERO</em>, el ciclo se repite ejecutando el bloque de instrucciones programadas; en caso contrario se termina el ciclo y continúa con el programa. </p>
+<p>En <em>PYTHON</em> la palabra clave es <strong>WHILE</strong> seguida de una expresión lógica que se evaluará en cada ciclo. El bloque de instrucciones siguiente sólo se ejecutará si la evaluación de la expresión lógica es <em>VERDADERA</em> ( (o en inglés TRUE). Veamos el siguiente programa que  tiene como objetivo calcular la suma de los números del 1 al 8, como en el ejemplo anterior, pero en este caso usando un ciclo controlado por condición: </p>
+<div class="pit_anexo_interno pit_bloque_imagen"><img class="pit_imagen" src="imagenes/3_while_en_python.png" title="While en Python"></div>
+<br class="pit_romper"/>
+<p>En este código las dos primeras líneas inicializan las variables sumaa donde se acumulará el resultado y n que incrementaremos en cada ciclo. La línea siguiente inicia el bloque con la palabra WHILE y la expresión lógica n<9 que se evalúa cada vez que se ejecuten todas las instrucciones del bloque. La indentación o los espacios que se dejan al inicio después de la línea de WHILE están definiendo el bloque de instrucciones que se va a ejecutar en cada ciclo; en este caso una instrucción acumula la suma en la variable sumaa y la otra instrucción incrementa la variable n. Al salir del ciclo se escribe en pantalla el valor de la variable sumaa donde se ha acumulado la suma de los números del 1 al 8.</p>
+<p>Este ciclo no tiene un contador, puede repetir la ejecución tantas veces como lo permita la evaluación de la condición. También tiene como alternativa el uso de la palabra clave <strong>ELSE</strong> para definir un bloque de instrucciones a ejecutar cuando la evaluación de la condición en <em>FALSA</em> y termina el ciclo.</p>
+<p>De estas estructuras básicas de programación existen variantes que se discutirán en otros capítulos posteriores.</p>
+
+<!-- InstanceEndEditable --></div>
+</div>
+<div id="footer">
+	<img src="../estilos/imgs/Creative_commons.png" width="88" height="31" alt="Licencia">
+	<p>	Esta obra esta protegida bajo una licencia de <a href="../presentacion/licencia.html" target="licencia" onclick="window.open(this.href,this.target,'resizable=1,scrollbars=1,directories=,location=,menubar=,toolbar=,status=1,width=620,height=450');" title="Licencia">creative commons</a><br>
+      Universidad de Antioquia
+          <br>
+          2010
+    </p>
+</div>
+</body>
+<!-- InstanceEnd -->
