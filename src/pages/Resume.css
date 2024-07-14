@@ -1,0 +1,79 @@
+/* Global styles */
+body {
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+    line-height: 1.5;
+    margin: 0;
+    padding: 0;
+  }
+  
+  /* Resume styles */
+  .resume {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 2rem;
+    background-color: #e66162;
+    color: #fff;
+    display: grid; /* Added to use CSS Grid to center the table */
+    place-items: left; /* Added to center the table */
+    
+  }
+  
+  h1 {
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+  }
+  
+  h2 {
+    font-size: 1.5rem;
+    margin-top: 0;
+  }
+  
+  h3 {
+    font-size: 1.25rem;
+    margin-top: 1.5rem;
+    margin-bottom: 0.5rem;
+  }
+  
+  p {
+    margin-top: 0;
+    margin-bottom: 1rem;
+  }
+  
+  ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  
+  li {
+    margin-bottom: 0.5rem;
+  }
+
+  table {
+    border-collapse: collapse;
+    margin-top: 1.5rem;
+    margin-bottom: 1.5rem;
+    width: 100%;
+  }
+  
+  th,
+  td {
+    padding: 0.75rem;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+  }
+  
+  th {
+    background-color: #ffffff;
+    font-weight: bold;
+    color: #e66162;
+  }
+  
+  td:last-child {
+    text-align: left;
+  }
+  
+  td:not(:last-child) {
+    text-align: left;
+  } 
