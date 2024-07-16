@@ -15,7 +15,7 @@
 			"company": "United Science IoT Project",
 			"startDate": "June 2024",
 			"endDate": "July 2024",
-			"description": "Designed and implemented a C++ function for a Jetson Nano to process image sequences from a rotating camera and generate a 3D point cloud. Utilized OpenCV for image analysis, feature detection, and advanced image processing techniques to optimize 3D point generation. Ensured accuracy through calibration adjustments, significantly enhancing 3D object reconstruction efficiency."
+			"description": "Designed and implemented a C++ artificial vision method for a Jetson Nano to process image sequences from a rotating camera and generate a 3D point cloud. Utilized OpenCV for image analysis, feature detection, and advanced image processing techniques to optimize 3D point generation. Ensured accuracy through calibration adjustments, significantly enhancing 3D object reconstruction efficiency."
 		},
 		{
 			"position": "Senior Software Engineer Full Stack",
