@@ -1,57 +1,113 @@
-
 {
 	"name": "Ariel Vernaza",
 	"jobTitle": "Senior Software Engineer",
 	"summary": "I'm Ariel Vernaza, a Senior Full Stack Developer based in Panama City, Panama. My expertise lies in Python, C++, Ruby on Rails, React, React Native, Postgres, Kubernetes, and GraphQL. I have a strong background in backend development, AI integration, and optimizing system performance. With a Master's in Game Design and Computer Science specializing in Artificial Intelligence, I bring extensive experience across various programming languages (Python, C++, Ruby, Java, etc.), frameworks (Django, Rails, Next.js, React, etc.), AI tools (TensorFlow, Keras, PyTorch, etc.), and backend technologies (Kubernetes, Docker, AWS, etc.). I'm passionate about designing robust software solutions, developing AI systems, and engaging in technical design. In my free time, I enjoy swimming, practicing kendo, and playing action RPG fantasy games.",
 	"experience": [
 		{
-			"position": "Teach Lead",
-			"company": "LazyRacoon LLC",
+			"position": "Senior Software Engineer Full Stack",
+			"company": "Farm2Friends",
 			"startDate": "July 2024",
-			"endDate": "present",
-			"description": "At LazyRacoon, I've been working as a Teach Lead, specializing in Next.js, React, MySQL, and NLP (Natural Language Processing). My role involves building backend and database integrations for marketplace and cart flow systems, as well as designing and implementing NLP solutions integrated with product workflows."
+			"endDate": "Present",
+			"description": "At Farm2Friends, I lead the development of an innovative marketplace connecting producers with consumers using Next.js, TypeScript, React, and MySQL. My responsibilities include planning AI modules for personalized recommendations and user interaction improvements using predictive and behavioral analysis."
 		},
 		{
-			"position": "Senior Software Engineer Fullstack",
-			"company": "Transfix LLC",
-			"startDate": "October 2022",
+			"position": "Senior Software Engineer Full Stack",
+			"company": "Transfix LLC (Acquired by NFI)",
+			"startDate": "October 2021",
 			"endDate": "July 2024",
-			"description": "At Transfix, I worked as a Senior Software Engineer Fullstack, utilizing Ruby on Rails, React, React Native, Postgres, Kubernetes, and GraphQL. My primary responsibilities included developing the Transfix Mobile App and integrating React Native for cross-platform functionality."
+			"description": "At Transfix, I developed and released the Transfix Mobile App using Ruby on Rails and React Native. I managed cross-team communication, integrated new map providers using GraphQL, and led the rebranding and update of 'My Loads' and 'Load Details' pages using React, TypeScript, Ruby on Rails, Postgres, Docker, Kubernetes, and GraphQL."
 		},
 		{
 			"position": "Senior Software Engineer",
-			"company": "Adelantos S.A. (Adquired by PayJoy)",
-			"startDate": "October 2021",
-			"endDate": "October 2022",
-			"description": "At Adelantos, I served as a Senior Software Engineer, specializing in Python, Django, GraphQL, Postgres, and Kubernetes. My role focused on designing and implementing integrations with payment providers and banking systems across multiple countries, as well as developing data mining solutions to enhance market reach"
+			"company": "Adelantos S.A. (Acquired by PayJoy)",
+			"startDate": "October 2020",
+			"endDate": "October 2021",
+			"description": "At Adelantos, I specialized in Python, Django, GraphQL, Postgres, and Kubernetes. I led the integration with OXXO payment system in Mexico and DataCrédito in Colombia, and developed an MVP for small businesses with Cervecería Nacional de Panamá."
+		},
+		{
+			"position": "Senior Software Engineer",
+			"company": "Ubiqua S.A. (Acquired by A.D.R. S.A.)",
+			"startDate": "July 2015",
+			"endDate": "October 2020",
+			"description": "At Ubiqua, I automated purchase order processing using Ruby on Rails, Python, NLP, regression models, and Kafka. I developed an advanced purchase order processing system and integrated it with client ERP systems."
+		},
+		{
+			"position": "Artificial Intelligence Professor",
+			"company": "University of Panama",
+			"startDate": "March 2014",
+			"endDate": "December 2022",
+			"description": "At the University of Panama, I taught advanced AI and simulation courses using Python, Scikit-Learn, PyTorch, TensorFlow, Keras, and OpenCV. I led research on integrating intelligent agents with physical robots and control systems, and collaborated on interdisciplinary projects."
 		}
 	],
 	"education": [
 		{
-			"institution": "Peder skrivare skola",
-			"degree": "Media Teknik",
-			"startDate": "August 2012",
-			"endDate": "May 2016"
+			"institution": "Escuela Superior de Arte y Diseño de Andalucía",
+			"degree": "Master’s in Game Design",
+			"startDate": "2023",
+			"endDate": "2023"
 		},
-    {
-			"institution": "Peder skrivare skola",
-			"degree": "Processteknik",
-			"startDate": "August 2016",
-			"endDate": "May 2017"
+		{
+			"institution": "University Charles III of Madrid",
+			"degree": "Master’s in Computer Science and Technology with Specialization in Artificial Intelligence",
+			"startDate": "2013",
+			"endDate": "2013"
 		},
-    {
-			"institution": "Campus Varberg",
-			"degree": "Systemutvecklare.NET",
-			"startDate": "August 2022",
-			"endDate": "Present"
+		{
+			"institution": "Specialized University of the Americas",
+			"degree": "Higher Education Specialization",
+			"startDate": "2018",
+			"endDate": "2018"
+		},
+		{
+			"institution": "University of Panama",
+			"degree": "Bachelor’s in Computer Science",
+			"startDate": "2012",
+			"endDate": "2012"
 		}
-    
 	],
 	"skills": [
-		"HTML",
-		"CSS",
-		"JavaScript",
+		"Python",
+		"Ruby",
+		"Java",
+		"C++",
+		"JavaScript/TypeScript",
+		"Kotlin",
+		"Swift",
 		"C#",
-    	"SQL"
+		"PHP",
+		"Django",
+		"Rails",
+		"Sinatra",
+		"Next.js",
+		"React",
+		"React Native",
+		"GraphQL",
+		"Spring",
+		"Express.js",
+		"Flask",
+		"Laravel",
+		"TensorFlow",
+		"Keras",
+		"PyTorch",
+		"Jupyter",
+		"PsyPy",
+		"Scikit-learn",
+		"Seaborn",
+		"ROS",
+		"Kubernetes",
+		"Docker",
+		"AWS",
+		"Tilt",
+		"Redis",
+		"Postgres",
+		"MySQL",
+		"MongoDB",
+		"Datadog",
+		"Sentry",
+		"Firebase",
+		"Snowflake",
+		"Unity",
+		"Pygame",
+		"GB Studio"
 	]
 }
