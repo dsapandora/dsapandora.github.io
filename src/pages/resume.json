@@ -10,6 +10,13 @@
 			"endDate": "Present",
 			"description": "At Farm2Friends, I lead the development of an innovative marketplace connecting producers with consumers using Next.js, TypeScript, React, and MySQL. My responsibilities include planning AI modules for personalized recommendations and user interaction improvements using predictive and behavioral analysis."
 		},
+			{
+			"position": "Senior Software Engineer",
+			"company": "United Science IoT Project",
+			"startDate": "June 2024",
+			"endDate": "July 2024",
+			"description": "Designed and implemented a C++ function for a Jetson Nano to process image sequences from a rotating camera and generate a 3D point cloud. Utilized OpenCV for image analysis, feature detection, and advanced image processing techniques to optimize 3D point generation. Ensured accuracy through calibration adjustments, significantly enhancing 3D object reconstruction efficiency."
+		},
 		{
 			"position": "Senior Software Engineer Full Stack",
 			"company": "Transfix LLC (Acquired by NFI)",
