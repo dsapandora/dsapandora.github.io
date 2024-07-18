@@ -1,2 +1,2 @@
-# CV Page WIP TEST
+# CV Page WIP
 # Introduce Information and Project
