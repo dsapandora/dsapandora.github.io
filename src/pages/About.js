@@ -1,6 +1,7 @@
 import React from 'react';
 import Card from 'react-bootstrap/Card';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import GitHubContributions from '../components/GitHubContributions';
 
 function About() {
   return (
@@ -61,6 +62,9 @@ function About() {
             </Card>
           </div>
         </div>
+      </div>
+      <div className="mt-1 mb-4">
+        <GitHubContributions username="dsapandora" />
       </div>
     </div>
   );

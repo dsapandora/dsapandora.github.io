@@ -6,7 +6,7 @@
 
   
   .navbar {
-    background: #e66162;
+    background: #57745a;
     height: 100px;
     display: flex;
     justify-content: center;
@@ -108,7 +108,7 @@
   }
   
   .activated {
-    color: #e66162;
+    color: #57745a;
     background-color: #fff;
   }
   
@@ -137,7 +137,7 @@
     }
   
     .nav-menu.active {
-      background:#e66162;
+      background:#57745a;
       left: 0;
       opacity: 1;
       transition: all 0.6s ease;

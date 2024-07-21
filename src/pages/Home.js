@@ -82,7 +82,7 @@ function Home() {
     <div className="home" style={{ padding: '2rem' }}>
       {loading ? (
         <PacmanLoader
-          color={"#e66162"}
+          color={"#57745a"}
           loading={loading}
           size={150}
           aria-label="Loading Spinner"

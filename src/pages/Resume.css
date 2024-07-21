@@ -12,7 +12,7 @@ body {
     max-width: 800px;
     margin: 0 auto;
     padding: 2rem;
-    background-color: #e66162;
+    background-color: #57745a;
     color: #fff;
     display: grid; /* Added to use CSS Grid to center the table */
     place-items: left; /* Added to center the table */
