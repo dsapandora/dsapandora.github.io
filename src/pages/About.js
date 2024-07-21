@@ -36,7 +36,7 @@ function About() {
           </div>
           <div className="col-md-6 mb-3">
             <Card>
-              <Card.Img variant="top" src="/logo_UC3M.png" style={{ height: '100px', objectFit: 'contain' }} />
+              <Card.Img variant="top" src="/logo_uc3m.png" style={{ height: '100px', objectFit: 'contain' }} />
               <Card.Body style={{ fontSize: '16px' }}>
                 <Card.Title className="h5">Master’s in Computer Science and Technology with Specialization in Artificial Intelligence</Card.Title>
                 <Card.Text>University Charles III of Madrid, 2013</Card.Text>
