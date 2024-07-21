@@ -1,73 +1,72 @@
-import React, { Component } from 'react';
+import React from 'react';
 import resumeData from './resume.json';
+import { Container, Row, Col, Card } from 'react-bootstrap';
+import 'bootstrap/dist/css/bootstrap.min.css';
 import './Resume.css';
 
-class Resume extends Component {
-  render() {
-    const { name, jobTitle, summary, experience, education, skills } = resumeData;
+const Resume = () => {
+  const { name, jobTitle, summary, experience, education, skills } = resumeData;
 
-    const experienceRows = experience.map((exp) => (
-      <tr key={exp.position}>
-        <td>{exp.position}</td>
-        <td>{exp.company}</td>
-        <td>{exp.startDate} - {exp.endDate}</td>
-        <td>{exp.description}</td>
-      </tr>
-    ));
+  return (
+    <Container className="resume">
+      <Row className="mb-4">
+        <Col>
+          <h1>{name}</h1>
+          <h2>{jobTitle}</h2>
+          <p>{summary}</p>
+        </Col>
+      </Row>
 
-    const educationRows = education.map((edu) => (
-      <tr key={edu.institution}>
-        <td>{edu.institution}</td>
-        <td>{edu.degree}</td>
-        <td>{edu.startDate} - {edu.endDate}</td>
-      </tr>
-    ));
-
-    return (
-      <div className="resume">
-        <h1>{name}</h1>
-        <h2>{jobTitle}</h2>
-        <p>{summary}</p>
-
-        <h3>Experience</h3>
-        <table>
-          <thead>
-            <tr>
-              <th>Position</th>
-              <th>Company</th>
-              <th>Dates</th>
-              <th>Description</th>
-            </tr>
-          </thead>
-          <tbody>
-            {experienceRows}
-          </tbody>
-        </table>
-
-        <h3>Education</h3>
-        <table>
-          <thead>
-            <tr>
-              <th>Institution</th>
-              <th>Degree</th>
-              <th>Dates</th>
-            </tr>
-          </thead>
-          <tbody>
-            {educationRows}
-          </tbody>
-        </table>
-
-        <h3>Skills</h3>
-        <ul>
-          {skills.map((skill) => (
-            <li key={skill}>{skill}</li>
+      <Row className="mb-4">
+        <Col>
+          <h3>Experience</h3>
+          {experience.map((exp) => (
+            <Card className="mb-3" key={exp.position}>
+              <Card.Body>
+                <Card.Title>{exp.position}</Card.Title>
+                <Card.Subtitle className="mb-2 text-muted">{exp.company}</Card.Subtitle>
+                <Card.Text>{exp.startDate} - {exp.endDate}</Card.Text>
+                <Card.Text>{exp.description}</Card.Text>
+              </Card.Body>
+            </Card>
           ))}
-        </ul>
-      </div>
-    );
-  }
-}
+        </Col>
+      </Row>
+
+      <Row className="mb-4">
+        <Col>
+          <h3>Education</h3>
+          {education.map((edu) => (
+            <Card className="mb-3" key={edu.institution}>
+              <Card.Body>
+                <Card.Title>{edu.institution}</Card.Title>
+                <Card.Subtitle className="mb-2 text-muted">{edu.degree}</Card.Subtitle>
+                <Card.Text>{edu.startDate} - {edu.endDate}</Card.Text>
+              </Card.Body>
+            </Card>
+          ))}
+        </Col>
+      </Row>
+
+      <Row className="mb-4">
+        <Col>
+          <h3>Skills</h3>
+          <Row>
+            {skills.map((skill) => (
+              <Col xs={6} md={4} lg={3} key={skill.name} className="mb-3">
+                <Card className="skill-card text-center">
+                  <Card.Img variant="top" src={skill.logo} className="skill-logo" />
+                  <Card.Body>
+                    <Card.Text>{skill.name}</Card.Text>
+                  </Card.Body>
+                </Card>
+              </Col>
+            ))}
+          </Row>
+        </Col>
+      </Row>
+    </Container>
+  );
+};
 
 export default Resume;
-
