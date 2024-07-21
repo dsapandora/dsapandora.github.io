@@ -2,9 +2,10 @@ import React from 'react'
 
 
 function Footer() {
+  const currentYear = new Date().getFullYear();
   return (
     <div className="footer">
-        <h1>Footer</h1>
+        <h3>&copy; {currentYear} LazyRacoon LLC. All rights reserved.</h3>
     </div>
   )
 }
