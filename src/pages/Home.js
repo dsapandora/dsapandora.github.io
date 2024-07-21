@@ -110,8 +110,12 @@ function Home() {
             </Card.Body>
           </Card>
           {showRepos && (
-            <div style={{ display: 'flex', flexWrap: 'wrap', marginLeft: '2rem', justifyContent: 'space-between' }}>
-              {repoData}
+            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '1rem', marginLeft: '2rem' }}>
+              {repoData.slice(0, 6).map((repo, index) => (
+                <div key={index} style={{ margin: '0.5rem' }}>
+                  {repo}
+                </div>
+              ))}
               {error && <p>{error}</p>}
             </div>
           )}
