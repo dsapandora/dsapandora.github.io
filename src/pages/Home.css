@@ -1,0 +1,55 @@
+.home {
+    padding: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+  }
+  
+  .content-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .content-container.show-repos {
+    flex-direction: row;
+  }
+  
+  .profile-card {
+    width: 18rem;
+    margin-bottom: 1rem;
+  }
+  
+  .repo-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+    margin-left: 2rem;
+  }
+  
+  .repo-item {
+    margin: 0.5rem;
+  }
+  
+  .repo-logo {
+    width: 100%;
+    height: auto;
+  }
+  
+  .error-text {
+    color: red;
+  }
+  
+  @media screen and (max-width: 768px) {
+    .content-container.show-repos {
+      flex-direction: column;
+    }
+  
+    .repo-grid {
+      grid-template-columns: 1fr;
+      margin-left: 0;
+    }
+  }
+  

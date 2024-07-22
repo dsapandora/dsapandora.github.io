@@ -3,6 +3,7 @@ import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
 import PacmanLoader from 'react-spinners/PacmanLoader';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import './Home.css';
 
 function Home() {
   const [loading, setLoading] = useState(false);
@@ -31,7 +32,7 @@ function Home() {
         const { data } = result;
         const { user: { pinnedItems } } = data;
         const list = pinnedItems.edges.map((repo) => {
-          const { node: { name, description, url,  openGraphImageUrl } } = repo;
+          const { node: { name, description, url, openGraphImageUrl } } = repo;
           return (
             <Card key={url} style={{ width: '18rem', margin: '0.5rem' }}>
               <Card.Img variant="top" src={openGraphImageUrl} className='repo-logo' />
@@ -79,7 +80,7 @@ function Home() {
   }, []);
 
   return (
-    <div className="home" style={{ padding: '2rem' }}>
+    <div className="home">
       {loading ? (
         <PacmanLoader
           color={"#57745a"}
@@ -89,8 +90,8 @@ function Home() {
           data-testid="loader"
         />
       ) : (
-        <div style={{ display: 'flex', flexDirection: showRepos ? 'row' : 'column', alignItems: 'center', justifyContent: 'center' }}>
-          <Card style={{ width: '18rem', marginBottom: '1rem' }}>
+        <div className={`content-container ${showRepos ? 'show-repos' : ''}`}>
+          <Card className="profile-card">
             <Card.Img variant="top" src={avatarURL} />
             <Card.Body>
               <Card.Title>{githubUsername}</Card.Title>
@@ -110,13 +111,13 @@ function Home() {
             </Card.Body>
           </Card>
           {showRepos && (
-            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '1rem', marginLeft: '2rem' }}>
+            <div className="repo-grid">
               {repoData.slice(0, 6).map((repo, index) => (
-                <div key={index} style={{ margin: '0.5rem' }}>
+                <div key={index} className="repo-item">
                   {repo}
                 </div>
               ))}
-              {error && <p>{error}</p>}
+              {error && <p className="error-text">{error}</p>}
             </div>
           )}
         </div>

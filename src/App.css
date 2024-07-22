@@ -7,6 +7,7 @@
   font-family: "Open Sans", sans-serif;
 }
 
+/* Home Section */
 .home {
   display: flex;
   justify-content: center;
@@ -14,7 +15,6 @@
   height: 100vh;
   flex-direction: column;
   text-align: center;
-  
 }
 
 .home a {
@@ -22,14 +22,14 @@
   text-decoration: none;
   transition: color 0.2s ease-in-out;
   font-size: 1.5rem;
-
-  /* Add underline on hover */
-  position: relative;
+  position: relative; /* Needed for the after pseudo-element */
 }
+
 .home a:hover {
   color: #000000;
   text-decoration: none;
 }
+
 .home a:hover:after {
   content: "";
   position: absolute;
@@ -42,6 +42,7 @@
   transform: scaleX(1);
   transition: all 0.2s ease-in-out;
 }
+
 .home a:after {
   content: "";
   position: absolute;
@@ -55,14 +56,13 @@
   transition: all 0.2s ease-in-out;
 }
 
-.home .text-center{
+.home .text-center {
   border-bottom: 2px solid #57745a;
   padding: 3px;
   margin-top: 5px;
 }
 
-
-
+/* About and Contact Sections */
 .about,
 .contact {
   display: flex;
@@ -78,11 +78,13 @@
   background-color: yellow;
 }
 
+/* Page Icon */
 .page-icon {
   margin-left: 1rem;
   font-size: 100px;
 }
 
+/* Error Page */
 #error-page {
   display: flex;
   flex-direction: column;
@@ -91,7 +93,7 @@
   width: 100%;
 }
 
-
+/* Footer */
 .footer {
   position: fixed;
   left: 0;
@@ -102,6 +104,7 @@
   text-align: center;
 }
 
+/* Logo Class */
 .logoclass {
   position: relative;
   float: left;
@@ -111,9 +114,10 @@
   content: ' ';
   position: absolute;
   bottom: 0;
-  right: 0
+  right: 0;
 }
 
+/* Media Queries */
 @media screen and (max-width: 960px) {
   .home,
   .about,
@@ -125,12 +129,16 @@
     margin-left: 1rem;
     font-size: 80px;
   }
+
+  .home a {
+    font-size: 1.2rem; /* Adjust font size for smaller screens */
+  }
 }
 
-
+/* Repository Logo */
 .repo-logo {
-  width: 200px; /* Reduced size */
-  height: 200px; /* Reduced size */
+  width: 200px;
+  height: 200px;
   object-fit: contain;
   margin: auto;
 }

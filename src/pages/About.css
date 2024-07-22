@@ -1,0 +1,49 @@
+.about {
+    padding: 2rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem; /* Adjust the gap between elements */
+  }
+  
+  .contact-info, .education-info {
+    flex: 1;
+    min-width: 300px; /* Ensure elements have a minimum width */
+  }
+  
+  .contact-info {
+    max-width: 100%; /* Ensure contact info doesn't exceed full width */
+  }
+  
+  .education-info {
+    flex-grow: 2; /* Allow the education section to grow more */
+  }
+  
+  .education-logo {
+    height: 100px;
+    object-fit: contain;
+  }
+  
+  .github-contributions {
+    width: 100%;
+    overflow-x: auto; /* Ensure horizontal scrolling if needed */
+  }
+  
+  @media screen and (max-width: 768px) {
+    .about {
+      padding: 1rem;
+      flex-direction: column; /* Stack elements vertically on mobile */
+    }
+  
+    .contact-info, .education-info {
+      min-width: 100%; /* Ensure elements take full width on mobile */
+    }
+  
+    .education-info {
+      margin-top: 1rem; /* Add spacing between sections */
+    }
+  
+    .github-contributions {
+      overflow-x: auto; /* Ensure horizontal scrolling for smaller screens */
+    }
+  }
+  
