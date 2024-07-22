@@ -31,10 +31,10 @@ function Home() {
         const { data } = result;
         const { user: { pinnedItems } } = data;
         const list = pinnedItems.edges.map((repo) => {
-          const { node: { name, description, url } } = repo;
+          const { node: { name, description, url,  openGraphImageUrl } } = repo;
           return (
             <Card key={url} style={{ width: '18rem', margin: '0.5rem' }}>
-              <Card.Img variant="top" src="/lazyracoon_logo.png" />
+              <Card.Img variant="top" src={openGraphImageUrl} className='repo-logo' />
               <Card.Body>
                 <Card.Title>
                   <a target="_blank" rel="noopener noreferrer" href={url}>

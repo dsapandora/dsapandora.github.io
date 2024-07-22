@@ -127,3 +127,10 @@
   }
 }
 
+
+.repo-logo {
+  width: 200px; /* Reduced size */
+  height: 200px; /* Reduced size */
+  object-fit: contain;
+  margin: auto;
+}
