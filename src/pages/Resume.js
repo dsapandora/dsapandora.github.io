@@ -23,10 +23,17 @@ const Resume = () => {
           {experience.map((exp) => (
             <Card className="mb-3" key={exp.position}>
               <Card.Body>
-                <Card.Title>{exp.position}</Card.Title>
-                <Card.Subtitle className="mb-2 text-muted">{exp.company}</Card.Subtitle>
-                <Card.Text>{exp.startDate} - {exp.endDate}</Card.Text>
-                <Card.Text>{exp.description}</Card.Text>
+                <Row>
+                  <Col xs={3} className="d-flex align-items-center">
+                    <img src={exp.logo} alt={exp.company} className="company-logo" />
+                  </Col>
+                  <Col xs={9}>
+                    <Card.Title>{exp.position}</Card.Title>
+                    <Card.Subtitle className="mb-2 text-muted">{exp.company}</Card.Subtitle>
+                    <Card.Text>{exp.startDate} - {exp.endDate}</Card.Text>
+                    <Card.Text>{exp.description}</Card.Text>
+                  </Col>
+                </Row>
               </Card.Body>
             </Card>
           ))}
@@ -39,9 +46,16 @@ const Resume = () => {
           {education.map((edu) => (
             <Card className="mb-3" key={edu.institution}>
               <Card.Body>
-                <Card.Title>{edu.institution}</Card.Title>
-                <Card.Subtitle className="mb-2 text-muted">{edu.degree}</Card.Subtitle>
-                <Card.Text>{edu.startDate} - {edu.endDate}</Card.Text>
+                <Row>
+                  <Col xs={3} className="d-flex align-items-center">
+                    <img src={edu.logo} alt={edu.institution} className="institution-logo" />
+                  </Col>
+                  <Col xs={9}>
+                    <Card.Title>{edu.institution}</Card.Title>
+                    <Card.Subtitle className="mb-2 text-muted">{edu.degree}</Card.Subtitle>
+                    <Card.Text>{edu.startDate} - {edu.endDate}</Card.Text>
+                  </Col>
+                </Row>
               </Card.Body>
             </Card>
           ))}

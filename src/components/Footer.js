@@ -1,13 +1,12 @@
 import React from 'react'
 
-
-function Footer() {
+const Footer = () => {
   const currentYear = new Date().getFullYear();
   return (
     <div className="footer">
-        <h3>&copy; {currentYear} LazyRacoon LLC. All rights reserved.</h3>
+      <p>&copy; {currentYear} Ariel Vernaza. All rights reserved.</p>
     </div>
-  )
-}
+  );
+};
 
-export default Footer
+export default Footer;
