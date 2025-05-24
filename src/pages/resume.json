@@ -3,10 +3,18 @@
 	"jobTitle": "Senior Software Engineer",
 	"summary": "I'm Ariel Vernaza, a Senior Software Engineer based in Panama City, Panama. My expertise lies in Python, C++, Ruby on Rails, React, React Native, Postgres, Kubernetes, and GraphQL. I have a strong background in backend development, AI integration, and optimizing system performance. With a Master's in Game Design and Computer Science specializing in Artificial Intelligence, I bring extensive experience across various programming languages (Python, C++, Ruby, Java, etc.), frameworks (Django, Rails, Next.js, React, etc.), AI tools (TensorFlow, Keras, PyTorch, etc.), and backend technologies (Kubernetes, Docker, AWS, etc.). I'm passionate about designing robust software solutions, developing AI systems, and engaging in technical design. In my free time, I enjoy swimming, practicing kendo, and playing action RPG fantasy games.",
 	"experience": [
+			{
+			"position": "Senior Software Engineer R&D",
+			"company": "Aparavi Software Corp",
+			"startDate": "September 2024",
+			"endDate": "Present",
+			"description": "With a proven track record of bridging AI innovation with engineering execution and delivering production-ready platforms environments foe R&D",
+			"logo": "https://aparavi.com/wp-content/uploads/2025/01/apa002_identity_CMYK_300ppi_ForDarkBackground.png"
+	},
 	{
 			"position": "Senior Software Engineer Full Stack Remote Contractor",
 			"company": "LazyRacoon LLC",
-			"startDate": "Janyary 2024",
+			"startDate": "January 2024",
 			"endDate": "Present",
 			"description": "As a seasoned remote Software Engineer Contractor at LazyRacoon, I lead the development and maintenance of high-performance web applications using a wide array of modern technologies. These include Next.js, TypeScript, React, MySQL, Docker, Kubernetes, AI tools like TensorFlow and PyTorch, as well as Ruby, Ruby on Rails, Python, Django, and C++. My responsibilities encompass designing scalable system architectures, planning and implementing AI modules for personalized recommendations, and ensuring seamless integration with various backend systems. I also coordinate with cross-functional teams to deliver innovative solutions that align with business objectives, contributing to the overall success and growth of the projects.",
 			"logo": "/lazyracoon_logo.png"
