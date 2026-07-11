@@ -1,127 +1,323 @@
-import React, { useEffect, useState } from 'react';
-import Button from 'react-bootstrap/Button';
-import Card from 'react-bootstrap/Card';
-import PacmanLoader from 'react-spinners/PacmanLoader';
-import 'bootstrap/dist/css/bootstrap.min.css';
+import React, { useEffect, useState, useRef } from 'react';
+import { FaGithub, FaLinkedin, FaEnvelope, FaMapMarkerAlt, FaGamepad } from 'react-icons/fa';
+import RetroGame from '../components/RetroGame';
+import PenguinGame from '../components/PenguinGame';
+import Model3D from '../components/Model3D';
+import Decor3D from '../components/Decor3D';
+import GitHubContributions from '../components/GitHubContributions';
+import resumeData from './resume.json';
+import projectsMeta from './projects.json';
 import './Home.css';
+import './Resume.css';
+import './About.css';
+
+const PROFILE = '/profile.jpg';
+
+function LogoBadge({ src, name, className }) {
+  const [err, setErr] = useState(false);
+  const initials = name.split(/[\s(]/).filter(Boolean).slice(0, 2).map((w) => w[0]).join('').toUpperCase();
+  if (!src || err) return <div className={`monogram ${className || ''}`}>{initials}</div>;
+  return <img src={src} alt={name} className={className} onError={() => setErr(true)} loading="lazy" />;
+}
+
+function hashHue(str) {
+  let h = 0;
+  for (let i = 0; i < str.length; i++) h = (h * 31 + str.charCodeAt(i)) % 360;
+  return h;
+}
+
+// Elegant, demonstrative "3D object" project card (parallax tilt on hover).
+function RepoCard({ repo }) {
+  const ref = useRef(null);
+  const m = projectsMeta[repo.name] || {};
+  const hue = m.hue ?? hashHue(repo.name);
+  const onMove = (e) => {
+    const el = ref.current; if (!el) return;
+    const r = el.getBoundingClientRect();
+    const px = (e.clientX - r.left) / r.width - 0.5;
+    const py = (e.clientY - r.top) / r.height - 0.5;
+    el.style.transform = `perspective(760px) rotateY(${px * 8}deg) rotateX(${-py * 8}deg) translateY(-4px)`;
+  };
+  const reset = () => { if (ref.current) ref.current.style.transform = ''; };
+  return (
+    <a
+      ref={ref} href={repo.url} target="_blank" rel="noopener noreferrer"
+      className="repo3d" style={{ '--h': hue }}
+      onMouseMove={onMove} onMouseLeave={reset}
+    >
+      <div
+        className={'repo3d-cover' + (m.banner ? ' has-banner' : '')}
+        style={m.banner ? { backgroundImage: `linear-gradient(180deg, rgba(8,10,22,0.05), rgba(8,10,22,0.66)), url(${m.banner})` } : undefined}
+      >
+        <span className="repo3d-icon">{m.icon || '{ }'}</span>
+        {m.type && <span className="repo3d-type">{m.type}</span>}
+        <span className="repo3d-name">{m.title || repo.name}</span>
+      </div>
+      <div className="repo3d-body">
+        <p>{m.blurb || repo.description || 'An experiment worth a look.'}</p>
+        {m.tags && (
+          <div className="repo3d-tags">
+            {m.tags.map((t) => <span key={t} className="repo3d-tag">{t}</span>)}
+          </div>
+        )}
+        <div className="repo3d-foot">
+          <span className="repo3d-repo mono">{repo.name}</span>
+          <span className="repo3d-link">Open on GitHub →</span>
+        </div>
+      </div>
+    </a>
+  );
+}
+
+// Origin demo — gated behind a click so nothing loads (or plays sound) until asked.
+function OriginDemo() {
+  const [go, setGo] = useState(false);
+  return (
+    <div className="rg-frame demo-frame">
+      {go ? (
+        <iframe className="demo-iframe" src="https://lazy-racoon.github.io/RelicHunterMiharuDemo/" title="Relic Hunter Miharu — the origin" />
+      ) : (
+        <button className="demo-play" onClick={() => setGo(true)}>
+          <span className="demo-cube">🗿</span>
+          <span>Load the origin demo</span>
+        </button>
+      )}
+      <div className="rg-scan" />
+    </div>
+  );
+}
 
 function Home() {
-  const [loading, setLoading] = useState(false);
-  const [avatarURL, setAvatarURL] = useState('');
-  const [githubUsername, setGitHubUsername] = useState('');
-  const [repoData, setRepoData] = useState([]);
-  const [error, setError] = useState('');
-  const [showRepos, setShowRepos] = useState(false);
+  const { experience, education, skills, summary } = resumeData;
+  const [repos, setRepos] = useState([]);
+  const [repoState, setRepoState] = useState('loading');
 
   useEffect(() => {
-    setLoading(true);
-    setTimeout(() => {
-      setLoading(false);
-    }, 5000);
-  }, []);
-
-  async function repoDataURL() {
-    setLoading(true);
-    try {
-      const response = await fetch('https://dsapandora-backend.lazyracoon.tech/pinned-repos');
-      const result = await response.json();
-      if (result.error) {
-        setError(result.error);
-        setRepoData([]);
-      } else {
-        const { data } = result;
-        const { user: { pinnedItems } } = data;
-        const list = pinnedItems.edges.map((repo) => {
-          const { node: { name, description, url, openGraphImageUrl } } = repo;
-          return (
-            <Card key={url} style={{ width: '18rem', margin: '0.5rem' }}>
-              <Card.Img variant="top" src={openGraphImageUrl} className='repo-logo' />
-              <Card.Body>
-                <Card.Title>
-                  <a target="_blank" rel="noopener noreferrer" href={url}>
-                    {name}
-                  </a>
-                </Card.Title>
-                <Card.Text>Description: {description}</Card.Text>
-              </Card.Body>
-            </Card>
-          );
-        });
-        setRepoData(list);
-        setError('');
-      }
-    } catch (error) {
-      console.error('Error fetching pinned repositories:', error);
-      setError('Error fetching pinned repositories');
-      setRepoData([]);
-    } finally {
-      setLoading(false);
-      setShowRepos(true);
-    }
-  }
-
-  function hideRepoData() {
-    setRepoData([]);
-    setShowRepos(false);
-  }
-
-  useEffect(() => {
-    fetch('https://api.github.com/users/dsapandora')
-      .then((res) => res.json())
-      .then(
-        (result) => {
-          setAvatarURL(result.avatar_url);
-          setGitHubUsername(result.name);
-        },
-        (error) => {
-          console.log(error);
-        }
-      );
+    fetch('https://dsapandora-backend.lazyracoon.tech/pinned-repos')
+      .then((r) => r.json())
+      .then((res) => {
+        const edges = res?.data?.user?.pinnedItems?.edges || [];
+        if (!edges.length) { setRepoState('error'); return; }
+        setRepos(edges.map((e) => e.node));
+        setRepoState('ok');
+      })
+      .catch(() => setRepoState('error'));
   }, []);
 
   return (
-    <div className="home">
-      {loading ? (
-        <PacmanLoader
-          color={"#57745a"}
-          loading={loading}
-          size={150}
-          aria-label="Loading Spinner"
-          data-testid="loader"
-        />
-      ) : (
-        <div className={`content-container ${showRepos ? 'show-repos' : ''}`}>
-          <Card className="profile-card">
-            <Card.Img variant="top" src={avatarURL} />
-            <Card.Body>
-              <Card.Title>{githubUsername}</Card.Title>
-              <Card.Text>
-                I am a Senior Software Engineer, and Artificial Intelligence researcher.
-              </Card.Text>
-
-              {showRepos ? (
-                <Button variant="danger" onClick={hideRepoData}>
-                  Hide Projects
-                </Button>
-              ) : (
-                <Button variant="primary" onClick={repoDataURL}>
-                  Projects
-                </Button>
-              )}
-            </Card.Body>
-          </Card>
-          {showRepos && (
-            <div className="repo-grid">
-              {repoData.slice(0, 6).map((repo, index) => (
-                <div key={index} className="repo-item">
-                  {repo}
-                </div>
-              ))}
-              {error && <p className="error-text">{error}</p>}
-            </div>
-          )}
+    <div className="home" id="top">
+      {/* HERO */}
+      <section className="hero container">
+        <div className="hero-text">
+          <span className="pill"><span className="dot" />staff software engineer · AI specialist · code sorcerer</span>
+          <h1>I build <span className="accent">AI software</span><br />and design <span className="mint">games</span>.</h1>
+          <p className="lead">
+            I'm <strong>Ariel Vernaza</strong> — a <strong>staff-level software engineer</strong> specialized
+            in AI, founder of Lazyracoon, core maintainer of <strong>RocketRide</strong>, and a game designer
+            from Panamá. I lead teams and take AI from zero to production.
+          </p>
+          <div className="hero-cta">
+            <a className="btn btn-primary" href="#play"><FaGamepad size={15} /> Play the page</a>
+            <a className="btn btn-ghost" href="#work">See my work</a>
+          </div>
+          <div className="hero-social">
+            <a href="https://github.com/dsapandora" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><FaGithub /></a>
+            <a href="https://linkedin.com/in/dsapandora" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><FaLinkedin /></a>
+            <a href="mailto:ariel@lazyracoon.tech" aria-label="Email"><FaEnvelope /></a>
+          </div>
         </div>
-      )}
+        <div className="hero-avatar">
+          <div className="avatar-frame"><img src={PROFILE} alt="Ariel Vernaza" /></div>
+          <span className="avatar-tag">PLAYER 1</span>
+        </div>
+      </section>
+
+      {/* GAMES — step inside a neon arcade */}
+      <section className="games-section" id="play">
+        <div className="arcade-glow" aria-hidden="true" />
+        <div className="arcade-sign sign-left" aria-hidden="true">INSERT<br />COIN</div>
+        <div className="arcade-sign sign-right" aria-hidden="true">GAME<br />OVER</div>
+        <div className="arcade-invaders" aria-hidden="true">👾&nbsp;&nbsp;🕹️&nbsp;&nbsp;👻&nbsp;&nbsp;⭐</div>
+        <div className="arcade-floor" aria-hidden="true" />
+        <Decor3D src="/models/conjuror.glb" className="decor-conjuror-arcade" orbit="22deg 84deg 100%" />
+        <div className="container">
+          <div className="arcade-neon">ARCADE</div>
+          <div className="section-head">
+            <span className="pill pill-arcade"><span className="dot" />insert coin</span>
+            <h2>Step into the arcade.</h2>
+            <p>Two playable games I coded from scratch in vanilla JS — plus the origin of a story that's becoming a 3D RPG.</p>
+          </div>
+          <div className="games-grid three">
+            <div className="game-col">
+              <div className="marquee">🦭 ICE DASH</div>
+              <RetroGame />
+              <div className="cabinet-controls" aria-hidden="true"><span className="stick" /><i className="btn-r" /><i className="btn-c" /><i className="btn-g" /></div>
+            </div>
+            <div className="game-col">
+              <div className="marquee">🐧 PENGUIN DASH</div>
+              <PenguinGame />
+              <div className="cabinet-controls" aria-hidden="true"><span className="stick" /><i className="btn-r" /><i className="btn-c" /><i className="btn-g" /></div>
+            </div>
+            <div className="game-col">
+              <div className="marquee">🗿 RELIC HUNTER · ORIGIN</div>
+              <OriginDemo />
+              <div className="rg-caption"><span>Where the story began — now growing into a 3D RPG.</span></div>
+              <div className="cabinet-controls" aria-hidden="true"><span className="stick" /><i className="btn-r" /><i className="btn-c" /><i className="btn-g" /></div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* WORK — straight from GitHub */}
+      <section className="work-section" id="work">
+        <div className="container work-inner">
+        <div className="section-head">
+          <span className="pill"><span className="dot" />what I ship</span>
+          <h2>Selected work</h2>
+          <p>Pinned repositories &amp; a year of commits, live from GitHub.</p>
+        </div>
+
+        {repoState === 'loading' && <p className="repo-note">Loading projects…</p>}
+        {repoState === 'error' && (
+          <p className="repo-note">See everything on <a href="https://github.com/dsapandora" target="_blank" rel="noopener noreferrer">github.com/dsapandora</a>.</p>
+        )}
+        {repoState === 'ok' && (
+          <div className="repo-grid">
+            {[...repos]
+              .sort((a, b) => (projectsMeta[a.name]?.order ?? 99) - (projectsMeta[b.name]?.order ?? 99))
+              .slice(0, 6)
+              .map((repo) => <RepoCard key={repo.url} repo={repo} />)}
+          </div>
+        )}
+
+        <div className="contrib"><GitHubContributions username="dsapandora" /></div>
+        </div>
+      </section>
+
+      {/* CREATIVE — a moonlit, comic-tinted band, woven into the page */}
+      <section className="creative-section" id="creative">
+        <div className="forest-eyes" aria-hidden="true">
+          <span className="eye eye-v" style={{ top: '20%', left: '7%' }} />
+          <span className="eye eye-p" style={{ top: '58%', left: '12%' }} />
+          <span className="eye eye-v" style={{ top: '32%', right: '9%' }} />
+          <span className="eye eye-p" style={{ top: '70%', right: '16%' }} />
+          <span className="eye eye-v" style={{ top: '15%', left: '44%' }} />
+          <span className="eye eye-p" style={{ top: '82%', left: '52%' }} />
+        </div>
+        <div className="lore-bg" aria-hidden="true">
+          <img src="/lore_1.png" className="lore lore-a" alt="" loading="lazy" />
+          <img src="/lore_2.png" className="lore lore-b" alt="" loading="lazy" />
+          <img src="/lore_3.png" className="lore lore-c" alt="" loading="lazy" />
+          <img src="/lore_4.png" className="lore lore-d" alt="" loading="lazy" />
+          <img src="/lore_5.png" className="lore lore-e" alt="" loading="lazy" />
+          <img src="/lore_6.png" className="lore lore-f" alt="" loading="lazy" />
+          <img src="/lore_7.png" className="lore lore-g" alt="" loading="lazy" />
+          <img src="/lore_8.png" className="lore lore-h" alt="" loading="lazy" />
+          <img src="/lore_9.png" className="lore lore-i" alt="" loading="lazy" />
+          <img src="/lore_10.png" className="lore lore-j" alt="" loading="lazy" />
+          <img src="/lore_11.png" className="lore lore-k" alt="" loading="lazy" />
+          <img src="/lore_12.png" className="lore lore-l" alt="" loading="lazy" />
+        </div>
+        <div className="container creative-inner">
+          <div className="creative-head">
+            <span className="pill pill-lilac"><span className="dot" />beyond code</span>
+            <h2>I design worlds, not just software.</h2>
+            <p>An original action-RPG &amp; comic I craft on the side — a moonlit world of story, characters and art. There's more I want to tell you… just not yet.</p>
+          </div>
+          <div className="creative-media">
+            <div className="creative-panel"><img src="/wip_rpg.png" alt="Original fantasy comic artwork" loading="lazy" /></div>
+            <Model3D src="/models/nightwarden.glb" label="" orbit="-18deg 84deg 108%" className="creative-fig" />
+          </div>
+        </div>
+      </section>
+
+      {/* EXPERIENCE + SKILLS */}
+      <section className="container" id="experience">
+        <div className="resume-block">
+          <h3 className="block-title"><span className="arcade-num">01</span> Experience</h3>
+          <div className="timeline">
+            {experience.map((exp, i) => (
+              <div className="tl-item" key={exp.company + i}>
+                <div className="tl-dot" />
+                <div className="gcard tl-card">
+                  <div className="tl-logo"><LogoBadge src={exp.logo} name={exp.company} className="company-logo" /></div>
+                  <div className="tl-body">
+                    <div className="tl-top">
+                      <h4>{exp.position}</h4>
+                      <span className="tl-dates">{exp.startDate} — {exp.endDate}</span>
+                    </div>
+                    <div className="tl-company">{exp.company}</div>
+                    <p>{exp.description}</p>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        <div className="resume-block">
+          <h3 className="block-title"><span className="arcade-num">02</span> Education</h3>
+          <div className="edu-grid">
+            {education.map((edu, i) => (
+              <div className="gcard edu-card" key={edu.institution + i}>
+                <div className="edu-logo"><LogoBadge src={edu.logo} name={edu.institution} className="institution-logo" /></div>
+                <div>
+                  <h4>{edu.degree}</h4>
+                  <div className="edu-inst">{edu.institution}</div>
+                  <span className="edu-dates">{edu.startDate} — {edu.endDate}</span>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        <div className="resume-block">
+          <h3 className="block-title"><span className="arcade-num">03</span> Skills &amp; tools</h3>
+          <div className="skills-grid">
+            {skills.map((skill, i) => (
+              <div className="skill-chip" key={skill.name + i}>
+                <LogoBadge src={skill.logo} name={skill.name} className="skill-logo" />
+                <span>{skill.name}</span>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ABOUT */}
+      <section className="container about-section" id="about">
+        <div className="section-head">
+          <span className="pill"><span className="dot" />about · lore</span>
+          <h2>Half engineer, half game designer.</h2>
+        </div>
+        <div className="about-grid">
+          <div className="about-bio">
+            <p>{summary}</p>
+            <div className="beyond">
+              <h3><FaGamepad /> Beyond the keyboard</h3>
+              <div className="beyond-tags">
+                <span>🥋 Kendo</span><span>🎮 Action RPGs</span><span>👾 Pixel art</span>
+                <span>🕹️ Game engines</span><span>🏊 Swimming</span>
+              </div>
+            </div>
+            <div className="alter-ego">
+              <video className="alter-video" src="/alter_ego.mp4" poster="/alter_ego_poster.jpg" autoPlay loop muted playsInline />
+            </div>
+          </div>
+          <div className="about-right">
+            <aside className="about-contact gcard">
+              <h3>Contact card</h3>
+              <ul>
+                <li><FaMapMarkerAlt /> Panama City, Panamá</li>
+                <li><FaEnvelope /> <a href="mailto:ariel@lazyracoon.tech">ariel@lazyracoon.tech</a></li>
+                <li><FaLinkedin /> <a href="https://linkedin.com/in/dsapandora" target="_blank" rel="noopener noreferrer">/in/dsapandora</a></li>
+                <li><FaGithub /> <a href="https://github.com/dsapandora" target="_blank" rel="noopener noreferrer">@dsapandora</a></li>
+              </ul>
+            </aside>
+            <Decor3D src="/models/mail_tree.glb" className="decor-tree-below" orbit="14deg 78deg 100%" />
+          </div>
+        </div>
+      </section>
     </div>
   );
 }

@@ -1,0 +1,62 @@
+{
+  "pr_analyzer": {
+    "order": 1,
+    "title": "PR Analyzer",
+    "type": "Agentic · RAG · Dev-tool",
+    "icon": "🔀",
+    "hue": 222,
+    "banner": "https://raw.githubusercontent.com/dsapandora/pr_analyzer/main/docs/pr-analyzer-readme-banner.png",
+    "blurb": "Agentic GitHub PR intelligence — topic clustering, duplicate hints, 0–100 quality scoring, merge recommendations and NL chat over your repo. RocketRide pipelines + Qdrant RAG + Claude, on FastAPI & Next.js.",
+    "tags": ["RocketRide", "Qdrant", "RAG", "Claude", "FastAPI", "Next.js"]
+  },
+  "turn-based-strategy-mcp-server": {
+    "order": 2,
+    "title": "Unity MCP × RocketRide",
+    "type": "Agentic · MCP · Game",
+    "icon": "♟️",
+    "hue": 275,
+    "banner": "https://github.com/dsapandora/turn-based-strategy-mcp-server/raw/main/docs/demo-unity-mcp-rockeride-preview.jpg",
+    "blurb": "A Unity tactical battle where an LLM is the strategist — Unity MCP talks to a RocketRide pipeline, and Claude (or a local Ollama model) chooses moves through MCP tool calls.",
+    "tags": ["Unity", "C#", "MCP", "RocketRide", "Claude"]
+  },
+  "3t_soccer_webots_agent": {
+    "order": 3,
+    "title": "3T Soccer Agent",
+    "type": "Agentic · Robotics",
+    "icon": "⚽",
+    "hue": 142,
+    "banner": "https://raw.githubusercontent.com/dsapandora/3t_soccer_webots_agent/main/docs/3t-webots-readme-banner.png",
+    "blurb": "A ROBOTIS OP2 humanoid plays soccer in Webots on a 3-tier stack — native skills, numpy vision and an FSM, with a RocketRide agent whose tool nodes (walk, kick…) plan over a local MCP command bus.",
+    "tags": ["RocketRide", "MCP", "Webots", "agent tools", "C++", "Python"]
+  },
+  "shajin": {
+    "order": 4,
+    "title": "Sentiment Twitter Bot",
+    "type": "NLP · Data",
+    "icon": "🐦",
+    "hue": 205,
+    "banner": "/shajin_banner.svg",
+    "blurb": "A Twitter bot that runs VADER sentiment analysis on a user's recent tweets and replies with a plotted sentiment timeline — mention it, get the chart back.",
+    "tags": ["Python", "NLP", "VADER", "tweepy"]
+  },
+  "ar_drone_wrapper": {
+    "order": 5,
+    "title": "AR Drone Wrapper",
+    "type": "Robotics · ROS",
+    "icon": "🚁",
+    "hue": 190,
+    "banner": "https://camo.githubusercontent.com/139488d70afa135355264fce38e07d9a9df843c15df231bb5f420c4eaa3d354d/68747470733a2f2f656e637279707465642d74626e302e677374617469632e636f6d2f696d616765733f713d74626e3a414e64394763514f44426d53725a75767378516e4c32334f7876494d354151674b5a55446a67516d67672673",
+    "blurb": "A ROS package to fly a Parrot AR Drone — commands, navigation data and camera streams over ROS topics; the perception-and-actuation layer for autonomous agents.",
+    "tags": ["ROS", "Python", "drone", "OpenCV"]
+  },
+  "dsa_robotis_nano": {
+    "order": 6,
+    "title": "Robotis Mini Controller",
+    "type": "Robotics · ROS",
+    "icon": "🤖",
+    "hue": 28,
+    "banner": "https://camo.githubusercontent.com/5680b374bce33955b9230ec44ec2397fa91f2c171198f596677e872c2cca5b5a/68747470733a2f2f7777772e726f74617465636e6f2e636f6d2f77702d636f6e74656e742f75706c6f6164732f323032302f30362f726f74617465636e6f2d3134322e6a7067",
+    "blurb": "A Python + ROS library to drive a ROBOTIS Mini humanoid over Bluetooth — a clean motion-control layer for experimenting with embodied robots.",
+    "tags": ["ROS", "Python", "Bluetooth", "humanoid"]
+  }
+}

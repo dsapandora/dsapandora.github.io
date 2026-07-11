@@ -1,0 +1,12 @@
+.decor3d { position: absolute; pointer-events: none; z-index: 0; }
+.decor3d model-viewer {
+  width: 100%; height: 100%;
+  background-color: transparent;
+  --poster-color: transparent;
+}
+
+/* placements (sit in the section side margins, behind the content) */
+.decor-conjuror-arcade { left: 6px; bottom: 6px; width: 250px; height: 350px; filter: drop-shadow(0 0 30px rgba(255, 210, 120, 0.4)); }
+.decor-tree-below { position: static; width: 100%; height: 400px; margin-top: 6px; }
+
+@media (max-width: 1180px) { .decor-conjuror-arcade { display: none; } }
