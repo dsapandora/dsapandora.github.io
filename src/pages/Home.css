@@ -20,15 +20,16 @@
 .lore-b { bottom: -90px; left: -70px; width: 320px; }
 .lore-c { top: -50px; left: 6%; width: 280px; }
 .lore-d { bottom: -70px; right: 8%; width: 300px; }
-.lore-e { top: 18%; left: 33%; width: 260px; opacity: 0.1; }
-.lore-f { top: 6%; right: 26%; width: 240px; opacity: 0.11; }
-.lore-g { bottom: 4%; left: 22%; width: 250px; opacity: 0.1; }
+/* hug the central panel at mid-height so the pages read there too */
+.lore-e { top: 34%; left: 13%; width: 250px; opacity: 0.15; transform: rotate(-6deg); }
+.lore-f { top: 26%; right: 13%; width: 240px; opacity: 0.15; transform: rotate(7deg); }
+.lore-g { bottom: 8%; left: 16%; width: 230px; opacity: 0.14; transform: rotate(4deg); }
 /* diagonal pages */
-.lore-h { top: -40px; left: 44%; width: 240px; opacity: 0.1; transform: rotate(-9deg); }
-.lore-i { bottom: -50px; right: 30%; width: 250px; opacity: 0.1; transform: rotate(7deg); }
-.lore-j { top: 28%; left: -50px; width: 260px; opacity: 0.12; transform: rotate(6deg); }
-.lore-k { top: 22%; right: -40px; width: 250px; opacity: 0.12; transform: rotate(-8deg); }
-.lore-l { bottom: -30px; left: 47%; width: 230px; opacity: 0.09; transform: rotate(11deg); }
+.lore-h { top: -40px; left: 44%; width: 240px; opacity: 0.11; transform: rotate(-9deg); }
+.lore-i { bottom: 6%; right: 15%; width: 240px; opacity: 0.14; transform: rotate(7deg); }
+.lore-j { top: 30%; left: -50px; width: 260px; opacity: 0.13; transform: rotate(6deg); }
+.lore-k { top: 24%; right: -40px; width: 250px; opacity: 0.13; transform: rotate(-8deg); }
+.lore-l { bottom: -30px; left: 47%; width: 230px; opacity: 0.1; transform: rotate(11deg); }
 @media (max-width: 760px) { .lore { opacity: 0.09; width: 200px; } }
 
 /* origin demo — click to load (silent until then) */
