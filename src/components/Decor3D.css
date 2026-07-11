@@ -7,6 +7,7 @@
 
 /* placements (sit in the section side margins, behind the content) */
 .decor-conjuror-arcade { left: 6px; bottom: 6px; width: 250px; height: 350px; filter: drop-shadow(0 0 30px rgba(255, 210, 120, 0.4)); }
+.decor-raccoon-arcade { right: 6px; bottom: 6px; width: 240px; height: 320px; filter: drop-shadow(0 0 26px rgba(53, 214, 240, 0.3)); }
 .decor-tree-below { position: static; width: 100%; height: 400px; margin-top: 6px; }
 
-@media (max-width: 1180px) { .decor-conjuror-arcade { display: none; } }
+@media (max-width: 1180px) { .decor-conjuror-arcade, .decor-raccoon-arcade { display: none; } }
