@@ -60,7 +60,7 @@ function RetroGame() {
   useEffect(() => {
     const h = parseInt(localStorage.getItem(HIGH_KEY) || '0', 10);
     if (!Number.isNaN(h)) setHigh(h);
-    const bg = new Image(); bg.src = '/fjord_bg.png'; bgRef.current = bg;
+    const bg = new Image(); bg.src = '/fjord_bg.webp'; bgRef.current = bg;
     const s = new Image(); s.src = '/seal.png'; sealRef.current = s;
   }, []);
 

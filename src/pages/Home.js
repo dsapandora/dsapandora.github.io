@@ -206,18 +206,18 @@ function Home() {
           <span className="eye eye-p" style={{ top: '82%', left: '52%' }} />
         </div>
         <div className="lore-bg" aria-hidden="true">
-          <img src="/lore_1.png" className="lore lore-a" alt="" loading="lazy" />
-          <img src="/lore_2.png" className="lore lore-b" alt="" loading="lazy" />
-          <img src="/lore_3.png" className="lore lore-c" alt="" loading="lazy" />
-          <img src="/lore_4.png" className="lore lore-d" alt="" loading="lazy" />
-          <img src="/lore_5.png" className="lore lore-e" alt="" loading="lazy" />
-          <img src="/lore_6.png" className="lore lore-f" alt="" loading="lazy" />
-          <img src="/lore_7.png" className="lore lore-g" alt="" loading="lazy" />
-          <img src="/lore_8.png" className="lore lore-h" alt="" loading="lazy" />
-          <img src="/lore_9.png" className="lore lore-i" alt="" loading="lazy" />
-          <img src="/lore_10.png" className="lore lore-j" alt="" loading="lazy" />
-          <img src="/lore_11.png" className="lore lore-k" alt="" loading="lazy" />
-          <img src="/lore_12.png" className="lore lore-l" alt="" loading="lazy" />
+          <img src="/lore_1.webp" className="lore lore-a" alt="" loading="lazy" />
+          <img src="/lore_2.webp" className="lore lore-b" alt="" loading="lazy" />
+          <img src="/lore_3.webp" className="lore lore-c" alt="" loading="lazy" />
+          <img src="/lore_4.webp" className="lore lore-d" alt="" loading="lazy" />
+          <img src="/lore_5.webp" className="lore lore-e" alt="" loading="lazy" />
+          <img src="/lore_6.webp" className="lore lore-f" alt="" loading="lazy" />
+          <img src="/lore_7.webp" className="lore lore-g" alt="" loading="lazy" />
+          <img src="/lore_8.webp" className="lore lore-h" alt="" loading="lazy" />
+          <img src="/lore_9.webp" className="lore lore-i" alt="" loading="lazy" />
+          <img src="/lore_10.webp" className="lore lore-j" alt="" loading="lazy" />
+          <img src="/lore_11.webp" className="lore lore-k" alt="" loading="lazy" />
+          <img src="/lore_12.webp" className="lore lore-l" alt="" loading="lazy" />
         </div>
         <div className="container creative-inner">
           <div className="creative-head">
@@ -226,7 +226,7 @@ function Home() {
             <p>An original action-RPG &amp; comic I craft on the side — a moonlit world of story, characters and art. There's more I want to tell you… just not yet.</p>
           </div>
           <div className="creative-media">
-            <div className="creative-panel"><img src="/wip_rpg.png" alt="Original fantasy comic artwork" loading="lazy" /></div>
+            <div className="creative-panel"><img src="/wip_rpg.webp" alt="Original fantasy comic artwork" loading="lazy" /></div>
             <Model3D src="/models/nightwarden.glb" label="" orbit="-24deg 84deg 108%" className="creative-fig" />
           </div>
         </div>
