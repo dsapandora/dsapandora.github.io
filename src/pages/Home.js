@@ -113,8 +113,8 @@ function Home() {
           <h1>I build <span className="accent">AI software</span><br />and design <span className="mint">games</span>.</h1>
           <p className="lead">
             I'm <strong>Ariel Vernaza</strong> — a <strong>staff-level software engineer</strong> specialized
-            in AI, founder of Lazyracoon, core maintainer of <strong>RocketRide</strong>, and a game designer
-            from Panamá. I lead teams and take AI from zero to production.
+            in AI, founder of Lazyracoon, core maintainer of <strong>RocketRide</strong>, and a Panamanian
+            game designer based in Madrid. I lead teams and take AI from zero to production.
           </p>
           <div className="hero-cta">
             <a className="btn btn-primary" href="#play"><FaGamepad size={15} /> Play the page</a>
@@ -288,7 +288,7 @@ function Home() {
       <section className="container about-section" id="about">
         <div className="section-head">
           <span className="pill"><span className="dot" />about · lore</span>
-          <h2>Half engineer, half game designer.</h2>
+          <h2>All engineer, all game designer.</h2>
         </div>
         <div className="about-grid">
           <div className="about-bio">
@@ -308,7 +308,7 @@ function Home() {
             <aside className="about-contact gcard">
               <h3>Contact card</h3>
               <ul>
-                <li><FaMapMarkerAlt /> Panama City, Panamá</li>
+                <li><FaMapMarkerAlt /> Madrid, Spain · from Panamá 🇵🇦</li>
                 <li><FaEnvelope /> <a href="mailto:ariel@lazyracoon.tech">ariel@lazyracoon.tech</a></li>
                 <li><FaLinkedin /> <a href="https://linkedin.com/in/dsapandora" target="_blank" rel="noopener noreferrer">/in/dsapandora</a></li>
                 <li><FaGithub /> <a href="https://github.com/dsapandora" target="_blank" rel="noopener noreferrer">@dsapandora</a></li>
