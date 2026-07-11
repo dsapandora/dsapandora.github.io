@@ -1,5 +1,5 @@
 import React, { useEffect, useState, useRef } from 'react';
-import { FaGithub, FaLinkedin, FaEnvelope, FaMapMarkerAlt, FaGamepad, FaInstagram, FaPlay } from 'react-icons/fa';
+import { FaGithub, FaLinkedin, FaEnvelope, FaMapMarkerAlt, FaGamepad, FaInstagram } from 'react-icons/fa';
 import RetroGame from '../components/RetroGame';
 import PenguinGame from '../components/PenguinGame';
 import Model3D from '../components/Model3D';
@@ -12,6 +12,15 @@ import './Resume.css';
 import './About.css';
 
 const PROFILE = '/profile.jpg';
+
+const REELS = [
+  { url: 'https://www.instagram.com/p/DV4ZEQujEKr/', title: 'Unity MCP × RocketRide — demo reel', img: 'https://github.com/dsapandora/turn-based-strategy-mcp-server/raw/main/docs/social-demo-banner.png' },
+  { url: 'https://www.instagram.com/p/DYJycPejF4O/', title: '3T Soccer — humanoid robot agent', img: 'https://raw.githubusercontent.com/dsapandora/3t_soccer_webots_agent/main/docs/instagram-reel-DYJycPejF4O-preview.jpg' },
+  { url: 'https://www.instagram.com/reel/Cwy4ss7tsFF/', title: 'Research reel' },
+  { url: 'https://www.instagram.com/p/B2I7XEaBkWZ/', title: 'Robotics — in the lab' },
+  { url: 'https://www.instagram.com/p/BuVO-ZRhDWL/', title: 'AI research experiment' },
+  { url: 'https://www.instagram.com/p/B1MU9BhBL3b/', title: 'Robots at work' },
+];
 
 function LogoBadge({ src, name, className }) {
   const [err, setErr] = useState(false);
@@ -102,6 +111,20 @@ function Home() {
         setRepoState('ok');
       })
       .catch(() => setRepoState('error'));
+  }, []);
+
+  // render the Instagram embeds once their script is ready
+  useEffect(() => {
+    let tries = 0;
+    const id = setInterval(() => {
+      if (window.instgrm && window.instgrm.Embeds && window.instgrm.Embeds.process) {
+        window.instgrm.Embeds.process();
+        clearInterval(id);
+      } else if (++tries > 25) {
+        clearInterval(id);
+      }
+    }, 400);
+    return () => clearInterval(id);
   }, []);
 
   return (
@@ -203,26 +226,14 @@ function Home() {
           <p>Reels from the lab and the arcade — AI, robotics and agentic experiments I share.</p>
         </div>
         <div className="ig-grid">
-          <a className="gcard ig-card" href="https://www.instagram.com/p/DV4ZEQujEKr/" target="_blank" rel="noopener noreferrer">
-            <div className="ig-thumb">
-              <img src="https://github.com/dsapandora/turn-based-strategy-mcp-server/raw/main/docs/social-demo-banner.png" alt="Unity MCP × RocketRide demo reel" loading="lazy" />
-              <span className="ig-play"><FaPlay /></span>
-            </div>
-            <div className="ig-body">
-              <h3>Unity MCP × RocketRide — demo reel</h3>
-              <span className="ig-link"><FaInstagram /> Watch on Instagram</span>
-            </div>
-          </a>
-          <a className="gcard ig-card" href="https://www.instagram.com/p/DYJycPejF4O/" target="_blank" rel="noopener noreferrer">
-            <div className="ig-thumb">
-              <img src="https://raw.githubusercontent.com/dsapandora/3t_soccer_webots_agent/main/docs/instagram-reel-DYJycPejF4O-preview.jpg" alt="3T Soccer humanoid robot agent reel" loading="lazy" />
-              <span className="ig-play"><FaPlay /></span>
-            </div>
-            <div className="ig-body">
-              <h3>3T Soccer — humanoid robot agent</h3>
-              <span className="ig-link"><FaInstagram /> Watch on Instagram</span>
-            </div>
-          </a>
+          {REELS.map((r) => (
+            <blockquote
+              key={r.url}
+              className="instagram-media ig-embed"
+              data-instgrm-permalink={r.url}
+              data-instgrm-version="14"
+            />
+          ))}
         </div>
         <div className="ig-follow-row">
           <a className="btn btn-ghost" href="https://instagram.com/dsapandora" target="_blank" rel="noopener noreferrer"><FaInstagram /> Follow @dsapandora</a>

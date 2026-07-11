@@ -283,9 +283,10 @@
 .model-row { display: grid; grid-template-columns: 1fr 1fr; gap: 22px; margin-top: 22px; }
 @media (max-width: 620px) { .model-row { grid-template-columns: 1fr; } }
 
-/* Instagram — curated reels */
+/* Instagram — curated reels (official embeds) */
 .ig-section { padding: 20px 0 64px; }
-.ig-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 22px; }
+.ig-grid { display: flex; flex-wrap: wrap; justify-content: center; align-items: flex-start; gap: 18px; }
+.ig-embed { flex: 0 1 340px; min-width: 300px; }
 .ig-card { overflow: hidden; display: flex; flex-direction: column; }
 .ig-thumb { position: relative; aspect-ratio: 16 / 9; overflow: hidden; background: var(--bg-2); border-bottom: 1px solid var(--border); }
 .ig-thumb img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.3s ease; }
