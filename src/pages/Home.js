@@ -226,7 +226,7 @@ function Home() {
           </div>
           <div className="creative-media">
             <div className="creative-panel"><img src="/wip_rpg.png" alt="Original fantasy comic artwork" loading="lazy" /></div>
-            <Model3D src="/models/nightwarden.glb" label="" orbit="-9deg 84deg 108%" className="creative-fig" />
+            <Model3D src="/models/nightwarden.glb" label="" orbit="-28deg 84deg 108%" className="creative-fig" />
           </div>
         </div>
       </section>
