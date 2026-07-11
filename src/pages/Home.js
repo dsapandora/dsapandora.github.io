@@ -109,10 +109,10 @@ function Home() {
       {/* HERO */}
       <section className="hero container">
         <div className="hero-text">
-          <span className="pill"><span className="dot" />staff software engineer · AI specialist · code sorcerer</span>
+          <span className="pill"><span className="dot" />full-stack software engineer · AI specialist · code sorcerer</span>
           <h1>I build <span className="accent">AI software</span><br />and design <span className="mint">games</span>.</h1>
           <p className="lead">
-            I'm <strong>Ariel Vernaza</strong> — a <strong>staff-level software engineer</strong> specialized
+            I'm <strong>Ariel Vernaza</strong> — a <strong>full-stack software engineer</strong> specialized
             in AI, founder of Lazyracoon, core maintainer of <strong>RocketRide</strong>, and a Panamanian
             game designer based in Madrid. I lead teams and take AI from zero to production.
           </p>
