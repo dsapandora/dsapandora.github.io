@@ -145,13 +145,14 @@
 .games-section {
   padding: 26px 0 74px; position: relative; overflow: hidden;
   background:
-    radial-gradient(ellipse 45% 40% at 18% 8%, rgba(255,61,154,0.18), transparent 60%),
-    radial-gradient(ellipse 45% 40% at 84% 12%, rgba(34,211,238,0.16), transparent 60%),
-    radial-gradient(ellipse 60% 50% at 50% 110%, rgba(124,58,237,0.16), transparent 60%),
-    linear-gradient(#0a0a12, #0d0d18 60%, #101122);
+    linear-gradient(rgba(8,8,16,0.72), rgba(8,8,16,0.88)),
+    url('/arcade_bg.webp') center top / cover no-repeat,
+    #0a0a12;
   border-top: 1px solid rgba(255,255,255,0.07);
   border-bottom: 1px solid rgba(255,255,255,0.07);
 }
+/* the arcade-room image already provides neon signs, invaders & floor */
+.arcade-sign, .arcade-invaders, .arcade-floor { display: none; }
 .arcade-glow {
   position: absolute; inset: 0; pointer-events: none;
   background-image: linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px);
