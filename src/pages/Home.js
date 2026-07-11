@@ -140,7 +140,7 @@ function Home() {
         <div className="arcade-invaders" aria-hidden="true">👾&nbsp;&nbsp;🕹️&nbsp;&nbsp;👻&nbsp;&nbsp;⭐</div>
         <div className="arcade-floor" aria-hidden="true" />
         <Decor3D src="/models/conjuror.glb" className="decor-conjuror-arcade" orbit="22deg 84deg 100%" />
-        <Decor3D src="/models/raccoon.glb" className="decor-raccoon-arcade" orbit="-28deg 84deg 100%" />
+        <Decor3D src="/models/raccoon.glb" className="decor-raccoon-arcade" orbit="28deg 84deg 100%" />
         <div className="container">
           <div className="arcade-neon">ARCADE</div>
           <div className="section-head">
