@@ -1,5 +1,5 @@
 import React, { useEffect, useState, useRef } from 'react';
-import { FaGithub, FaLinkedin, FaEnvelope, FaMapMarkerAlt, FaGamepad } from 'react-icons/fa';
+import { FaGithub, FaLinkedin, FaEnvelope, FaMapMarkerAlt, FaGamepad, FaInstagram, FaPlay } from 'react-icons/fa';
 import RetroGame from '../components/RetroGame';
 import PenguinGame from '../components/PenguinGame';
 import Model3D from '../components/Model3D';
@@ -192,6 +192,40 @@ function Home() {
         )}
 
         <div className="contrib"><GitHubContributions username="dsapandora" /></div>
+        </div>
+      </section>
+
+      {/* INSTAGRAM — curated reels (research, robots, demos) */}
+      <section className="ig-section container" id="reels">
+        <div className="section-head">
+          <span className="pill"><span className="dot" />on instagram · @dsapandora</span>
+          <h2>Research, robots &amp; demos.</h2>
+          <p>Reels from the lab and the arcade — AI, robotics and agentic experiments I share.</p>
+        </div>
+        <div className="ig-grid">
+          <a className="gcard ig-card" href="https://www.instagram.com/p/DV4ZEQujEKr/" target="_blank" rel="noopener noreferrer">
+            <div className="ig-thumb">
+              <img src="https://github.com/dsapandora/turn-based-strategy-mcp-server/raw/main/docs/social-demo-banner.png" alt="Unity MCP × RocketRide demo reel" loading="lazy" />
+              <span className="ig-play"><FaPlay /></span>
+            </div>
+            <div className="ig-body">
+              <h3>Unity MCP × RocketRide — demo reel</h3>
+              <span className="ig-link"><FaInstagram /> Watch on Instagram</span>
+            </div>
+          </a>
+          <a className="gcard ig-card" href="https://www.instagram.com/p/DYJycPejF4O/" target="_blank" rel="noopener noreferrer">
+            <div className="ig-thumb">
+              <img src="https://raw.githubusercontent.com/dsapandora/3t_soccer_webots_agent/main/docs/instagram-reel-DYJycPejF4O-preview.jpg" alt="3T Soccer humanoid robot agent reel" loading="lazy" />
+              <span className="ig-play"><FaPlay /></span>
+            </div>
+            <div className="ig-body">
+              <h3>3T Soccer — humanoid robot agent</h3>
+              <span className="ig-link"><FaInstagram /> Watch on Instagram</span>
+            </div>
+          </a>
+        </div>
+        <div className="ig-follow-row">
+          <a className="btn btn-ghost" href="https://instagram.com/dsapandora" target="_blank" rel="noopener noreferrer"><FaInstagram /> Follow @dsapandora</a>
         </div>
       </section>
 
