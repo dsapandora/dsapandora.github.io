@@ -288,7 +288,7 @@ function Home() {
       <section className="container about-section" id="about">
         <div className="section-head">
           <span className="pill"><span className="dot" />about · lore</span>
-          <h2>All engineer, all game designer.</h2>
+          <h2>Full-stack engineer &amp; game designer.</h2>
         </div>
         <div className="about-grid">
           <div className="about-bio">
