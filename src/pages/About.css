@@ -27,9 +27,9 @@
 .about-contact a:hover { color: var(--red); }
 
 .contrib { margin-top: 54px; }
-.github-contributions { text-align: center; overflow-x: auto; }
-.github-contributions h3 { font-size: 1.2rem; margin-bottom: 20px; color: var(--text); }
-.github-contributions > div { display: inline-block; }
+.github-contributions { display: flex; flex-direction: column; align-items: center; overflow-x: auto; }
+.github-contributions h3 { font-size: 1.2rem; margin-bottom: 20px; color: var(--text); text-align: center; }
+.github-contributions > div { display: inline-block; margin: 0 auto; }
 
 @media (max-width: 860px) {
   .about-grid { grid-template-columns: 1fr; }
