@@ -218,28 +218,6 @@ function Home() {
         </div>
       </section>
 
-      {/* INSTAGRAM — curated reels (research, robots, demos) */}
-      <section className="ig-section container" id="reels">
-        <div className="section-head">
-          <span className="pill"><span className="dot" />on instagram · @dsapandora</span>
-          <h2>Research, robots &amp; demos.</h2>
-          <p>Reels from the lab and the arcade — AI, robotics and agentic experiments I share.</p>
-        </div>
-        <div className="ig-grid">
-          {REELS.map((r) => (
-            <blockquote
-              key={r.url}
-              className="instagram-media ig-embed"
-              data-instgrm-permalink={r.url}
-              data-instgrm-version="14"
-            />
-          ))}
-        </div>
-        <div className="ig-follow-row">
-          <a className="btn btn-ghost" href="https://instagram.com/dsapandora" target="_blank" rel="noopener noreferrer"><FaInstagram /> Follow @dsapandora</a>
-        </div>
-      </section>
-
       {/* CREATIVE — a moonlit, comic-tinted band, woven into the page */}
       <section className="creative-section" id="creative">
         <div className="forest-eyes" aria-hidden="true">
@@ -327,6 +305,28 @@ function Home() {
               </div>
             ))}
           </div>
+        </div>
+      </section>
+
+      {/* INSTAGRAM — curated reels (research, robots, demos) */}
+      <section className="ig-section container" id="reels">
+        <div className="section-head">
+          <span className="pill"><span className="dot" />on instagram · @dsapandora</span>
+          <h2>Research, robots &amp; demos.</h2>
+          <p>Reels from the lab and the arcade — AI, robotics and agentic experiments I share.</p>
+        </div>
+        <div className="ig-grid">
+          {REELS.map((r) => (
+            <blockquote
+              key={r.url}
+              className="instagram-media ig-embed"
+              data-instgrm-permalink={r.url}
+              data-instgrm-version="14"
+            />
+          ))}
+        </div>
+        <div className="ig-follow-row">
+          <a className="btn btn-ghost" href="https://instagram.com/dsapandora" target="_blank" rel="noopener noreferrer"><FaInstagram /> Follow @dsapandora</a>
         </div>
       </section>
 
