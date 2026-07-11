@@ -172,21 +172,27 @@ function Home() {
             <p>Two playable games I coded from scratch in vanilla JS — plus the origin of a story that's becoming a 3D RPG.</p>
           </div>
           <div className="games-grid three">
-            <div className="game-col">
-              <div className="marquee">🦭 ICE DASH</div>
-              <RetroGame />
-              <div className="cabinet-controls" aria-hidden="true"><span className="stick" /><i className="btn-r" /><i className="btn-c" /><i className="btn-g" /></div>
+            <div className="game-col cab">
+              <div className="cab-shell">
+                <img className="cab-art" src="/arcade_cab.png" alt="" aria-hidden="true" />
+                <div className="cab-title">ICE DASH</div>
+                <div className="cab-screen"><RetroGame /></div>
+              </div>
             </div>
-            <div className="game-col">
-              <div className="marquee">🐧 PENGUIN DASH</div>
-              <PenguinGame />
-              <div className="cabinet-controls" aria-hidden="true"><span className="stick" /><i className="btn-r" /><i className="btn-c" /><i className="btn-g" /></div>
+            <div className="game-col cab">
+              <div className="cab-shell">
+                <img className="cab-art" src="/arcade_cab.png" alt="" aria-hidden="true" />
+                <div className="cab-title">PENGUIN DASH</div>
+                <div className="cab-screen"><PenguinGame /></div>
+              </div>
             </div>
-            <div className="game-col">
-              <div className="marquee">🗿 RELIC HUNTER · ORIGIN</div>
-              <OriginDemo />
+            <div className="game-col cab">
+              <div className="cab-shell">
+                <img className="cab-art" src="/arcade_cab.png" alt="" aria-hidden="true" />
+                <div className="cab-title">RELIC HUNTER</div>
+                <div className="cab-screen"><OriginDemo /></div>
+              </div>
               <div className="rg-caption"><span>Where the story began — now growing into a 3D RPG.</span></div>
-              <div className="cabinet-controls" aria-hidden="true"><span className="stick" /><i className="btn-r" /><i className="btn-c" /><i className="btn-g" /></div>
             </div>
           </div>
         </div>
