@@ -256,7 +256,7 @@ function Home() {
           </div>
           <div className="creative-media">
             <div className="creative-panel"><img src="/wip_rpg.webp" alt="Original fantasy comic artwork" loading="lazy" /></div>
-            <Model3D src="/models/nightwarden.glb" label="" orbit="-15deg 85deg 112%" className="creative-fig" />
+            <Model3D src="/models/nightwarden.glb" label="" orbit="0deg 90deg 62%" target="0m 1.7m 0m" animated className="creative-fig" />
           </div>
         </div>
       </section>
